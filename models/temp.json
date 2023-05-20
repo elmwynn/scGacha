@@ -1,0 +1,591 @@
+[
+    {
+        "id": 1,
+        "name": "Olivier Chance",
+        "type": "True Conductor",
+        "affiliation": "Ariesian Royalty",
+        "conductingType": "Elementalist: Fire",
+        "ranking": "✦ ✦ ✦ ✦",
+        "image": "https://sixchanceshome.files.wordpress.com/2021/07/illustration-rev.png",
+        "upgradeDialogue": ["Are you sure you're not wasting all of that on me?", "", "","", "Thank you... I guess...", "I promise I won't disappoint you."],
+        "upgradeCount": 9
+    },
+    {
+        "id": 2,
+        "name": "Cadence Morello",
+        "type": "True Conductor",
+        "affiliation": "Twin Cities Underground",
+        "conductingType": "Transmutationist",
+        "ranking": "✦ ✦ ✦",
+        "image": "https://sixchanceshome.files.wordpress.com/2021/07/illustration2.jpg",
+        "upgradeDialogue": ["Well, that's what I call a good investment!", "", "","Aw, ya make me feel real special!", "Ain't this a little bit too much responsibility?", "Ya know what? I trust ya. So... please trust me too."],
+        "upgradeCount": 12
+        
+    },
+    {
+        "id": 3,
+        "name": "Werner Waltz",
+        "conductingType": "Projector",
+        "affiliation": "Capricornian Army",
+        "type": "True Conductor",
+        "ranking": "✦ ✦ ✦ ✦",
+        "image": "https://sixchanceshome.files.wordpress.com/2021/07/illustration4-2.jpg",
+        "upgradeDialogue": ["I will do my best to meet your standards.", "", "","", "I... appreciate your kindness. I promise I will not disappoint you", "I know you are... aware of my imperfections, but I will not allow them to deter me from standing by your side."],
+        "upgradeCount": 9
+    },
+    {
+        "id": 4,
+        "name": "Maria Gloria-Fernandez",
+        "type": "True Conductor",
+        "affiliation": "Gloria's Grail",
+        "conductingType": "?????",
+        "ranking": "✦ ✦ ✦ ✦ ✦",
+        "image": "https://sixchanceshome.files.wordpress.com/2021/07/illustration.jpg",
+        "upgradeDialogue": ["Oh! Well, I always knew I could become even stronger, yes?", "", "","", "", "Hm... This feels good, no? I have decided. You are now a part of my crew... if you would like, yes?"],
+        "upgradeCount": 5
+    },
+    {
+        "id": 5,
+        "name": "Atienna Imamu",
+        "type": "True Conductor",
+        "affiliation": "Imamu Tribe",
+        "conductingType": "???",
+        "ranking": "✦ ✦ ✦ ✦",
+        "image": "https://sixchanceshome.files.wordpress.com/2021/08/illustration-3-e1630347568788.jpg",
+        "upgradeDialogue": ["Oh... this is interesting.", "", "","", "Ah...", "It would be impossible for us to truly understand each other, don't you think? And yet... here we are, side-by-side..."],
+        "upgradeCount": 9
+    },
+    {
+        "id": 6,
+        "name": "Jericho",
+        "type": "True Conductor",
+        "affiliation": "Ophiuchus",
+        "conductingType": "Diverger",
+        "ranking": "✦ ✦ ✦ ✦ ✦",
+        "image": "https://sixchanceshome.files.wordpress.com/2021/09/illustration2-2-e1631104353299.jpg",
+        "upgradeDialogue": ["I am leveling up.", "", "","", "", "... we are friends."],
+        "upgradeCount": 5
+    },
+    {
+        "id": 7,
+        "name": "Shion Myosotis",
+        "type": "True Conductor",
+        "affiliation": "????",
+        "conductingType": "Elementalist: Air",
+        "ranking": "✦ ✦ ✦ ✦ ✦",
+        "image": "https://cdn.discordapp.com/attachments/970820451578298398/1108845444953559142/image.png"
+    },
+    {
+        "id": 8,
+        "name": "Yuseong Claire",
+        "type": "True Conductor",
+        "affiliation": "Seong Clan",
+        "conductingType": "Elementalist: Air" ,
+        "ranking": "✦ ✦ ✦ ✦",
+        "image": "https://static.wikia.nocookie.net/sixchances/images/7/7d/Claire.jpg/revision/latest/scale-to-width-down/1000?cb=20211027132327"
+    },
+    {
+        "id": 9,
+        "name": "Francis Foxman",
+        "type": "Civillian",
+        "affiliation": "Twin Cities Underground",
+        "conductingType": "????",
+        "ranking": "✦ ✦ ✦",
+        "image": "https://cdn.discordapp.com/attachments/970820451578298398/1108845585076863056/image.png"
+    },
+    {
+        "id": 10,
+        "name": "Gilbert Wolff",
+        "type": "Conductor",
+        "affiliation": "Capricornian Army",
+        "conductingType": "Projector",
+        "ranking": "✦ ✦ ✦",
+        "image": "https://cdn.discordapp.com/attachments/970820451578298398/1108852019554431048/image.png"
+    },
+    {
+        "id": 11,
+        "name": "Trystan Carter",
+        "type": "Conductor",
+        "affiliation": "Ariesian Royalty",
+        "conductingType": "Elementalist: Fire",
+        "ranking": "✦ ✦ ✦",
+        "image": ""
+    },
+    {
+        "id": 13,
+        "name": "Conta",
+        "type": "Civillian",
+        "affiliation": "Gloria's Grail",
+        "conductingType": "Diverger",
+        "ranking": "✦ ✦ ✦",
+        "image": ""
+    },
+    {
+        "id": 14,
+        "name": "Talib Al-Jarrah",
+        "type": "Peacekeeper",
+        "affiliation": "Ophiuchus",
+        "conductingType": "Manipulator",
+        "ranking": "✦ ✦ ✦",
+        "image": "https://media.discordapp.net/attachments/970820451578298398/1108855460884381798/image.png"
+    },
+    {
+        "id": 15,
+        "name": "Gabrielle Law",
+        "type": "Peacekeeper",
+        "affiliation": "Ophiuchus",
+        "conductingType": "Elementalist: Fire",
+        "ranking": "✦ ✦ ✦ ✦",
+        "image": "https://cdn.discordapp.com/attachments/970820451578298398/1108839956102795415/image.png"
+    },
+    {
+        "id": 16,
+        "name": "Wtorek Izsak",
+        "type": "Peacekeeper",
+        "affiliation": "Ophiuchus",
+        "conductingType": "Conjuror",
+        "ranking": "✦ ✦ ✦",
+        "image": "https://sixchanceshome.files.wordpress.com/2023/05/0f77f07e-8e30-4169-9e52-a62d68dde38a.png"
+    },
+    {
+        "id": 17,
+        "name": "Alice Kingsley",
+        "type": "Peacekeeper",
+        "affiliation": "Ophiuchus",
+        "conductingType": "Diverger",
+        "ranking": "✦ ✦ ✦ ✦",
+        "image": "https://cdn.discordapp.com/attachments/970820451578298398/1108839795280580749/image.png"
+    },
+    {
+        "id": 18,
+        "name": "Ferris Hart",
+        "type": "Peacekeeper",
+        "affiliation": "Ophiuchus",
+        "conductingType": "Transmutationist",
+        "ranking": "✦ ✦",
+        "image": ""
+    },
+    {
+        "id": 19,
+        "name": "Nico Fabrizzio",
+        "type": "Conductor",
+        "affiliation": "Twin Cities Underground",
+        "conductingType": "Transmutationist",
+        "ranking": "✦ ✦ ✦",
+        "image": "https://media.discordapp.net/attachments/970820451578298398/1108838982994907196/image.png?width=298&height=514"
+    },
+    {
+        "id": 20,
+        "name": "Carl Foxman",
+        "type": "Civillian",
+        "affiliation": "Twin Cities Underground",
+        "conductingType": "???",
+        "ranking": "✦ ✦ ✦",
+        "image": "https://media.discordapp.net/attachments/970820451578298398/1108845737988608020/image.png?width=319&height=514"
+    },
+    {
+        "id": 21,
+        "name": "Allen Foxman",
+        "type": "Civillian",
+        "affiliation": "Twin Cities Underground",
+        "conductingType": "???",
+        "ranking": "✦ ✦ ✦",
+        "image": ""
+    },
+    {
+        "id": 22,
+        "name": "Otto Vogt",
+        "type": "Conductor",
+        "affiliation": "Capricornian Army",
+        "conductingType": "Projector",
+        "ranking": "✦ ✦",
+        "image": "https://media.discordapp.net/attachments/970820451578298398/1108851817451888660/image.png?width=340&height=514"
+    },
+    {
+        "id": 23,
+        "name": "Derik Stein",
+        "type": "Conductor",
+        "affiliation": "Capricornian Army",
+        "conductingType": "Projector",
+        "ranking": "✦ ✦ ✦",
+        "image": "https://media.discordapp.net/attachments/970820451578298398/1108851990856999043/image.png?width=340&height=514"
+    },
+    {
+        "id": 24,
+        "name": "Emilia Bergmann",
+        "type": "Conductor",
+        "affiliation": "Capricornian Army",
+        "conductingType": "Elementalist: Earth",
+        "ranking": "✦ ✦ ✦ ✦",
+        "image": "https://media.discordapp.net/attachments/970820451578298398/1108851860414144622/image.png?width=340&height=514"
+    },
+    {
+        "id": 25,
+        "name": "Wilhelm Fischer",
+        "type": "Conductor",
+        "affiliation": "Capricornian Army",
+        "conductingType": "Projector",
+        "ranking": "✦ ✦",
+        "image": "https://media.discordapp.net/attachments/970820451578298398/1108851956425965598/image.png?width=340&height=514"
+    },
+    {
+        "id": 26,
+        "name": "Volker Weingartner",
+        "type": "Conductor",
+        "affiliation": "Capricornian Army",
+        "conductingType": "Conjuror",
+        "ranking": "✦ ✦ ✦ ✦",
+        "image": ""
+    },
+    {
+        "id": 27,
+        "name": "Alwin Brandt",
+        "type": "Conductor",
+        "affiliation": "Capricornian Army",
+        "conductingType": "Transmutationist",
+        "ranking": "✦ ✦ ✦",
+        "image": "https://media.discordapp.net/attachments/970820451578298398/1108851930412879972/image.png?width=340&height=514"
+    },
+    {
+        "id": 28,
+        "name": "Alexander Charming",
+        "type": "Conductor",
+        "affiliation": "Ariesian Royalty",
+        "conductingType": "Elementalist: Fire",
+        "ranking": "✦ ✦ ✦ ✦",
+        "image": ""
+    },
+    {
+        "id": 29,
+        "name": "Verga",
+        "type": "Conductor",
+        "affiliation": "Twin Cities Underground",
+        "conductingType": "???",
+        "ranking": "✦",
+        "image": ""
+    },
+    {
+        "id": 30,
+        "name": "Erwin Ersatz",
+        "type": "Conductor",
+        "affiliation": "Capricornian Army",
+        "conductingType": "Projector",
+        "ranking": "✦ ✦",
+        "image": ""
+    },
+    {
+        "id": 31,
+        "name": "Stefano",
+        "type": "Civillian",
+        "affiliation": "Twin Cities Underground",
+        "conductingType": "???",
+        "ranking": "✦",
+        "image": ""
+    },
+    {
+        "id": 32,
+        "name": "Matilda",
+        "type": "Civillian",
+        "affiliation": "Twin Cities Underground",
+        "conductingType": "???",
+        "ranking": "✦ ✦",
+        "image": ""
+    },
+    {
+        "id": 33,
+        "name": "Lita",
+        "type": "Conductor",
+        "affiliation": "Gloria's Grail",
+        "conductingType": "Diverger",
+        "ranking": "✦ ✦ ✦ ✦",
+        "image": ""
+    },
+    {
+        "id": 34,
+        "name": "Simon",
+        "type": "Civillian",
+        "affiliation": "Gloria's Grail",
+        "conductingType": "Transmutationist",
+        "ranking": "✦ ✦",
+        "image": ""
+    },
+    {
+        "id": 34,
+        "name": "Morandi",
+        "type": "Civillian",
+        "affiliation": "Gloria's Grail",
+        "conductingType": "????",
+        "ranking": "✦ ✦ ✦",
+        "image": ""
+    },
+    {
+        "id": 35,
+        "name": "Leona Gloria-Angelo",
+        "type": "Saint Candidate",
+        "affiliation": "Ophiuchus",
+        "conductingType": "Projector",
+        "ranking": "✦ ✦ ✦ ✦ ✦",
+        "image": "https://sixchanceshome.files.wordpress.com/2021/02/414141.png"
+    },
+    {
+        "id": 36,
+        "name": "Andres",
+        "type": "True Conductor",
+        "affiliation": "Monadism",
+        "conductingType": "Conjuror",
+        "ranking": "✦ ✦ ✦ ✦",
+        "image": "https://media.discordapp.net/attachments/970820451578298398/1108846396720812082/image.png?width=262&height=514"
+    },
+    {
+        "id": 37,
+        "name": "Sigrid Anker",
+        "type": "True Conductor",
+        "affiliation": "Aquarian Army",
+        "conductingType": "Elementalist: Water",
+        "ranking": "✦ ✦ ✦ ✦",
+        "image": "https://media.discordapp.net/attachments/970820451578298398/1108846425141415956/image.png?width=238&height=514"
+    },
+    {
+        "id": 38,
+        "name": "Veles",
+        "type": "True Conductor",
+        "affiliation": "Unknown",
+        "conductingType": "Elementalist: Water",
+        "ranking": "✦ ✦ ✦ ✦ ✦",
+        "image": "https://media.discordapp.net/attachments/970820451578298398/1108857030959181884/image.png?width=215&height=514"
+    },
+    {
+        "id": 39,
+        "name": "Reneé Le Blanc",
+        "type": "True Conductor",
+        "affiliation": "Chevaliers",
+        "conductingType": "Transmutationist",
+        "ranking": "✦ ✦ ✦ ✦",
+        "image": "https://media.discordapp.net/attachments/970820451578298398/1108857050043269190/image.png?width=228&height=514"
+    },
+    {
+        "id": 40,
+        "name": "Hilton Tyler",
+        "type": "True Conductor",
+        "affiliation": "News",
+        "conductingType": "????",
+        "ranking": "✦ ✦",
+        "image": ""
+    },
+    {
+        "id": 41,
+        "name": "Lyrs Faitah",
+        "type": "True Conductor",
+        "affiliation": "Ophiuchus",
+        "conductingType": "Projector",
+        "ranking": "✦ ✦ ✦",
+        "image": ""
+    },
+    {
+        "id": 42,
+        "name": "Yuseong Eunji",
+        "type": "Conductor",
+        "affiliation": "Seong Clan",
+        "conductingType": "Elementalist: Air",
+        "ranking": "✦ ✦ ✦",
+        "image": ""
+    },
+    {
+        "id": 43,
+        "name": "Jaesong Felix",
+        "type": "Conductor",
+        "affiliation": "Seong Clan",
+        "conductingType": "Conjuror",
+        "ranking": "✦ ✦ ✦",
+        "image": ""
+    },
+    {
+        "id": 44,
+        "name": "Jaesong Soha",
+        "type": "Conductor",
+        "affiliation": "Seong Clan",
+        "conductingType": "Projector",
+        "ranking": "✦ ✦ ✦",
+        "image": ""
+    },
+    {
+        "id": 45,
+        "name": "Theta",
+        "type": "ELPIS Leader",
+        "affiliation": "ELPIS",
+        "conductingType": "Diverger",
+        "ranking": "✦ ✦ ✦ ✦ ✦",
+        "image": "https://sixchanceshome.files.wordpress.com/2021/03/comm2.2.png"
+    },
+    {
+        "id": 46,
+        "name": "Omicron",
+        "type": "ELPIS Leader",
+        "affiliation": "ELPIS",
+        "conductingType": "Manipulator",
+        "ranking": "✦ ✦ ✦ ✦",
+        "image": "https://sixchanceshome.files.wordpress.com/2021/01/ilustracion25.jpg"
+    },
+    {
+        "id": 47,
+        "name": "Omega",
+        "type": "ELPIS Leader",
+        "affiliation": "ELPIS",
+        "conductingType": "Manipulator",
+        "ranking": "✦ ✦ ✦",
+        "image": "https://cdn.discordapp.com/attachments/970820451578298398/1108840185808027698/image.png"
+    },
+    {
+        "id": 48,
+        "name": "Tau",
+        "type": "ELPIS Leader",
+        "affiliation": "ELPIS",
+        "conductingType": "Conjuror",
+        "ranking": "✦ ✦ ✦ ✦",
+        "image": "https://media.discordapp.net/attachments/970820451578298398/1108844085902585896/image.png?width=307&height=514"
+    },
+    {
+        "id": 49,
+        "name": "Iota (McKillop)",
+        "type": "ELPIS Leader",
+        "affiliation": "ELPIS",
+        "conductingType": "Manipulator",
+        "ranking": "✦ ✦ ✦",
+        "image": "https://media.discordapp.net/attachments/970820451578298398/1108843976372518982/image.png?width=364&height=514"
+    },
+    {
+        "id": 50,
+        "name": "Wtorek Elizabeta",
+        "type": "Peacekeeper",
+        "affiliation": "Ophiuchus",
+        "conductingType": "Transmutationist",
+        "ranking": "✦ ✦ ✦ ✦",
+        "image": "https://sixchanceshome.files.wordpress.com/2023/05/0f77f07e-8e30-4169-9e52-a62d68dde38a-1.png"
+    },
+    {
+        "id": 51,
+        "name": "Sagittarius (Ilseong)",
+        "type": "Saint Candidate",
+        "affiliation": "???",
+        "conductingType": "Elementalist: Air",
+        "ranking": "✦ ✦ ✦ ✦ ✦ ✦",
+        "image": "https://sixchanceshome.files.wordpress.com/2021/05/dfgtdfg-1.png"
+    },
+    {
+        "id": 52,
+        "name": "Scorpio (Al-Jarrah)",
+        "type": "Saint Candidate",
+        "affiliation": "Ophiuchus",
+        "conductingType": "Manipulator",
+        "ranking": "✦ ✦ ✦ ✦ ✦ ✦",
+        "image": "https://sixchanceshome.files.wordpress.com/2021/06/4141.png"
+    },
+    {
+        "id": 53,
+        "name": "Libra (Caertas)",
+        "type": "Saint Candidate",
+        "affiliation": "Ophiuchus",
+        "conductingType": "Diverger",
+        "ranking": "✦ ✦ ✦ ✦ ✦ ✦",
+        "image": "https://sixchanceshome.files.wordpress.com/2021/05/1-3.png"
+    }, 
+    {
+        "id": 54,
+        "name": "Olive Chance (?)",
+        "type": "????",
+        "affiliation": "Ndoto",
+        "conductingType": "????",
+        "ranking": "✦ ✦ ✦ ✦ ✦ ✦",
+        "image": "https://media.discordapp.net/attachments/970820451578298398/1108864677125042288/image.png?width=418&height=514"
+    },
+    {
+        "id": 55,
+        "name": "Cadence Foxman (?)",
+        "type": "????",
+        "affiliation": "Ndoto",
+        "conductingType": "????",
+        "ranking": "✦ ✦ ✦ ✦ ✦ ✦",
+        "image": "https://media.discordapp.net/attachments/970820451578298398/1108864407758450688/image.png?width=494&height=514"
+    },
+    {
+        "id": 55,
+        "name": "Werner Waltz (?)",
+        "type": "????",
+        "affiliation": "Ndoto",
+        "conductingType": "????",
+        "ranking": "✦ ✦ ✦ ✦ ✦ ✦",
+        "image": "https://media.discordapp.net/attachments/970820451578298398/1108864233720000522/image.png?width=443&height=514"
+    },
+    {
+        "id": 56,
+        "name": "Maria Gloria-Morandi (?)",
+        "type": "????",
+        "affiliation": "Ndoto",
+        "conductingType": "????",
+        "ranking": "✦ ✦ ✦ ✦ ✦ ✦",
+        "image": "https://media.discordapp.net/attachments/970820451578298398/1108864549483991162/image.png?width=412&height=514"
+    },
+    {
+        "id": 57,
+        "name": "Jericho El-Mahdy (?)",
+        "type": "????",
+        "affiliation": "Ndoto",
+        "conductingType": "????",
+        "ranking": "✦ ✦ ✦ ✦ ✦ ✦",
+        "image": "https://media.discordapp.net/attachments/970820451578298398/1108864591246663714/image.png?width=356&height=513"
+    },
+    {
+        "id": 58,
+        "name": "Leo (Ariete)",
+        "type": "Saint Candidate",
+        "affiliation": "????",
+        "conductingType": "????",
+        "ranking": "✦ ✦ ✦ ✦ ✦ ✦",
+        "image": "https://media.discordapp.net/attachments/970820451578298398/1108865437934035004/image.png?width=410&height=514"
+    },
+    {
+        "id": 59,
+        "name": "Fortuna Romano",
+        "type": "Civillian",
+        "affiliation": "Twin Cities Underground",
+        "conductingType": "????",
+        "ranking": "✦ ✦",
+        "image": "https://media.discordapp.net/attachments/970820451578298398/1108846138947293244/image.png?width=317&height=514"
+    },
+    {
+        "id": 60,
+        "name": "Mother",
+        "type": "Civillian",
+        "affiliation": "Capricorn",
+        "conductingType": "????",
+        "ranking": "✦",
+        "image": "https://cdn.pixabay.com/photo/2014/06/24/17/34/silhouette-376538_1280.jpg"
+    },
+    {
+        "id": 61,
+        "name": "Alma Mirragio",
+        "type": "Civillian",
+        "affiliation": "Twin Cities Underground",
+        "conductingType": "????",
+        "ranking": "✦",
+        "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+    },
+    {
+        "id": 62,
+        "name": "Enzo",
+        "type": "Civillian",
+        "affiliation": "Twin Cities Underground",
+        "conductingType": "????",
+        "ranking": "✦",
+        "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+    },
+    {
+        "id": 63,
+        "name": "Alpha",
+        "type": "ELPIS Leader",
+        "affiliation": "????",
+        "conductingType": "Diverger",
+        "ranking": "✦ ✦ ✦ ✦ ✦ ✦",
+        "image": "https://media.discordapp.net/attachments/970820451578298398/1109203496328233061/image.png?width=396&height=599"
+    }
+]
