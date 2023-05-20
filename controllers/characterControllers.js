@@ -44,6 +44,7 @@ const weekendPityRoll = async() => {
         chosenRank = 4;
     else{
         chosenRank = 5;
+        
     }
     const randomCard = (Math.floor(Math.random() * allCharacters[chosenRank].length));
     return allCharacters[chosenRank][randomCard];
