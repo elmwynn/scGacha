@@ -139,6 +139,12 @@ const getAllCards = async(userID, pageNumber) => {
 //post-condition: returns true if the array of numbers matches card numbers in
 //the player deck & if the appropriate cards have been provided
 const isValidBurn = async(userID, arrayIndex) => {
+    for(let i = 0; i < arrayIndex.length-1; i++){
+        //loop through array to ensure that there are no duplicate card#s
+        for(let j = i+1; j < arrayIndex.length; j++)
+            if(arrayIndex[i] === arrayIndex[j])
+                return false;
+    }
     const result = await Player.find({
         playerId: userID
     })
