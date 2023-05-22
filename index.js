@@ -56,8 +56,12 @@ client.on('messageCreate', async (message) => {
             //increment daily roll count
             const cardIDs = await achievementFunctions.getCharacterIDArray(user);
             const achievementArray = await achievementFunctions.checkAchievement(cardIDs, user);
+            console.log('acheivement arary:')
+            console.log(achievementArray);
             if(achievementArray.length !== 0){
                 const uniqueAchievemnts = await achievementFunctions.filteredAchievements(user, achievementArray);
+                console.log('unique arary:')
+                console.log(uniqueAchievemnts);
                 if(uniqueAchievemnts.length !== 0){
                     const embeddedAchieve = achievementFunctions.achievementEmbedArray(uniqueAchievemnts)
                     for(let i = 0; i < embeddedAchieve.length; i++){
@@ -301,9 +305,9 @@ client.on('messageCreate', async (message) => {
         }
         else if(request.search("pulltest [1-99]") !== -1){
             const cardChosen = Number(request.substring(9));
-            await adminFunctions.randomAddToDeck('919299409563488347', cardChosen);
+            await adminFunctions.randomAddToDeck(user, cardChosen);
             message.channel.send('Selected Card has been added.')
-           /*const cardIDs = await achievementFunctions.getCharacterIDArray(user);
+           const cardIDs = await achievementFunctions.getCharacterIDArray(user);
             const achievementArray = await achievementFunctions.checkAchievement(cardIDs, user);
             if(achievementArray.length !== 0){
                 const uniqueAchievemnts = await achievementFunctions.filteredAchievements(user, achievementArray);
@@ -314,7 +318,7 @@ client.on('messageCreate', async (message) => {
                     }
                 await achievementFunctions.addAchievement(user, uniqueAchievemnts);
                 }
-            }*/
+            }
 
         }
          else if(request === "addFields"){
@@ -339,6 +343,9 @@ client.on('messageCreate', async (message) => {
                 await adminFunctions.reInitializePoints(users[i]);
             }
             message.channel.send('All Points Re-initialized');
+        }
+        else if(request === 'getID'){
+            adminFunctions.getID();
         }
     }
 });

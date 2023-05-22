@@ -87,7 +87,7 @@
         {
             
             
-            "id": 34,
+            "id": 12,
             "name": "Simon",
             "type": "Civillian",
             "affiliation": "Gloria's Grail",
@@ -239,7 +239,9 @@
             "affiliation": "Twin Cities Underground",
             "conductingType": "????",
             "ranking": "✦ ✦ ✦",
-            "image": "https://cdn.discordapp.com/attachments/970820451578298398/1108845585076863056/image.png"
+            "image": "https://cdn.discordapp.com/attachments/970820451578298398/1108845585076863056/image.png",
+            "upgradeDialogue": ["Oh... You're very generous. Thank you.", " ", " ","Oh? My ranking went up. Well... it wouldn't be polite of me to not give you anything in exchange, would it?", "You've helped me this far. If you need anything, please don't hesitate to ask.", "To be honest with you, I always feel like I'm struggling to match the pace of everyone else around me. But with you... It's nothing. Forget I said anything."],
+            "upgradeCount": 12
         },
         {
             "id": 41,
@@ -257,7 +259,9 @@
             "affiliation": "Capricornian Army",
             "conductingType": "Projector",
             "ranking": "✦ ✦ ✦",
-            "image": "https://cdn.discordapp.com/attachments/970820451578298398/1108852019554431048/image.png"
+            "image": "https://cdn.discordapp.com/attachments/970820451578298398/1108852019554431048/image.png",
+            "upgradeDialogue": ["Sh*t. I hope you know that there are no refunds.", " ", " ","Damn. My rank went up. That's never a good sign... but thanks.", "Another promotion? Well...", "You're putting a lot of faith in me. I hope you know that."],
+            "upgradeCount": 12
         },
         {
             "id": 11,
@@ -377,7 +381,7 @@
             "image": "https://media.discordapp.net/attachments/970820451578298398/1108851930412879972/image.png?width=340&height=514"
         },
         {
-            "id": 85,
+            "id": 110,
             "name": "Beijixing Mai",
             "type": "Conductor",
             "affiliation": "Xing Clan",
@@ -463,7 +467,9 @@
             "affiliation": "Seong Clan",
             "conductingType": "Elementalist: Air" ,
             "ranking": "✦ ✦ ✦ ✦",
-            "image": "https://static.wikia.nocookie.net/sixchances/images/7/7d/Claire.jpg/revision/latest/scale-to-width-down/1000?cb=20211027132327"
+            "image": "https://static.wikia.nocookie.net/sixchances/images/7/7d/Claire.jpg/revision/latest/scale-to-width-down/1000?cb=20211027132327",
+            "upgradeDialogue": ["Ah! You're too generous! ... Please continue...", " ", " "," ", "Hm... this ranking is a little bit more befitting of a prince, isn't it?", "This is probably as far as I can go but... is it me or does it feel kinda heavy? Well, it's alright. I don't mind it. I don't mind being like this if that means you can be a cloud."],
+            "upgradeCount": 9
         },
         {
             "id": 15,
@@ -493,7 +499,7 @@
             "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
         },
         {
-            "id": 76,
+            "id": 111,
             "name": "Delta",
             "type": "ELPIS Leader",
             "affiliation": "ELPIS",
@@ -709,7 +715,7 @@
             "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
         },
         {
-            "id": 84,
+            "id": 109,
             "name": "Astante",
             "type": "True Conductor",
             "affiliation": "News",
@@ -772,7 +778,7 @@
             "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
         },
         {
-            "id": 83,
+            "id": 108,
             "name": "Emperor Fu Heixing",
             "type": "Political Leader",
             "affiliation": "Xing Clan",
@@ -781,7 +787,7 @@
             "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
         },
         {
-            "id": 72,
+            "id": 112,
             "name": "Beta",
             "type": "ELPIS Leader",
             "affiliation": "ELPIS",
@@ -856,7 +862,9 @@
             "affiliation": "????",
             "conductingType": "Elementalist: Air",
             "ranking": "✦ ✦ ✦ ✦ ✦",
-            "image": "https://cdn.discordapp.com/attachments/970820451578298398/1108845444953559142/image.png"
+            "image": "https://cdn.discordapp.com/attachments/970820451578298398/1108845444953559142/image.png",
+            "upgradeDialogue": ["Oh... thank you! Please don't focus too much on me though. Have you leveled up Olive, Cadence, Werner, Maria, Atienna, or Jericho yet?", " ", " "," ", " ", "... Thank you for helping me even though I'm no longer..."],
+            "upgradeCount": 5
         },
         {
             "id": 91,
@@ -933,19 +941,7 @@
             "image": "https://media.discordapp.net/attachments/970820451578298398/1108864677125042288/image.png?width=418&height=514"
         },
         {
-            "id": 2,
-            "name": "Cadence Morello",
-            "type": "True Conductor",
-            "affiliation": "Twin Cities Underground",
-            "conductingType": "Transmutationist",
-            "ranking": "✦ ✦ ✦",
-            "image": "https://sixchanceshome.files.wordpress.com/2021/07/illustration2.jpg",
-            "upgradeDialogue": ["Well, that's what I call a good investment!", " ", " ","Aw, ya make me feel real special!", "Ain't this a little bit too much responsibility?", "Ya know what? I trust ya. So... please trust me too."],
-            "upgradeCount": 12
-            
-        },
-        {
-            "id": 55,
+            "id": 106,
             "name": "Werner Waltz (?)",
             "type": "????",
             "affiliation": "Ndoto",
@@ -990,7 +986,7 @@
             "image": "https://media.discordapp.net/attachments/970820451578298398/1109203496328233061/image.png?width=396&height=599"
         },
         {
-            "id": 66,
+            "id": 107,
             "name": "Atienna Imamu (?)",
             "type": "???",
             "affiliation": "Ndoto",
@@ -1006,6 +1002,15 @@
             "conductingType": "Projector",
             "ranking": "✦ ✦ ✦ ✦ ✦ ✦",
             "image": "https://media.discordapp.net/attachments/970820451578298398/1109872357100757023/image.png?width=369&height=599"
+        },
+        {
+            "id": 55,
+            "name": "Cadence Foxman (?)",
+            "type": "????",
+            "affiliation": "Ndoto",
+            "conductingType": "????",
+            "ranking": "✦ ✦ ✦ ✦ ✦ ✦",
+            "image": "https://media.discordapp.net/attachments/970820451578298398/1108864407758450688/image.png?width=494&height=514"
         },
         {
             "id": 81,

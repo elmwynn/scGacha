@@ -71,6 +71,14 @@ const resetPityRollCount = async() => {
     );
 }
 
+
+const getID = () =>{
+    const allCharacters=characterData.characters;
+    for(let i = 0; i < allCharacters.length; i++)
+        for(let k = i+1; k < allCharacters.length-1; k++)
+            if(allCharacters[i].id === allCharacters[k].id)
+                console.log(allCharacters[i].id);
+}
 const burnAll = async(userID) =>{
     const result = await Player.find(
         {playerId: userID}
@@ -141,5 +149,6 @@ module.exports = {
     resetPityRollCount,
     burnAll,
     getAllPlayerIDs,
-    reInitializePoints
+    reInitializePoints,
+    getID
 }

@@ -61,7 +61,7 @@ const addToPlayerDeck = async(userID, data) => {
         addPoints +=5;
     else if(data.ranking === '✦ ✦ ✦ ✦')  
         addPoints += 10;
-    else if(rdata.ranking === '✦ ✦ ✦ ✦ ✦')  
+    else if(data.ranking === '✦ ✦ ✦ ✦ ✦')  
             addPoints += 15;
     else
         addPoints+=20;

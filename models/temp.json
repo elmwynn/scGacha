@@ -119,6 +119,15 @@
         "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
     },
     {
+        "id": 12,
+        "name": "Simon",
+        "type": "Civillian",
+        "affiliation": "Gloria's Grail",
+        "conductingType": "Transmutationist",
+        "ranking": "✦ ✦",
+        "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+    },
+    {
         "id": 13,
         "name": "Conta",
         "type": "Civillian",
@@ -305,15 +314,6 @@
         "affiliation": "Gloria's Grail",
         "conductingType": "Diverger",
         "ranking": "✦ ✦ ✦ ✦",
-        "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
-    },
-    {
-        "id": 34,
-        "name": "Simon",
-        "type": "Civillian",
-        "affiliation": "Gloria's Grail",
-        "conductingType": "Transmutationist",
-        "ranking": "✦ ✦",
         "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
     },
     {
@@ -515,15 +515,6 @@
         "image": "https://media.discordapp.net/attachments/970820451578298398/1108864407758450688/image.png?width=494&height=514"
     },
     {
-        "id": 55,
-        "name": "Werner Waltz (?)",
-        "type": "????",
-        "affiliation": "Ndoto",
-        "conductingType": "????",
-        "ranking": "✦ ✦ ✦ ✦ ✦ ✦",
-        "image": "https://media.discordapp.net/attachments/970820451578298398/1108864233720000522/image.png?width=443&height=514"
-    },
-    {
         "id": 56,
         "name": "Maria Gloria-Morandi (?)",
         "type": "????",
@@ -623,15 +614,6 @@
         "image": "https://media.discordapp.net/attachments/970820451578298398/1109861690750800013/image.png?width=460&height=599"
     },
     {
-        "id": 66,
-        "name": "Atienna Imamu (?)",
-        "type": "???",
-        "affiliation": "Ndoto",
-        "conductingType": "???",
-        "ranking": "✦ ✦ ✦ ✦ ✦ ✦",
-        "image": "https://media.discordapp.net/attachments/970820451578298398/1109862079638290553/image.png?width=452&height=599"
-    },
-    {
         "id": 67,
         "name": "Ricardo Romano",
         "type": "Civillian",
@@ -686,15 +668,6 @@
         "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
     },
     {
-        "id": 72,
-        "name": "Beta",
-        "type": "ELPIS Leader",
-        "affiliation": "ELPIS",
-        "conductingType": "Projector",
-        "ranking": "✦ ✦ ✦ ✦",
-        "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
-    },
-    {
         "id": 73,
         "name": "Rho",
         "type": "ELPIS Leader",
@@ -728,15 +701,6 @@
         "affiliation": "Twin Cities Underground",
         "conductingType": "???",
         "ranking": "✦ ✦",
-        "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
-    },
-    {
-        "id": 76,
-        "name": "Delta",
-        "type": "ELPIS Leader",
-        "affiliation": "ELPIS",
-        "conductingType": "Diverger",
-        "ranking": "✦ ✦ ✦ ✦",
         "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
     },
     {
@@ -818,33 +782,6 @@
         "affiliation": "Capricornian Army",
         "conductingType": "Projector",
         "ranking": "✦ ✦ ✦ ✦",
-        "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
-    },
-    {
-        "id": 83,
-        "name": "Emperor Fu Heixing",
-        "type": "Political Leader",
-        "affiliation": "Xing Clan",
-        "conductingType": "Elementalist: Air",
-        "ranking": "✦ ✦ ✦ ✦",
-        "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
-    },
-    {
-        "id": 84,
-        "name": "Astante",
-        "type": "True Conductor",
-        "affiliation": "News",
-        "conductingType": "???",
-        "ranking": "✦ ✦ ✦ ✦",
-        "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
-    },
-    {
-        "id": 85,
-        "name": "Beijixing Mai",
-        "type": "Conductor",
-        "affiliation": "Xing Clan",
-        "conductingType": "Elementalist: Air",
-        "ranking": "✦ ✦ ✦",
         "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
     },
     {
@@ -1024,6 +961,69 @@
         "type": "True Conductor",
         "affiliation": "Aquarian Army",
         "conductingType": "Conjuror",
+        "ranking": "✦ ✦ ✦ ✦",
+        "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+    },
+    {
+        "id": 106,
+        "name": "Werner Waltz (?)",
+        "type": "????",
+        "affiliation": "Ndoto",
+        "conductingType": "????",
+        "ranking": "✦ ✦ ✦ ✦ ✦ ✦",
+        "image": "https://media.discordapp.net/attachments/970820451578298398/1108864233720000522/image.png?width=443&height=514"
+    },
+    {
+        "id": 107,
+        "name": "Atienna Imamu (?)",
+        "type": "???",
+        "affiliation": "Ndoto",
+        "conductingType": "???",
+        "ranking": "✦ ✦ ✦ ✦ ✦ ✦",
+        "image": "https://media.discordapp.net/attachments/970820451578298398/1109862079638290553/image.png?width=452&height=599"
+    },
+    {
+        "id": 108,
+        "name": "Emperor Fu Heixing",
+        "type": "Political Leader",
+        "affiliation": "Xing Clan",
+        "conductingType": "Elementalist: Air",
+        "ranking": "✦ ✦ ✦ ✦",
+        "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+    },
+    {
+        "id": 109,
+        "name": "Astante",
+        "type": "True Conductor",
+        "affiliation": "News",
+        "conductingType": "???",
+        "ranking": "✦ ✦ ✦ ✦",
+        "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+    },
+    {
+        "id": 110,
+        "name": "Beijixing Mai",
+        "type": "Conductor",
+        "affiliation": "Xing Clan",
+        "conductingType": "Elementalist: Air",
+        "ranking": "✦ ✦ ✦",
+        "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+    },
+    {
+        "id": 111,
+        "name": "Delta",
+        "type": "ELPIS Leader",
+        "affiliation": "ELPIS",
+        "conductingType": "Diverger",
+        "ranking": "✦ ✦ ✦ ✦",
+        "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+    },
+    {
+        "id": 112,
+        "name": "Beta",
+        "type": "ELPIS Leader",
+        "affiliation": "ELPIS",
+        "conductingType": "Projector",
         "ranking": "✦ ✦ ✦ ✦",
         "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
     }
