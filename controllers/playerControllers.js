@@ -1,12 +1,35 @@
-const path = require('path');
+//these are functions that players specifically use
 const Player = require('../models/Player');
 const {EmbedBuilder} = require('discord.js');
+const giftData = {
+    gifts: require('../models/awards.json'),
+    setCharacters: function (giftData){
+        this.gifts = giftData;
+    }
+};
 const characterData = {
-    characters: require('../models/characterData.json'),
+    characters: require('../models/temp.json'),
     setCharacters: function (characterData){
         this.characters = characterData;
     }
 };
+
+
+//** PLAYER CREATION FUNCTIONS *//
+
+//pre-condition: userID available
+//post-condition: returns true if player already exists in database
+//returns false otherwise
+const playerExists = async (userID) => {
+    const result = await Player.find({
+        //search database for player
+        playerId: userID
+    })
+    if(result.length === 0)
+    //create player if they do not exist
+        return false;
+    return true;
+}
 
 //pre-condition: userID obtained
 //post-conditoin: creates new player document 
@@ -16,6 +39,10 @@ const createPlayer = async (userID, userName) => {
         username: userName
     })
 }
+
+
+//**PLAYER DECK CHANGE AND ROLL INCREMENT FUNCTIONS */
+
 //pre-condition: player exists, card has been obtained
 //post-conditions: adds character card to deck
 const addToPlayerDeck = async(userID, data) => {
@@ -25,6 +52,25 @@ const addToPlayerDeck = async(userID, data) => {
         {$push: {characterDeck: data}}
         //push the card data to their character deck
     );
+    let addPoints = 0
+    if(data.ranking === '✦')
+        addPoints += 1;
+    else if(data.ranking === '✦ ✦')
+        addPoints += 2;
+    else if(data.ranking === '✦ ✦ ✦')  
+        addPoints +=5;
+    else if(data.ranking === '✦ ✦ ✦ ✦')  
+        addPoints += 10;
+    else if(rdata.ranking === '✦ ✦ ✦ ✦ ✦')  
+            addPoints += 15;
+    else
+        addPoints+=20;
+        await Player.findOneAndUpdate(
+            {playerId: userID},
+            //find player by id
+            {$inc: {points: addPoints}}
+            //push the card data to their character deck
+        );
 }
 
 //pre-condition: player has performed a daily roll
@@ -47,6 +93,10 @@ const incrementPityCount = async(userID) => {
     );
 }
 
+
+
+// **PLAYER CARD DISPLAY FUNCTIONS ***//
+
 //pre-condition: userID and card number index provided
 //post-condition: returns false if index is not valid
 //returns true otherwise
@@ -68,6 +118,13 @@ const getPlayerCard = async(userID, index) => {
         playerId: userID
     });
     const data = result[0].characterDeck[index-1];
+    let count;
+    if(data.upgradeCount){
+        count = data.upgradeCount;
+    }
+    else{
+        count = 'N/A';
+    }
     const characterEmbedded = new EmbedBuilder()
     .setColor(0x0099FF)
     .setTitle(`Card #${index}`)
@@ -78,7 +135,8 @@ const getPlayerCard = async(userID, index) => {
         { name: 'Type', value: data.type, inline:true },
         { name: 'Affiliation', value: data.affiliation, inline: true },
         { name: 'Conducting Type', value: data.conductingType},
-        { name: 'Ranking', value: data.ranking }
+        { name: 'Ranking', value: data.ranking },
+        {name: 'Upgrade Count', value: `${count}` }
     )
     .setImage(data.image);
     return characterEmbedded;
@@ -134,6 +192,67 @@ const getAllCards = async(userID, pageNumber) => {
     }
     return charactersEmbedded;
 }
+
+const getGachaStats = async(userID) => {
+    const result = await Player.find(
+        {playerId: userID}
+    )
+    const statsArray = [];
+    let sixStarCount = 0, fiveStarCount = 0, fourStarCount = 0, threeStarCount = 0, twoStarCount = 0, oneStarCount = 0;
+    const points = result[0].points;
+    const numberOfGifts = (result[0].gifts).length;
+    const username = result[0].username;
+    for(let i = 0; i < result[0].characterDeck.length; i++){
+        if(result[0].characterDeck[i].ranking === '✦')
+            oneStarCount++;
+        else if(result[0].characterDeck[i].ranking === '✦ ✦')
+            twoStarCount++;
+        else if(result[0].characterDeck[i].ranking === '✦ ✦ ✦')  
+            threeStarCount++;
+        else if(result[0].characterDeck[i].ranking === '✦ ✦ ✦ ✦')  
+            fourStarCount++;
+        else if(result[0].characterDeck[i].ranking === '✦ ✦ ✦ ✦ ✦')  
+            fiveStarCount++;
+        else
+            sixStarCount++;
+    }
+    const arrayOfCharacterIDs =[];
+    const arrayOfUniqueIDs = []
+    for(let i = 0; i < result[0].characterDeck.length; i++)
+        arrayOfCharacterIDs.push(result[0].characterDeck[i].id);
+    for(let i = 0; i < arrayOfCharacterIDs.length; i++)
+        if(!arrayOfUniqueIDs.includes(arrayOfCharacterIDs[i]))
+            arrayOfUniqueIDs.push(arrayOfCharacterIDs[i]);
+    const uniqueCards = arrayOfUniqueIDs.length;
+    statsArray.push(oneStarCount, twoStarCount, threeStarCount, fourStarCount, fiveStarCount, sixStarCount, uniqueCards, points, numberOfGifts, username);
+    return statsArray;
+
+}
+
+const displayGachaStats = (array) => {
+    const totalCharactersInDatabase = characterData.characters.length;
+    console.log(totalCharactersInDatabase);
+    const displayStats = new EmbedBuilder()
+    .setColor(0x0099FF)
+    .setTitle(`${array[9]}'s Gacha Stats`)
+    .addFields(
+        {name: 'CHARACTERS IN DECK', value: ' '},
+    )
+    .addFields(
+        {name: '1-star', value: `${array[0]}`, inline: true},
+        {name: '2-star', value: `${array[1]}`, inline:true},
+        {name: '3-star', value: `${array[2]}`, inline:true},
+        {name: '4-star', value: `${array[3]}`, inline:true},
+        {name: '5-star', value: `${array[4]}`, inline:true},
+        {name: '6-star', value: `${array[5]}`, inline:true},
+        {name: 'COLLECTION: ', value: `${array[6]}/${totalCharactersInDatabase}`},
+        {name: 'GIFTS RECEIVED: ', value: `${array[8]}`},
+        {name: 'TOTAL POINTS: ', value: `${array[7]}`}
+    );
+    return displayStats;
+}
+
+// **** BURN FUNCTIONS ***** //
 
 //pre-condition: an array of numbers provided by an existing player is provided
 //post-condition: returns true if the array of numbers matches card numbers in
@@ -194,7 +313,7 @@ const isValidBurn = async(userID, arrayIndex) => {
     return true;
 }
 
-//pre-conditoin: burn request is valid
+//pre-condition: burn request is valid
 //post-condition: the requested cards are burned and additional rolls
 //are added to the player
 const burnCards = async(userID, arrayIndex) => {
@@ -228,28 +347,30 @@ const burnCards = async(userID, arrayIndex) => {
     )
 }
 
-//pre-condition: userID available
-//post-condition: returns true if player already exists in database
-//returns false otherwise
-const playerExists = async (userID) => {
+
+// *** PLAYER CARD UPGRADE FUNCTIONS ***//
+//currently constructing
+
+const isUpgradable = async(userID, upgradedCard) => {
     const result = await Player.find({
-        //search database for player
         playerId: userID
     })
-    if(result.length === 0)
-    //create player if they do not exist
+    if(result[0].characterDeck.length === 0)
         return false;
-    return true;
+    const toUpgrade = result[0].characterDeck[upgradedCard-1];
+    if(toUpgrade.upgradeDialogue)
+        return true;
+    else
+        return false;
 }
 
-//currently constructing
 const validUpgrade = async(userID, upgradedCard, burnedCard) =>{
     const result = await Player.find({
         playerId: userID
     })
     const toUpgrade = result[0].characterDeck[upgradedCard-1];
     const toBurn = result[0].characterDeck[burnedCard-1];
-    if(toUpgrade.id === toBurn.id){
+    if(toUpgrade.id === toBurn.id /*&& toUpgrade.ranking === toBurn.ranking*/){
         return true;
     }
     else{
@@ -266,11 +387,15 @@ const upgradeCard  = async(userID, upgradedCard, burnedCard) => {
     if(toUpgrade.ranking ===  "✦ ✦ ✦ ✦ ✦ ✦")
         return;
     const toBurn = result[0].characterDeck[burnedCard-1];
+
     const toUnset = `characterDeck.${burnedCard-1}`;
     const toUpdate = `characterDeck.${upgradedCard-1}`
     const minusValue = toUpgrade.upgradeCount-1;
     toUpgrade.upgradeCount = minusValue;
-    if(minusValue === 9){
+    if(minusValue === 12){
+        toUpgrade.ranking = "✦ ✦ ✦"
+    }
+    else if(minusValue === 9){
         toUpgrade.ranking = "✦ ✦ ✦ ✦"
     }
     else if(minusValue === 5){
@@ -290,8 +415,7 @@ const upgradeCard  = async(userID, upgradedCard, burnedCard) => {
     )
     await Player.findOneAndUpdate(
         {playerId: userID},
-        {$set: {[toUpdate]: toUpgrade}}
-    )
+        {$set: {[toUpdate]: toUpgrade}})
     
 }
 
@@ -302,9 +426,8 @@ const upgradeDialogue = async(userID, upgradedCard) =>{
     })
     const upgraded = result[0].characterDeck[upgradedCard-1];
     let levelUPDialogue = `${upgraded.name} has evolved to another star level!`;
-    console.log(upgraded.upgradeDialogue[0]);
-    console.log(upgraded.upgradeDialogue[1]);
-    if(upgraded.upgradeCount === 9 & upgraded.ranking !== ""){
+    console.log(upgraded.name);
+    if(upgraded.upgradeCount === 9){
         dialogue = upgraded.upgradeDialogue[3];
     }
     else if(upgraded.upgradeCount === 5){
@@ -317,19 +440,86 @@ const upgradeDialogue = async(userID, upgradedCard) =>{
         levelUPDialogue=`${upgraded.name} has been leveled up!`;
         dialogue = upgraded.upgradeDialogue[0];
     }
-    if(dialogue === "")
-        dialogue = "..."
+    
     const dialogueEmbed = new EmbedBuilder()
     .setColor(0x0099FF)
     .setTitle(levelUPDialogue)
     .addFields(
         {name: 'Current Ranking', value: upgraded.ranking },
-        {name: 'Commentary', value: dialogue }
+        {name: ' ', value: `"${dialogue}"` }
     )
     .setImage(upgraded.image);
     return dialogueEmbed;
 }
 
+const isGiftReady =  async(userID, upgradedCard) => {
+    const result = await Player.find({
+        playerId: userID
+    })
+    const upgraded = result[0].characterDeck[upgradedCard-1];
+    if(upgraded.upgradeCount !== 0)
+        return false;
+    else 
+        return true;
+}
+
+const getGift = async (userID, upgradedCard) => {
+    const result = await Player.find({
+        playerId: userID
+    })
+    const giftID = result[0].characterDeck[upgradedCard-1].id;
+    const allGifts = giftData.gifts;
+    for(let i= 0; i < allGifts.length; i++){
+        if(allGifts[i].id === giftID)
+            return allGifts[i];
+    }
+}
+
+const showOffGift = async (userID, index) => {
+    const result = await Player.find({
+        playerId: userID
+    })
+    return result[0].gifts[index-1];
+}
+
+const displayGift = (giftStuff) => {
+    const giftEmbed = new EmbedBuilder()
+    .setColor(0x0099FF)
+    .setTitle(`A gift from ${giftStuff.from}`)
+    .addFields(
+        {name: 'Gift', value: giftStuff.name},
+        {name: 'Description', value: giftStuff.description }
+    )
+    .setImage(giftStuff.image);
+    return giftEmbed;
+}
+
+const validGiftIndex = async(userID, index) => {
+    const result = await Player.find({
+        playerId: userID
+    })
+    if(result[0].gifts.length < index || index < 1){
+        //if the index is greater than the length of the player deck or if the index is less than 1 
+        return false;
+    }
+    return true;
+}
+
+
+const addGift =  async(userID, data) => {
+    await Player.findOneAndUpdate(
+        {playerId: userID},
+        //find player by id
+        {$push: {gifts: data}}
+        //push the gift data to their gift deck
+    );
+    await Player.findOneAndUpdate(
+        {playerId: userID},
+        //find player by id
+        {$inc: {points: 50}}
+        //push the gift data to their gift deck
+    )
+}
 
 //pre-condition: player exists
 //post-condition: if player has reached their roll count limit 3
@@ -369,10 +559,19 @@ module.exports = {
     burnCards,
     getAllCards,
     validCardPage,
+    isUpgradable,
     validUpgrade,
     upgradeDialogue,
     upgradeCard,
     checkPityRollCount,
     incrementDailyCount,
-    incrementPityCount
+    incrementPityCount,
+    isGiftReady,
+    getGift,
+    displayGift,
+    addGift,
+    validGiftIndex,
+    showOffGift,
+    getGachaStats,
+    displayGachaStats
 }

@@ -44,13 +44,13 @@ const weekendPityRoll = async() => {
         chosenRank = 4;
     else{
         chosenRank = 5;
-        
+
     }
     const randomCard = (Math.floor(Math.random() * allCharacters[chosenRank].length));
     return allCharacters[chosenRank][randomCard];
 }
 
-//pre-condition: character data is available
+//pre-condition: character data is available from the getCharacter function
 //post-condition: returns an embedded with values for name, type, affiliation, etc
 const getEmbedded = (data) => {
     const characterEmbedded = new EmbedBuilder()

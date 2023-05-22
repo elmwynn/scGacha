@@ -1,0 +1,64 @@
+[
+    {
+        "id": 1,
+        "achievement": "Synchronization",
+        "description": "Obtain all six main characters",
+        "points": 150
+
+    },
+    {
+        "id":2,
+        "achievement": "Lucky 7",
+        "description": "Obtain all six main characters and Shion",
+        "points": 200
+    },
+    {
+        "id":3,
+        "achievement": "Accept everything. Reject nothing.",
+        "description": "Obtain all Twin Cities underground characters.",
+        "points": 100
+    },
+    {
+        "id":4,
+        "achievement": "Endless Cycles",
+        "description": "Obtain all Saint Candidates",
+        "points": 250
+    },
+    {
+        "id":5,
+        "achievement": "Precious Magpie",
+        "description": "Obtain all variations of Omicron and Theta",
+        "points": 100
+    },
+    {
+        "id":6,
+        "achievement": "For Glory, For Honor",
+        "description": "Obtain all Capricornian Army characters",
+        "points": 100
+    },
+    {
+        "id": 7,
+        "achievement": "Pulse of the Syzygy",
+        "description": "Obtain all True Conductor characters",
+        "points": 100
+    },
+    {
+        "id": 8,
+        "achievement": "Reversus Oratio",
+        "description": "Obtain all ELPIS Leader characters",
+        "points": 100
+    },
+    {
+        "id": 9,
+        "achievement": "212th Division",
+        "description": "Obtain all characters associated with Werner's division",
+        "points": 100
+    },
+    {
+        "id": 10,
+        "achievement": "Those in power",
+        "description": "Obtain all characters that are political leaders",
+        "points": 100
+    }
+
+]

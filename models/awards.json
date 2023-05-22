@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "name": "Blackbird Cage",
+        "from": "Olive Chance",
+        "description" : "A bird cage holding a bird, a memory, a motivator.",
+        "image": "https://culturedecanted.files.wordpress.com/2014/08/bridcage.jpg",
+        "points": 50
+    },
+    {
+        "id": 2,
+        "name": "Special Melody",
+        "from": "Cadence Morello",
+        "description": "A specially written jazz song made for the piano.",
+        "image": "https://i.pinimg.com/originals/6f/00/4d/6f004de67122c249bfe070e42d30139e.jpg",
+        "points": 50
+    },
+    {
+        "id": 3,
+        "name": "Precious timepiece",
+        "from": "Werner Waltz",
+        "description": "A precious, hand-crafted pocketwatch.",
+        "image": "https://i.etsystatic.com/9626860/r/il/7a3874/2219064500/il_fullxfull.2219064500_avlt.jpg",
+        "points": 50
+    },
+    {
+        "id": 4,
+        "name": "Antique dagger",
+        "from": "Maria Gloria-Fernandez",
+        "description": "An exciting yet intricately designed dagger",
+        "image": "https://media.istockphoto.com/id/520497352/photo/ancient-short-sword-dagger-old-knife.jpg?s=612x612&w=0&k=20&c=sAioU2uB1hKvhXNWVM36jzUUsc3CL0-b_P9uA6Y4Vsw=",
+        "points": 50
+    },
+    {
+        "id": 5,
+        "name": "Favorite collection",
+        "from": "Atienna Imamu",
+        "description": "A collection of interesting and perhaps favored books",
+        "image": "https://media.istockphoto.com/id/897745776/photo/a-stack-of-old-books-isolated.jpg?s=612x612&w=0&k=20&c=M2-pCBlisUx7HgMyYoSOJqbKOJ7WhkUpVvsKNlH0B64=",
+        "points": 50
+    },
+    {
+        "id": 6,
+        "name": "Handrawn sketch",
+        "from": "Jericho",
+        "description": "A hand-drawn sketch of...?",
+        "image": "https://tumamocsketchbook.com/wp-content/uploads/2018/03/sonoran-desert-panorama_pencil-2000x759.jpg",
+        "points": 50
+    },
+    {
+        "id": 7,
+        "name": "Braided bracelet",
+        "from": "Shion Myosotis",
+        "description": "A hand-braided bracelet meaning...?",
+        "image": "https://m.media-amazon.com/images/I/51VXy8-2Z+L._AC_UF894,1000_QL80_.jpg",
+        "points": 50
+    },
+    {
+        "id": 8,
+        "name": "Riceball",
+        "from": "Yuseong Claire",
+        "description": "A small yet hearty riceball.",
+        "image": "https://www.justonecookbook.com/wp-content/uploads/2017/09/Onigiri-Rice-Balls-3082-500x500.jpg",
+        "points": 50
+    },
+    {
+        "id": 9,
+        "name": "Antique Cigarette Case",
+        "from": "Francis Foxman",
+        "description": "A rather expensive-looking cigarette case.",
+        "image": "https://m.media-amazon.com/images/I/81vbwfMnLuL.jpg",
+        "points": 50
+    },
+    {
+        "id": 10,
+        "name": "Beer",
+        "from": "Gilbert Wolff",
+        "description": "A bottle of lukewarm beer.",
+        "image": "https://i.ebayimg.com/images/g/~LgAAOxyx0JThuMP/s-l1600.jpg",
+        "points": 50
+    }
+]

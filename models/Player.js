@@ -12,12 +12,18 @@ const playerSchema = new Schema({
         required: true
     },
     characterDeck: [Object],
+    achievements: [Object],
+    gifts: [Object],
     dailyRollCount: {
         type: Number,
         default: 0,
         required: true
     },
     pityRollCount: {
+        type: Number,
+        default: 0
+    },
+    points: {
         type: Number,
         default: 0
     }
