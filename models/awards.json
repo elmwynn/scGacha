@@ -78,5 +78,13 @@
         "description": "A bottle of lukewarm beer.",
         "image": "https://i.ebayimg.com/images/g/~LgAAOxyx0JThuMP/s-l1600.jpg",
         "points": 50
+    },
+    {
+        "id": 14,
+        "name": "Pen collection",
+        "from": "Talib Al-Jarrah",
+        "description": "A collection of hand-crafted glass pens. Rather expensive-looking!",
+        "image": "https://i.pinimg.com/originals/d3/25/48/d32548759383618b0f1b944f4405895f.jpg",
+        "points": 50
     }
 ]

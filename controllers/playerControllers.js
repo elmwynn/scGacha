@@ -92,6 +92,12 @@ const incrementPityCount = async(userID) => {
         {$inc:{pityRollCount: 1}}
     );
 }
+const incrementGoldenCount = async(userID) => {
+    await Player.findOneAndUpdate(
+        {playerId: userID},
+        {$inc:{goldenRollCount: 1}}
+    );
+}
 
 
 
@@ -231,7 +237,6 @@ const getGachaStats = async(userID) => {
 
 const displayGachaStats = (array) => {
     const totalCharactersInDatabase = characterData.characters.length;
-    console.log(totalCharactersInDatabase);
     const displayStats = new EmbedBuilder()
     .setColor(0x0099FF)
     .setTitle(`${array[9]}'s Gacha Stats`)
@@ -370,41 +375,62 @@ const validUpgrade = async(userID, upgradedCard, burnedCard) =>{
     })
     const toUpgrade = result[0].characterDeck[upgradedCard-1];
     const toBurn = result[0].characterDeck[burnedCard-1];
-    if(toUpgrade.id === toBurn.id /*&& toUpgrade.ranking === toBurn.ranking*/){
+    if(toUpgrade.ranking === toBurn.ranking){
         return true;
     }
-    else{
-        return false;
-    }
+    return false;
 }
 
 //currently constructing
-const upgradeCard  = async(userID, upgradedCard, burnedCard) => {
+const upgradeCard  = async(userID, upgradedCard) => {
     const result = await Player.find({
         playerId: userID
     })
+    let gainedPoints = 0;
     const toUpgrade = result[0].characterDeck[upgradedCard-1];
+    const toUpdate = `characterDeck.${upgradedCard-1}`
     if(toUpgrade.ranking ===  "✦ ✦ ✦ ✦ ✦ ✦")
         return;
-    const toBurn = result[0].characterDeck[burnedCard-1];
-
-    const toUnset = `characterDeck.${burnedCard-1}`;
-    const toUpdate = `characterDeck.${upgradedCard-1}`
     const minusValue = toUpgrade.upgradeCount-1;
+    //decrement the upgradecount
     toUpgrade.upgradeCount = minusValue;
+    //store the new upgradeCount
     if(minusValue === 12){
-        toUpgrade.ranking = "✦ ✦ ✦"
+        toUpgrade.ranking = "✦ ✦ ✦";
+        gainedPoints = 5;
     }
     else if(minusValue === 9){
-        toUpgrade.ranking = "✦ ✦ ✦ ✦"
+        toUpgrade.ranking = "✦ ✦ ✦ ✦";
+        gainedPoints = 10;
     }
     else if(minusValue === 5){
         toUpgrade.ranking = "✦ ✦ ✦ ✦ ✦"
+        gainedPoints = 15;
     }
     else if(minusValue === 0){
         toUpgrade.ranking = "✦ ✦ ✦ ✦ ✦ ✦";
+        gainedPoints = 20;
     }
+    await Player.findOneAndUpdate(
+        {playerId: userID},
+        {$set: {[toUpdate]: toUpgrade}}
+    );
+    await Player.findOneAndUpdate(
+        {playerId: userID},
+        {$inc: {points: gainedPoints}}
+    );
     
+
+}
+
+
+const burnCardForUpgrade = async(userID, burnedCard) => {
+    const result = await Player.find({
+        playerId: userID
+    })
+    const toBurn = result[0].characterDeck[burnedCard-1];
+    console.log(toBurn);
+    const toUnset = `characterDeck.${burnedCard-1}`;
     await Player.findOneAndUpdate(
         {playerId: userID},
         {$unset: {[toUnset]: toBurn}}
@@ -413,10 +439,6 @@ const upgradeCard  = async(userID, upgradedCard, burnedCard) => {
         {playerId: userID},
         {$pull: {characterDeck: null}}
     )
-    await Player.findOneAndUpdate(
-        {playerId: userID},
-        {$set: {[toUpdate]: toUpgrade}})
-    
 }
 
 //currently constructing
@@ -426,7 +448,6 @@ const upgradeDialogue = async(userID, upgradedCard) =>{
     })
     const upgraded = result[0].characterDeck[upgradedCard-1];
     let levelUPDialogue = `${upgraded.name} has evolved to another star level!`;
-    console.log(upgraded.name);
     if(upgraded.upgradeCount === 9){
         dialogue = upgraded.upgradeDialogue[3];
     }
@@ -545,6 +566,15 @@ const checkPityRollCount =  async (userID) => {
     return true;
 }
 
+const checkGoldenRollCount =  async (userID) => {
+    const result = await Player.find({
+        playerId: userID
+    })
+    if(result[0].goldenRollCount  >=1)
+        return false;
+    return true;
+}
+
 
 
 
@@ -573,5 +603,8 @@ module.exports = {
     validGiftIndex,
     showOffGift,
     getGachaStats,
-    displayGachaStats
+    displayGachaStats,
+    checkGoldenRollCount, 
+    incrementGoldenCount, 
+    burnCardForUpgrade
 }

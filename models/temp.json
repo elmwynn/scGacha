@@ -29,7 +29,7 @@
         "type": "True Conductor",
         "ranking": "✦ ✦ ✦ ✦",
         "image": "https://sixchanceshome.files.wordpress.com/2021/07/illustration4-2.jpg",
-        "upgradeDialogue": ["I will do my best to meet your standards.", " ", " "," ", "I... appreciate your kindness. I promise I will not disappoint you", "I know you are... aware of my imperfections, but I will not allow them to deter me from standing by your side."],
+        "upgradeDialogue": ["I will do my best to meet your standards.", " ", " "," ", "I... appreciate your kindness. I promise I will not disappoint you.", "I know you are... aware of my imperfections, but I will not allow them to deter me from standing by your side."],
         "upgradeCount": 9
     },
     {
@@ -143,7 +143,9 @@
         "affiliation": "Ophiuchus",
         "conductingType": "Manipulator",
         "ranking": "✦ ✦ ✦",
-        "image": "https://media.discordapp.net/attachments/970820451578298398/1108855460884381798/image.png"
+        "image": "https://media.discordapp.net/attachments/970820451578298398/1108855460884381798/image.png",
+        "upgradeDialogue": ["I see. I see! You too are a supporter of the truth!", " ", " ","Well, well, well. We work quite well together don't we? I already have a partner, but I wouldn't mind it if you joined us on our search for the truth!", "You know most Apeople avoid me--a worthwhile sacrifice against my relentless and daring fight against the Organization!--but it does get lonely on this journey... so thank you.", "I had a friend once. He was my best friend... And he... Well, I promise you this. I won't leave you behind."],
+        "upgradeCount": 12
     },
     {
         "id": 15,
@@ -206,7 +208,7 @@
         "affiliation": "Twin Cities Underground",
         "conductingType": "???",
         "ranking": "✦ ✦ ✦",
-        "image": ""
+        "image": "https://media.discordapp.net/attachments/970820451578298398/1108851817451888660/image.png?width=340&height=514"
     },
     {
         "id": 22,
@@ -1026,6 +1028,60 @@
         "conductingType": "Projector",
         "ranking": "✦ ✦ ✦ ✦",
         "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+    },
+    {
+        "id": 113,
+        "name": "Bachiru Imamu",
+        "type": "Civillian",
+        "affiliation": "Imamu Tribe",
+        "conductingType": "???",
+        "ranking": "✦ ✦",
+        "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+    },
+    {
+        "id": 114,
+        "name": "Sefu",
+        "type": "Conductor",
+        "affiliation": "Imamu Tribe",
+        "conductingType": "???",
+        "ranking": "✦ ✦ ✦",
+        "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+    },
+    {
+        "id": 115,
+        "name": "Kamaria Imamu",
+        "type": "Civillian",
+        "affiliation": "Imamu Tribe",
+        "conductingType": "???",
+        "ranking": "✦ ✦",
+        "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+    },
+    {
+        "id": 116,
+        "name": "Kichea Imamu",
+        "type": "Civillian",
+        "affiliation": "Imamu Tribe",
+        "conductingType": "???",
+        "ranking": "✦ ✦",
+        "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+    },
+    {
+        "id": 117,
+        "name": "Altair",
+        "type": "Remnant",
+        "affiliation": "Pandora, Ophiuchus",
+        "conductingType": "???",
+        "ranking": "✦ ✦ ✦ ✦ ✦ ✦",
+        "image": "https://media.discordapp.net/attachments/970820451578298398/1110573817585225839/image.png?width=410&height=599"
+    },
+    {
+        "id": 118,
+        "name": "Vega",
+        "type": "Remnant",
+        "affiliation": "Pandora, Ophiuchus",
+        "conductingType": "???",
+        "ranking": "✦ ✦ ✦ ✦ ✦ ✦",
+        "image": "https://media.discordapp.net/attachments/970820451578298398/1110573857443676230/image.png?width=394&height=599"
     }
     
 ]

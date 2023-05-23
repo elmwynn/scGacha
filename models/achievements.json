@@ -28,7 +28,7 @@
         "id":5,
         "achievement": "Precious Magpie",
         "description": "Obtain all variations of Omicron and Theta",
-        "points": 100
+        "points": 200
     },
     {
         "id":6,
@@ -59,6 +59,18 @@
         "achievement": "Those in power",
         "description": "Obtain all characters that are political leaders",
         "points": 100
+    },
+    {
+        "id": 11,
+        "achievement": "Why can't I help but go to them...?",
+        "description": "Obtain the True Conductor Circle Yulia, Kovich, Fritz",
+        "points": 100
+    },
+    {
+        "id": 12,
+        "achievement": "Let's play pretend",
+        "description": "Obtain the variations of the Wtorek family",
+        "points": 200
     }
 
 ]

@@ -1,6 +1,7 @@
 const path = require('path');
 const Player = require('../models/Player');
 const {EmbedBuilder} = require('discord.js');
+const { all } = require('axios');
 const achievementData = {
     achievements: require('../models/achievements.json'),
     setCharacters: function (achievementData){
@@ -30,7 +31,7 @@ const getCharacterIDArray = async(userID)=>{
 
 //** HELPER FUNCTIONS */
 //pre-condition: receives an array of character IDs from player
-const synchronizationAchievement = async(synchroArray) =>{
+const synchronizationAchievement = (synchroArray) =>{
     if(synchroArray.includes(1) && synchroArray.includes(2) && synchroArray.includes(3) &&synchroArray.includes(4) && synchroArray.includes(5) && synchroArray.includes(6))
         achievementObtained = allAchievements[0];
     else    
@@ -40,7 +41,7 @@ const synchronizationAchievement = async(synchroArray) =>{
 }
 
 //pre-condition: receives an array of character IDs from player
-const lucky7Achievement = async(lucky7Array) =>{
+const lucky7Achievement = (lucky7Array) =>{
     if(lucky7Array.includes(1) && lucky7Array.includes(2) && lucky7Array.includes(3) && lucky7Array.includes(4) && lucky7Array.includes(5) && lucky7Array.includes(6) && lucky7Array.includes(7))
         achievementObtained = allAchievements[1];
     else    
@@ -94,24 +95,78 @@ const endlessCyclesAchieve = async(userID) => {
     return -1;
 }
 
+//pre-condition: recieves an array of characterIDs from player deck
+const preciousAchiev = (characterArray) => {
+    if(characterArray.includes(45) && characterArray.includes(46) && characterArray.includes(9) && characterArray.includes(117) & characterArray.includes(118))
+        return allAchievements[4];
+    return -1;
 
+}
+
+const forGloryAchiev = async(userID) => {
+    const result = await Player.find(
+        {playerId: userID}
+    )
+    const allCharacters = characterData.characters;
+    let capricornCount = [];
+    let playerCount = [];
+    for(let i = 0; i < allCharacters.length; i++){
+        if(allCharacters[i].affiliation === 'Capricornian Army')
+            capricornCount.push(allCharacters[i].id);
+    }
+    for(let i = 0; i < result[0].characterDeck.length; i++){
+        const id = result[0].characterDeck[i].id;
+        const affiliation = result[0].characterDeck[i].affiliation;
+        if(!playerCount.includes(id) && affiliation === 'Capricornian Army')
+            playerCount.push(result[0].characterDeck[i].id);
+    }
+    if(capricornCount.length === playerCount.length)
+        return allAchievements[5];
+    return -1;
+
+}
+
+const pulseAchieve = async(userID) => {
+    const result = await Player.find(
+        {playerId: userID}
+    )
+    const allCharacters = characterData.characters;
+    let trueConductorCount = [];
+    let playerCount = [];
+    for(let i = 0; i < allCharacters.length; i++){
+        if(allCharacters[i].type === 'True Conductor')
+            trueConductorCount.push(allCharacters[i].id);
+    }
+    for(let i = 0; i < result[0].characterDeck.length; i++){
+        const id = result[0].characterDeck[i].id;
+        const type = result[0].characterDeck[i].type;
+        if(!playerCount.includes(id) && type === 'True Conductor')
+            playerCount.push(result[0].characterDeck[i].id);
+    }
+    if(trueConductorCount.length === playerCount.length)
+        return allAchievements[6];
+    return -1;
+
+}
 
 //** MAIN ACHIEVEMENT FUNCTIONS */
 
 const checkAchievement = async(array, userID) => {
     const obtainedAchievements = [];
-    if(await synchronizationAchievement(array) !== -1)
+    if(synchronizationAchievement(array) !== -1)
         obtainedAchievements.push(await synchronizationAchievement(userID));
-     
-    if(await lucky7Achievement(array) !== -1)
+    if(lucky7Achievement(array) !== -1)
         obtainedAchievements.push(await lucky7Achievement(array));
-     
     if(await twinCitiesAchiev(userID) !== -1)
         obtainedAchievements.push(await twinCitiesAchiev(userID));
-     
     if(await endlessCyclesAchieve(userID) !== -1)
         obtainedAchievements.push(await endlessCyclesAchieve(userID));
-    
+    if(preciousAchiev(array) !== -1)
+        obtainedAchievements.push(preciousAchiev(array));
+    if(await forGloryAchiev(userID) !== -1)
+        obtainedAchievements.push(await forGloryAchiev(userID));
+    if(await pulseAchieve(userID) !== -1)
+        obtainedAchievements.push(await pulseAchieve(userID));
     return obtainedAchievements;
 }
 

@@ -50,6 +50,20 @@ const weekendPityRoll = async() => {
     return allCharacters[chosenRank][randomCard];
 }
 
+const goldenRoll = async() => {
+    const allCharacters = characterData.characters;
+    const randomRank = (Math.floor(Math.random() * 101));
+    if(randomRank <= 90)
+        chosenRank = 4;
+    else{
+        chosenRank = 5;
+
+    }
+    const randomCard = (Math.floor(Math.random() * allCharacters[chosenRank].length));
+    return allCharacters[chosenRank][randomCard];
+}
+
+
 //pre-condition: character data is available from the getCharacter function
 //post-condition: returns an embedded with values for name, type, affiliation, etc
 const getEmbedded = (data) => {
@@ -75,5 +89,6 @@ const getEmbedded = (data) => {
 module.exports = {
     getCharacter,
     getEmbedded,
-    weekendPityRoll
+    weekendPityRoll,
+    goldenRoll
 }
