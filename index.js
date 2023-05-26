@@ -5,7 +5,8 @@ const connectDB = require('./config/dbConn');
 const characterFunctions = require('./controllers/characterControllers');
 const playerFunctions = require('./controllers/playerControllers');
 const adminFunctions = require('./controllers/adminControllers');
-const achievementFunctions = require('./controllers/achievementsController')
+const achievementFunctions = require('./controllers/achievementsController');
+const shopFunctions = require('./controllers/pointShopController');
 
 connectDB();
 //connect to the mongoDB database
@@ -73,6 +74,7 @@ client.on('messageCreate', async (message) => {
         else if(request === 'Golden'){
             const canRoll = await playerFunctions.checkGoldenRollCount(user);
             //check to see if player can roll
+            console.log(canRoll)
             if(canRoll){
                 const goldenCard = await characterFunctions.goldenRoll();
                 //obtain roll
@@ -87,6 +89,31 @@ client.on('messageCreate', async (message) => {
             }
             else{
                 message.channel.send("No more golden rolls for you! OWO")
+            }  
+        }
+        else if(request.startsWith('Rank')){
+            const canRoll = await playerFunctions.checkRankRollCount(user);
+            //check to see if player can roll
+            const rankRequest = Number(request.substring(5));
+            if(rankRequest === 1 || rankRequest === 2 || rankRequest === 3 || rankRequest === 4 || rankRequest === 5 ){
+                if(canRoll){
+                    const rankCard = await characterFunctions.rankRoll(rankRequest);
+                    //obtain roll
+                    const displayCard = await characterFunctions.getEmbedded(rankCard);
+                    //obtain embed of roll
+                    message.channel.send({embeds: [displayCard]});
+                    //display roll
+                    await playerFunctions.addToPlayerDeck(user, rankCard);
+                    //add to player deck
+                    await playerFunctions.incrementRankCount(user);
+                    //increment pity roll count
+                }
+                else{
+                    message.channel.send("No more rank rolls for you! OWO")
+                }
+            }
+            else{
+                message.channel.send("OWO...? What kinda request was that?")
             }
         }
         const cardIDs = await achievementFunctions.getCharacterIDArray(user);
@@ -96,9 +123,14 @@ client.on('messageCreate', async (message) => {
             if(uniqueAchievemnts.length !== 0){
                 const embeddedAchieve = achievementFunctions.achievementEmbedArray(uniqueAchievemnts)
                 for(let i = 0; i < embeddedAchieve.length; i++){
-                    message.channel.send({embeds: [embeddedAchieve[i]]})
+                    message.channel.send({embeds: [embeddedAchieve[i]]});
                 }
-            await achievementFunctions.addAchievement(user, uniqueAchievemnts);
+                for(let i = 0; i < embeddedAchieve.length; i++){
+                    await playerFunctions.resetGoldenRollCount(user);
+                }
+
+                message.channel.send('You have obtained a Golden Roll!!!!');
+                await achievementFunctions.addAchievement(user, uniqueAchievemnts);
             }
         }
     }
@@ -113,7 +145,7 @@ client.on('messageCreate', async (message) => {
                 playerFunctions.createPlayer(user, name);
                 console.log('Player Created');
             }
-        if(request.search("Card [1-99]") !== -1){
+        if(request.search("Card \d*") !== -1){
             //get userID and username for future functions
             const indexValue = Number(request.substring(5));
             //obtain requested card number
@@ -131,7 +163,7 @@ client.on('messageCreate', async (message) => {
             }
             
         }
-        else if(request.search("AllCards [1-99]") !== -1){
+        else if(request.search("AllCards \d*") !== -1){
             if(message.author.bot)
                 return;
             const number = Number(request.substring(9));
@@ -147,7 +179,7 @@ client.on('messageCreate', async (message) => {
                 message.channel.send('You do not have any more cards.');
             }
         }
-        else if(request.search("Gift [1-99]") !== -1){
+        else if(request.search("Gift \d*") !== -1){
             const indexValue = Number(request.substring(5));
             //obtain requested card number
             const isValid = await playerFunctions.validGiftIndex(user, indexValue);
@@ -170,8 +202,32 @@ client.on('messageCreate', async (message) => {
             message.channel.send({embeds: [displayStat]});
 
         }
+        else if(request === 'Shop'){
+            const shopDisplay = shopFunctions.displayShop();
+            message.channel.send({embeds: [shopDisplay]});
+        }
     }
-    
+    else if(message.content.startsWith('/organize switch')){
+        const request = message.content.substring(17);
+        const user = message.author.id;
+        const cardArray = request.split(" ");
+        const numberCardArray = cardArray.map(Number);
+        const numberCard = numberCardArray.filter(
+            (number) => { 
+                return !isNaN(number)
+                //filter the array so only numbers retained
+            }
+        );
+        if(numberCard.length === 2 && await playerFunctions.validIndex(user, numberCard[0]) && await playerFunctions.validIndex(user, numberCard[1]) && numberCard[0] !== numberCard[1]){
+            await playerFunctions.changeOrder(user, numberCard[0], numberCard[1]);
+            message.channel.send('Order changed!');
+        }
+        else{
+            message.channel.send('... Are you testing me OWO?');
+            message.channel.send('Do you want to lose your cards OWO?');
+            message.channel.send('Please list only two cards and only cards in your deck... uwu!');
+        }
+    }
     else if(message.content === '/scGachaRules'){
         const rulesEmbed = new EmbedBuilder()
         .setColor(0x0099FF)
@@ -182,15 +238,16 @@ client.on('messageCreate', async (message) => {
             { name: 'Rolls', value: 'You can roll up to 3 times per day. Rolls are reset daily.' },
             { name: 'Character rarity', value: 'Characters are ranked from 1* to 6* with increasing rarity with increasing star ranking. Almost all major characters are obtainable. The database is updated frequently so you have the opportunity to obtain more characters. Repeat characters are possible.'},
             { name: 'Burning Cards', value: 'If you would like more daily rolls and are willing to sacrifice cards, you can burn your cards to get 3 additional rolls. Must have one of the following requirements: ten 1-star cards, eight 2-star cards, six 3-star cards, four 4-star cards, two 5-star cards, OR one 6-star card.'},
-            { name: 'Points', value: 'You can obtain points by rolling for characters, getting achievements, receiving gifts from characters, etc. If you obtain a certai number of points, you may receive a GRAND ROLL for a 5*-6* character.'},
+            { name: 'Points', value: 'You can obtain points by rolling for characters, getting achievements, receiving gifts from characters, etc. If you obtain a certai number of points, you may receive a GOLDEN ROLL for a 5*-6* character.'},
             { name: 'COMMANDS', value: ' '},
             { name: '/scGachaRules', value: 'Get info on how to use the bot.' },
-            { name: '/scRoll, /scRollPity, /scRollGolden', value: 'Roll for a character with varying rates. scRoll is a daily roll (3 rolls, 1-star to 6-star). scPityRoll is a daily roll (1 roll, 3-star to 6-star). scGoldenRoll is a special roll (1 roll, 5-star to 6-star)'},
-            { name: '/checkCard NUMBER', value: 'Check a specific card (detailed)'},
-            { name: '/checkAllCards NUMBER', value: 'Look at multiple cards at once'},
+            { name: '/scRoll, /scRollPity, /scRollGolden, /scRollRank #', value: 'Roll for a character with varying rates. scRoll is a daily roll (3 rolls, 1-star to 6-star). scRollPity is a daily roll (1 roll, 3-star to -star). scRollGolden is a special roll (1 roll, 5-star to 6-star). scRollRank is a special roll (1 roll, specifying a rank between 1 and 5'},
+            { name: '/checkCard #', value: 'Check a specific card (detailed)'},
+            { name: '/checkAllCards #', value: 'Look at multiple cards at once'},
             { name: '/checkGachaStats', value: 'Check your stats!'},
-            { name: '/burn CARDNUMBER,CARDNUMBER,CARDNUMBER', value: 'Burn cards for more rolls.'},
-            { name: '/upgradee CARDNUMBER CARDNUMBER', value: 'Upgrade a character card.' },
+            { name: '/burn #,#,#', value: 'Burn cards for more rolls.'},
+            { name: '/upgrade # #', value: 'Upgrade a character card.' },
+            { name: '/organize switch # #', value: 'Switch ordering of your cards.' }
         )
         message.channel.send({embeds: [rulesEmbed]})
     }
@@ -264,7 +321,7 @@ client.on('messageCreate', async (message) => {
                 //filter the array so only numbers retained
             }
         )
-        if(numberCard.length === 2 && numberCard[0] !== numberCard[1] && playerFunctions.validIndex(user, numberCard[0]) && playerFunctions.validIndex(user,numberCard[1])){
+        if(numberCard.length === 2 && numberCard[0] !== numberCard[1] && await playerFunctions.validIndex(user, numberCard[0]) && await playerFunctions.validIndex(user,numberCard[1])){
             const canUpgrade = await playerFunctions.isUpgradable(user, numberCard[0]);
             if(canUpgrade){
                 const valid = await playerFunctions.validUpgrade(user, numberCard[0], numberCard[1]);
@@ -289,15 +346,35 @@ client.on('messageCreate', async (message) => {
             }
         }
         else{
-            message.channel.send('Please list only two different cards for upgrade.')
+            message.channel.send('Please list only two different cards that are in your deck for upgrade.')
         }
+    }
+    else if(message.content.search("/purchase \d*") !== -1){
+        if(message.author.bot)
+            return;
+        const user = message.author.id;
+        const itemRequest = Number(message.content.substring(10));
+        if(shopFunctions.validShopRequest(itemRequest)){
+            const item = shopFunctions.getShopItem(itemRequest);
+            if(await shopFunctions.enoughPoints(user, item)){
+                await shopFunctions.transactShop(user, item);
+                await shopFunctions.getItem(user, item);
+                message.channel.send('Transaction complete. Thank yowo for your patrowonage!');
+            }
+            else{
+                message.channel.send('Hm... Not enough points... owo.');
+            }
+        }
+        else{
+            message.channel.send("OwO. We do not have that item!");
+        }
+        
     }
     else if(message.content.startsWith('/admin') && message.author.id === '182655922043224064'){
         //these are specifically admin functions
         const user = message.author.id;
         const request = message.content.substring(7);
         //obtain the request substring
-        console.log(request.startsWith('addToPlayer'));
         if(request === "syncUpdate"){
             const allPlayers = await adminFunctions.getAllPlayerIDs();
             for(let i = 0; i < allPlayers.length; i++){
@@ -305,7 +382,7 @@ client.on('messageCreate', async (message) => {
             }
             message.channel.send("Character decks have been synced!")
         }
-        else if(request.search("pulltest [1-99]") !== -1){
+        else if(request.search("pulltest \d*") !== -1){
             const cardChosen = Number(request.substring(9));
             await adminFunctions.randomAddToDeck(user, cardChosen);
             message.channel.send('Selected Card has been added.')
@@ -316,7 +393,12 @@ client.on('messageCreate', async (message) => {
                 if(uniqueAchievemnts.length !== 0){
                     const embeddedAchieve = achievementFunctions.achievementEmbedArray(uniqueAchievemnts)
                     for(let i = 0; i < embeddedAchieve.length; i++){
-                        message.channel.send({embeds: [embeddedAchieve[i]]})
+                        await playerFunctions.resetGoldenRollCount(user);
+                        message.channel.send({embeds: [embeddedAchieve[i]]});
+                        message.channel.send('You have obtained a Golden Roll!!!!');
+                    }
+                    for(let i = 0; i < embeddedAchieve.length; i++){
+                        await playerFunctions.resetGoldenRollCount(user);
                     }
                 await achievementFunctions.addAchievement(user, uniqueAchievemnts);
                 }

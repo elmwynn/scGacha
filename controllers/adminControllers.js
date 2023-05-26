@@ -71,12 +71,6 @@ const resetPityRollCount = async() => {
     );
 }
 
-const resetGoldenRollCount = async(userId) => {
-    await Player.findOneAndUpdate(
-        {playerId: userID},
-        {goldenRollCount: 0}
-    );
-}
 
 
 const getID = () =>{
@@ -113,7 +107,6 @@ const syncDeck = async(userID) => {
                 //if the card id for player deck matches card id for main deck
                 const oldCard = result[0].characterDeck[i];
                 //set oldCard
-                const keepRanking = oldCard.ranking;
                 //store old ranking
                 const updatedCard = allCharacters[k];
                 //set new card
@@ -121,9 +114,10 @@ const syncDeck = async(userID) => {
                 //if upgrade count exists, store old upgrade count
                     keepUpgradeCount = oldCard.upgradeCount;
                     updatedCard.upgradeCount = keepUpgradeCount;
+                    const keepRanking = oldCard.ranking;
+                    updatedCard.ranking = keepRanking;
                 }
                 //set new card
-                updatedCard.ranking = keepRanking;
                 //update new card ranking
                 //update new card upgrade count
                 await Player.updateMany(
@@ -139,7 +133,7 @@ const syncDeck = async(userID) => {
 const addNewFieldsToPlayers = async() =>{
     await Player.updateMany(
         {},
-        {$set: {"goldenRollCount": 0}}
+        {$set: {"rankRollCount": 0}}
     )
 }
 

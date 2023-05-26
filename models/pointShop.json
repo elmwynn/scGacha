@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "item": "Daily roll",
+        "description": "3 Daily Rolls (1-star to 6-star)",
+        "tag": "dailyRollCount",
+        "amount": 3,
+        "cost": 100
+    },
+    {
+        "id": 2,
+        "item": "Pity roll",
+        "description": "1 Pity Roll (3-star to 6-star)",
+        "tag": "pityRollCount",
+        "amount": 1,
+        "cost": 200
+    },
+    {
+        "id": 3,
+        "item": "Rank roll",
+        "description": "1 Rank Roll (1-star to 5-star of your star choice)",
+        "tag": "rankRollCount",
+        "amount": 1,
+        "cost": 600
+    },
+    {
+        "id": 4,
+        "item": "Golden roll",
+        "description": "1 Golden Roll (5-star to 6-star)",
+        "tag": "goldenRollCount",
+        "amount": 1,
+        "cost": 1000
+    }
+]

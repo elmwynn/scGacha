@@ -50,7 +50,14 @@ const weekendPityRoll = async() => {
     return allCharacters[chosenRank][randomCard];
 }
 
-const goldenRoll = async() => {
+const rankRoll = (rank) => {
+    const allCharacters = characterData.characters;
+    let chosenRank = rank-1;
+    const randomCard = (Math.floor(Math.random() * allCharacters[chosenRank].length));
+    return allCharacters[chosenRank][randomCard];
+}
+
+const goldenRoll = () => {
     const allCharacters = characterData.characters;
     const randomRank = (Math.floor(Math.random() * 101));
     if(randomRank <= 90)
@@ -90,5 +97,6 @@ module.exports = {
     getCharacter,
     getEmbedded,
     weekendPityRoll,
-    goldenRoll
+    goldenRoll,
+    rankRoll
 }

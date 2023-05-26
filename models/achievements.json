@@ -22,7 +22,7 @@
         "id":4,
         "achievement": "Endless Cycles",
         "description": "Obtain all Saint Candidates",
-        "points": 250
+        "points": 400
     },
     {
         "id":5,
@@ -68,9 +68,32 @@
     },
     {
         "id": 12,
-        "achievement": "Let's play pretend",
+        "achievement": "Let's play pretend...",
         "description": "Obtain the variations of the Wtorek family",
         "points": 200
+    },
+    {
+        "id": 13,
+        "achievement": "On Gloria's Grail",
+        "description": "Obtain the characters assocaited with Gloria's Grail",
+        "points": 200
+    },
+    {
+        "id": 14,
+        "achievement": "Stars and the Night Sky",
+        "description": "Obtain the characters associated with the Gloria Houses",
+        "points": 300
+    },
+    {
+        "id": 15,
+        "achievement": "The Inner Circle",
+        "description": "Obtain the characters part of Gabrielle's inner circle",
+        "points": 300
+    },
+    {
+        "id": 16,
+        "achievement": "Pieces of the past",
+        "description": "Obtain the characters of type Remnant",
+        "points": 300
     }
-
 ]

@@ -252,6 +252,15 @@
             "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
         },
         {
+            "id": 124,
+            "name": "Roberto",
+            "type": "Peacekeeper",
+            "affiliation": "Ophiuchus",
+            "conductingType": "???",
+            "ranking": "✦ ✦ ✦",
+            "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+        },
+        {
             "id": 64,
             "name": "Albatross",
             "type": "Conductor",
@@ -281,10 +290,19 @@
             "upgradeCount": 12
         },
         {
+            "id": 99,
+            "name": "Fritz Von Spiel",
+            "type": "True Conductor",
+            "affiliation": "Capricornian Army",
+            "conductingType": "Projector",
+            "ranking": "✦ ✦ ✦",
+            "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+        },
+        {
             "id": 41,
             "name": "Lyrs Faitah",
             "type": "True Conductor",
-            "affiliation": "Ophiuchus",
+            "affiliation": "Monadism",
             "conductingType": "Projector",
             "ranking": "✦ ✦ ✦",
             "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
@@ -400,6 +418,24 @@
             "conductingType": "Projector",
             "ranking": "✦ ✦ ✦",
             "image": "https://media.discordapp.net/attachments/970820451578298398/1108851990856999043/image.png?width=340&height=514"
+        },
+        {
+            "id": 120,
+            "name": "Friedhelm Heimler",
+            "type": "Conductor",
+            "affiliation": "Capricornian Army",
+            "conductingType": "Projector",
+            "ranking": "✦ ✦ ✦",
+            "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+        },
+        {
+            "id": 119,
+            "name": "Klaus Kleine",
+            "type": "Conductor",
+            "affiliation": "Capricornian Army",
+            "conductingType": "Conjuror",
+            "ranking": "✦ ✦ ✦",
+            "image": "https://media.discordapp.net/attachments/970820451578298398/1108851901224734812/image.png?width=397&height=599"
         },
         {
             "id": 67,
@@ -549,7 +585,7 @@
         {
             "id": 90,
             "name": "Nadinaline Delacroix",
-            "type": "Conductor",
+            "type": "Peacekeeper",
             "affiliation": "Ophiuchus",
             "conductingType": "Manipulator",
             "ranking": "✦ ✦ ✦ ✦",
@@ -561,15 +597,6 @@
             "type": "Conductor",
             "affiliation": "Tāra Clan",
             "conductingType": "Elementalist: Air",
-            "ranking": "✦ ✦ ✦ ✦",
-            "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
-        },
-        {
-            "id": 77,
-            "name": "Gamma (Wtorek)",
-            "type": "ELPIS Leader",
-            "affiliation": "ELPIS",
-            "conductingType": "Conjuror",
             "ranking": "✦ ✦ ✦ ✦",
             "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
         },
@@ -648,7 +675,7 @@
         {
             "id": 93,
             "name": "Katharina Groth",
-            "type": "Conductor",
+            "type": "Peacekeeper",
             "affiliation": "Ophiuchus",
             "conductingType": "????",
             "ranking": "✦ ✦ ✦ ✦",
@@ -666,7 +693,7 @@
         {
             "id": 95,
             "name": "Luca D'Angelo",
-            "type": "Conductor",
+            "type": "Peacekeeper",
             "affiliation": "Ophiuchus",
             "conductingType": "????",
             "ranking": "✦ ✦ ✦ ✦",
@@ -675,7 +702,7 @@
         {
             "id": 96,
             "name": "Saddine Agwuegbo",
-            "type": "Conductor",
+            "type": "Peacekeeper",
             "affiliation": "Ophiuchus",
             "conductingType": "????",
             "ranking": "✦ ✦ ✦ ✦",
@@ -693,7 +720,7 @@
         {
             "id": 97,
             "name": "Saddine Agwuegbo",
-            "type": "Conductor",
+            "type": "Peacekeeper",
             "affiliation": "Ophiuchus",
             "conductingType": "????",
             "ranking": "✦ ✦ ✦ ✦",
@@ -702,7 +729,7 @@
         {
             "id": 98,
             "name": "Hårek Ohmdahl",
-            "type": "Conductor",
+            "type": "Peacekeeper",
             "affiliation": "Ophiuchus",
             "conductingType": "Transmutationist",
             "ranking": "✦ ✦ ✦ ✦",
@@ -734,15 +761,6 @@
             "conductingType": "Conjuror",
             "ranking": "✦ ✦ ✦ ✦",
             "image": "https://media.discordapp.net/attachments/970820451578298398/1108844085902585896/image.png?width=307&height=514"
-        },
-        {
-            "id": 66,
-            "name": "Nico Fabrizzio (?)",
-            "type": "???",
-            "affiliation": "Ndoto",
-            "conductingType": "???",
-            "ranking": "✦ ✦ ✦ ✦",
-            "image": "https://media.discordapp.net/attachments/970820451578298398/1109861690750800013/image.png?width=460&height=599"
         },
         {
             "id": 33,
@@ -844,15 +862,6 @@
             "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
         },
         {
-            "id": 36,
-            "name": "Andres",
-            "type": "True Conductor",
-            "affiliation": "Monadism",
-            "conductingType": "Conjuror",
-            "ranking": "✦ ✦ ✦ ✦",
-            "image": "https://media.discordapp.net/attachments/970820451578298398/1108846396720812082/image.png?width=262&height=514"
-        },
-        {
             "id": 37,
             "name": "Sigrid Anker",
             "type": "True Conductor",
@@ -884,6 +893,15 @@
             "upgradeCount": 5
         },
         {
+            "id": 122,
+            "name": "Scorpio (Nareen)",
+            "type": "Saint Candidate",
+            "affiliation": "Ophiuchus",
+            "conductingType": "Manipulator",
+            "ranking": "✦ ✦ ✦ ✦ ✦",
+            "image": "https://media.discordapp.net/attachments/970820451578298398/1110930653496758373/image.png"
+        },
+        {
             "id": 6,
             "name": "Jericho",
             "type": "True Conductor",
@@ -893,6 +911,15 @@
             "image": "https://sixchanceshome.files.wordpress.com/2021/09/illustration2-2-e1631104353299.jpg",
             "upgradeDialogue": ["I am leveling up.", " ", " "," ", " ", "... we are friends."],
             "upgradeCount": 5
+        },
+        {
+            "id": 77,
+            "name": "Gamma (Wtorek)",
+            "type": "ELPIS Leader",
+            "affiliation": "ELPIS",
+            "conductingType": "Conjuror",
+            "ranking": "✦ ✦ ✦ ✦ ✦",
+            "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
         },
         {
             "id": 7,
@@ -906,6 +933,15 @@
             "upgradeCount": 5
         },
         {
+            "id": 125,
+            "name": "Gilbert (?)",
+            "type": "???",
+            "affiliation": "Ndoto",
+            "conductingType": "???",
+            "ranking": "✦ ✦ ✦ ✦ ✦",
+            "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+        },
+        {
             "id": 91,
             "name": "Moerani Pō'ai",
             "type": "Conductor",
@@ -915,6 +951,15 @@
             "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
         },
         {
+            "id": 123,
+            "name": "Proteus",
+            "type": "Remnant",
+            "affiliation": "Pandora, Ophiuchus",
+            "conductingType": "???",
+            "ranking": "✦ ✦ ✦ ✦ ✦",
+            "image": "https://media.discordapp.net/attachments/970820451578298398/1110953142872457276/image.png?width=377&height=598"
+        },
+        {
             "id": 35,
             "name": "Leona Gloria-Angelo",
             "type": "Saint Candidate",
@@ -922,6 +967,15 @@
             "conductingType": "Projector",
             "ranking": "✦ ✦ ✦ ✦ ✦",
             "image": "https://sixchanceshome.files.wordpress.com/2021/02/414141.png"
+        },
+        {
+            "id": 36,
+            "name": "Andres",
+            "type": "True Conductor",
+            "affiliation": "Monadism",
+            "conductingType": "Conjuror",
+            "ranking": "✦ ✦ ✦ ✦ ✦",
+            "image": "https://media.discordapp.net/attachments/970820451578298398/1108846396720812082/image.png?width=262&height=514"
         },
         {
             "id": 38,
@@ -940,6 +994,33 @@
             "conductingType": "Diverger",
             "ranking": "✦ ✦ ✦ ✦ ✦",
             "image": "https://sixchanceshome.files.wordpress.com/2021/03/comm2.2.png"
+        },
+        {
+            "id": 81,
+            "name": "Aries (Chance)",
+            "type": "Saint Candidate",
+            "affiliation": "????",
+            "conductingType": "Elementalist: Fire",
+            "ranking": "✦ ✦ ✦ ✦ ✦",
+            "image": "https://sixchanceshome.files.wordpress.com/2021/05/jjjj.png"
+        },
+        {
+            "id": 66,
+            "name": "Nico Fabrizzio (?)",
+            "type": "???",
+            "affiliation": "Ndoto",
+            "conductingType": "???",
+            "ranking": "✦ ✦ ✦ ✦ ✦",
+            "image": "https://media.discordapp.net/attachments/970820451578298398/1109861690750800013/image.png?width=460&height=599"
+        },
+        {
+            "id": 121,
+            "name": "Marionette Engel",
+            "type": "Political Leader",
+            "affiliation": "Capricornian Army",
+            "conductingType": "???",
+            "ranking": "✦ ✦ ✦ ✦ ✦",
+            "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
         }
     ],
     [
@@ -1052,22 +1133,13 @@
             "image": "https://media.discordapp.net/attachments/970820451578298398/1108864407758450688/image.png?width=494&height=514"
         },
         {
-            "id": 81,
-            "name": "Aries (Chance)",
-            "type": "Saint Candidate",
-            "affiliation": "????",
-            "conductingType": "Elementalist: Fire",
-            "ranking": "✦ ✦ ✦ ✦ ✦ ✦",
-            "image": "https://sixchanceshome.files.wordpress.com/2021/05/jjjj.png"
-        },
-        {
             "id": 82,
             "name": "Ophiuchus",
             "type": "Remnant",
-            "affiliation": "????",
-            "conductingType": "Diverger",
+            "affiliation": "Pandora, Ophiuchus",
+            "conductingType": "????",
             "ranking": "✦ ✦ ✦ ✦ ✦ ✦",
-            "image": "https://media.istockphoto.com/id/171581708/photo/silhouette-of-woman-black-and-white.jpg?s=170667a&w=0&k=20&c=Vg6JweMmNZ3m4CwsXo2tgDYA5jXBPXjlk99510UZxJc="
+            "image": "https://media.discordapp.net/attachments/970820451578298398/1111014080610836643/image.png"
         },
         {
             "id": 117,

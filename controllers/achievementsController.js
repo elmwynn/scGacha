@@ -149,6 +149,102 @@ const pulseAchieve = async(userID) => {
 
 }
 
+const reversusOratioAchieve = async(userID) => {
+    const result = await Player.find(
+        {playerId: userID}
+    )
+    const allCharacters = characterData.characters;
+    let elpisLeadCount = [];
+    let playerCount = [];
+    for(let i = 0; i < allCharacters.length; i++){
+        if(allCharacters[i].type === 'ELPIS Leader')
+            elpisLeadCount.push(allCharacters[i].id);
+    }
+    for(let i = 0; i < result[0].characterDeck.length; i++){
+        const id = result[0].characterDeck[i].id;
+        const type = result[0].characterDeck[i].type;
+        if(!playerCount.includes(id) && type === 'ELPIS Leader')
+            playerCount.push(result[0].characterDeck[i].id);
+    }
+    if(elpisLeadCount.length === playerCount.length)
+        return allAchievements[7];
+    return -1;
+}
+
+const wernDivision = (characterIDArray) => {
+    if(characterIDArray.includes(3) && characterIDArray.includes(10) && characterIDArray.includes(22) && characterIDArray.includes(23) & characterIDArray.includes(24) & characterIDArray.includes(27) & characterIDArray.includes(26) & characterIDArray.includes(25) & characterIDArray.includes(119) & characterIDArray.includes(120))
+        return allAchievements[8];
+    return -1;
+}
+
+const thoseInPower = async(userID) => {
+    const result = await Player.find(
+        {playerId: userID}
+    )
+    const allCharacters = characterData.characters;
+    let politicalLeaderCount = [];
+    let playerCount = [];
+    for(let i = 0; i < allCharacters.length; i++){
+        if(allCharacters[i].type === 'Political Leader')
+        politicalLeaderCount.push(allCharacters[i].id);
+    }
+    for(let i = 0; i < result[0].characterDeck.length; i++){
+        const id = result[0].characterDeck[i].id;
+        const type = result[0].characterDeck[i].type;
+        if(!playerCount.includes(id) && type === 'Political Leader')
+            playerCount.push(result[0].characterDeck[i].id);
+    }
+    if(politicalLeaderCount.length === playerCount.length)
+        return allAchievements[9];
+    return -1;
+}
+
+const cantHelpButGo = (characterIDArray) => {
+    if(characterIDArray.includes(100) && characterIDArray.includes(99) && characterIDArray.includes(101))
+        return allAchievements[10];
+    return -1;
+}
+
+const playPretend = (characterIDArray) => {
+    if(characterIDArray.includes(50) && characterIDArray.includes(80) && characterIDArray.includes(16) && characterIDArray.includes(77))
+        return allAchievements[11];
+    return -1;
+}
+
+
+const gloriaGrail = async(userID) => {
+    const result = await Player.find(
+        {playerId: userID}
+    )
+    const allCharacters = characterData.characters;
+    let gloriaGrailCount = [];
+    let playerCount = [];
+    for(let i = 0; i < allCharacters.length; i++){
+        if(allCharacters[i].affiliation === 'Gloria\'s Grail')
+            gloriaGrailCount.push(allCharacters[i].id);
+    }
+    for(let i = 0; i < result[0].characterDeck.length; i++){
+        const id = result[0].characterDeck[i].id;
+        const affiliation = result[0].characterDeck[i].affiliation;
+        if(!playerCount.includes(id) && affiliation ===  'Gloria\'s Grail')
+            playerCount.push(result[0].characterDeck[i].id);
+    }
+    if(gloriaGrailCount.length === playerCount.length)
+        return allAchievements[12];
+    return -1;
+}
+
+const starsAndSky = (characterIDArray) => {
+    if(characterIDArray.includes(36) && characterIDArray.includes(4) && characterIDArray.includes(41) && characterIDArray.includes(12) && characterIDArray.includes(35) && characterIDArray.includes(58))
+        return allAchievements[13];
+return -1;
+}
+
+const innerCircle = (characterIDArray) => {
+    if(characterIDArray.includes(15) && characterIDArray.includes(16) && characterIDArray.includes(50) && characterIDArray.includes(53) && characterIDArray.includes(6) && characterIDArray.includes(17)  && characterIDArray.includes(14) && characterIDArray.includes(18) && characterIDArray.includes(124) && characterIDArray.includes(91))
+        return allAchievements[14];
+return -1;
+}
 //** MAIN ACHIEVEMENT FUNCTIONS */
 
 const checkAchievement = async(array, userID) => {
@@ -167,6 +263,22 @@ const checkAchievement = async(array, userID) => {
         obtainedAchievements.push(await forGloryAchiev(userID));
     if(await pulseAchieve(userID) !== -1)
         obtainedAchievements.push(await pulseAchieve(userID));
+    if(await reversusOratioAchieve(userID) !== -1)
+        obtainedAchievements.push(await reversusOratioAchieve(userID));
+    if(wernDivision(array) !== -1)
+        obtainedAchievements.push(wernDivision(array));
+    if(await thoseInPower(userID) !== -1)
+        obtainedAchievements.push(await thoseInPower(userID));
+    if(cantHelpButGo(array) !== -1)
+        obtainedAchievements.push(cantHelpButGo(array));
+    if(playPretend(array) !== -1)
+        obtainedAchievements.push(playPretend(array));
+    if(await gloriaGrail(userID) !== -1)
+        obtainedAchievements.push(await gloriaGrail(userID));
+    if(starsAndSky(array) !== -1)
+        obtainedAchievements.push(starsAndSky(array));
+    if(innerCircle(array) !== -1)
+        obtainedAchievements.push(innerCircle(array));
     return obtainedAchievements;
 }
 
@@ -189,6 +301,8 @@ const addAchievement = async(userID, array) => {
     }
 }
 
+//pree-condition: receives an array of achievement ids and player id
+//post-condition: returns an array containing the acheivement ids that hte player does not yet have
 const filteredAchievements = async(userID, array) => {
     const result = await Player.find(
         {playerId: userID}

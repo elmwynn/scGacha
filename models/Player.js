@@ -23,6 +23,10 @@ const playerSchema = new Schema({
         type: Number,
         default: 0
     },
+    rankRollCount: {
+        type: Number,
+        default: 0
+    },
     goldenRollCount: {
         type: Number,
         default: 0

@@ -73,6 +73,28 @@ const addToPlayerDeck = async(userID, data) => {
         );
 }
 
+
+const changeOrder = async(userID, card1, card2) => {
+    const result = await Player.find({
+        playerId: userID
+    })
+    const firstCardValue = result[0].characterDeck[card1-1];
+    const firstCardPosition = `characterDeck.${card1-1}`;
+    const secondCardValue = result[0].characterDeck[card2-1]
+    const secondCardPosition = `characterDeck.${card2-1}`;
+    await Player.findOneAndUpdate(
+        {playerId: userID},
+        {$set:{ [firstCardPosition]: secondCardValue}}
+    )
+    await Player.findOneAndUpdate(
+        {playerId: userID},
+        {$set: {[secondCardPosition]: firstCardValue}}
+    )
+
+}
+
+//** PLAYER ROLL INCREMENTATION  FUNCTIONS */
+
 //pre-condition: player has performed a daily roll
 //post-condition: dailyCount of user is incremented by 1
 const incrementDailyCount = async(userID) => {
@@ -84,7 +106,7 @@ const incrementDailyCount = async(userID) => {
     );
 }
 
-//pre-condition: player has performed a pity roll
+//pre-condition: player has performed a successful pity roll
 //post-condition: pity count of user is incremented by 1
 const incrementPityCount = async(userID) => {
     await Player.findOneAndUpdate(
@@ -92,12 +114,32 @@ const incrementPityCount = async(userID) => {
         {$inc:{pityRollCount: 1}}
     );
 }
+
+
+//pre-condition: player has performed a successful golden roll
+//post-condition: golden count of user is incremented by 1
 const incrementGoldenCount = async(userID) => {
     await Player.findOneAndUpdate(
         {playerId: userID},
         {$inc:{goldenRollCount: 1}}
     );
 }
+
+const incrementRankCount = async(userID) => {
+    await Player.findOneAndUpdate(
+        {playerId: userID},
+        {$inc: {rankRollCount: 1}}
+    );
+   
+}
+
+const resetGoldenRollCount = async(userID) => {
+    await Player.findOneAndUpdate(
+        {playerId: userID},
+        {$inc: {goldenRollCount: -1}}
+    );
+}
+
 
 
 
@@ -106,12 +148,13 @@ const incrementGoldenCount = async(userID) => {
 //pre-condition: userID and card number index provided
 //post-condition: returns false if index is not valid
 //returns true otherwise
-const validIndex = async(userID, index) => {
+const validIndex = async(userID, cardChosen) => {
     const result = await Player.find({
         playerId: userID
     })
-    if(result[0].characterDeck.length < index || index < 1){
-        //if the index is greater than the length of the player deck or if the index is less than 1 
+    if(cardChosen > result[0].characterDeck.length || cardChosen < 1){
+        //if the cardChosen is greater than the length of the player deck or if the index is less than 1 
+        //note: the player sees the card as card # array index + 1
         return false;
     }
     return true;
@@ -159,14 +202,17 @@ const validCardPage = async(userID, pageNumber) =>{
     });
     const numberOfCards = result[0].characterDeck.length;
     //obtain length of deck
-    const value = pageNumber*5-5;
-    if(value > numberOfCards)
+    let possibleCardPage = Math.floor(numberOfCards/10);
+    const trailingCards = numberOfCards - possibleCardPage*10;
+    if(trailingCards > 0)
+        possibleCardPage += 1;
+    if(pageNumber > possibleCardPage)
         return false;
     return true;
 }
 
 //pre-condition: player exists & has provided a pageNumber
-//post-condition: a list of 5 player cards is returned depending on
+//post-condition: a list of 10 player cards is returned depending on
 //the page they chose
 const getAllCards = async(userID, pageNumber) => {
     const result = await Player.find({
@@ -178,9 +224,9 @@ const getAllCards = async(userID, pageNumber) => {
     //if they chose page 1
         beginIndex = 0
     else{
-        beginIndex = pageNumber*5-5;
+        beginIndex = pageNumber*10-10;
     }
-    endIndex = beginIndex +5;
+    endIndex = beginIndex + 10;
     if(endIndex > length){
         //if the addition from the previous line of code is greater than the length
         //that would be invalid, so set the index to the length
@@ -191,24 +237,30 @@ const getAllCards = async(userID, pageNumber) => {
     .setTitle(`Cards of ${result[0].username}, Page ${pageNumber}`)
     for(let i = beginIndex; i < endIndex; i++){
         charactersEmbedded.addFields(
-            {name: 'Card #', value: `${i+1}`, inline: true},
-            { name: 'Name', value: `${result[0].characterDeck[i].name}`, inline: true },
-            { name: 'Ranking', value: `${result[0].characterDeck[i].ranking}`, inline: true },
+            {name: `Card # ${i+1}  »  ${result[0].characterDeck[i].name}`, value: `Ranking:  ${result[0].characterDeck[i].ranking} `/*, inline: true},
+            //{ name: 'Name', value: `${result[0].characterDeck[i].name}`, inline: true },
+        { name: 'Ranking', value: `${result[0].characterDeck[i].ranking}\n`, inline: true },*/}
         )
     }
     return charactersEmbedded;
 }
 
+
+//pre-condition: user/player exists
+//post-condition: an array containing player data is returned
 const getGachaStats = async(userID) => {
     const result = await Player.find(
         {playerId: userID}
     )
     const statsArray = [];
     let sixStarCount = 0, fiveStarCount = 0, fourStarCount = 0, threeStarCount = 0, twoStarCount = 0, oneStarCount = 0;
+    //set star counts to 0
     const points = result[0].points;
+    //obtain user points
     const numberOfGifts = (result[0].gifts).length;
     const username = result[0].username;
     for(let i = 0; i < result[0].characterDeck.length; i++){
+        //loop through deck, incrementing the star counts everytime there is a star match
         if(result[0].characterDeck[i].ranking === '✦')
             oneStarCount++;
         else if(result[0].characterDeck[i].ranking === '✦ ✦')
@@ -222,19 +274,26 @@ const getGachaStats = async(userID) => {
         else
             sixStarCount++;
     }
+    //the following is to count the number of unique cards the player has ((for duplicate cases))
     const arrayOfCharacterIDs =[];
     const arrayOfUniqueIDs = []
     for(let i = 0; i < result[0].characterDeck.length; i++)
+    //loop through player deck and obtain all character ids
         arrayOfCharacterIDs.push(result[0].characterDeck[i].id);
     for(let i = 0; i < arrayOfCharacterIDs.length; i++)
+    //loop through resulting array
         if(!arrayOfUniqueIDs.includes(arrayOfCharacterIDs[i]))
+        //if the id is not in the new array yet, add it
             arrayOfUniqueIDs.push(arrayOfCharacterIDs[i]);
     const uniqueCards = arrayOfUniqueIDs.length;
+    //obtain the length of the array--this is the number of unqique cards the player has
     statsArray.push(oneStarCount, twoStarCount, threeStarCount, fourStarCount, fiveStarCount, sixStarCount, uniqueCards, points, numberOfGifts, username);
     return statsArray;
 
 }
 
+//pre-condition: an array of user data ((from getGachaStats)) is provided
+//post-condition: am embedded object of user data is returned for display
 const displayGachaStats = (array) => {
     const totalCharactersInDatabase = characterData.characters.length;
     const displayStats = new EmbedBuilder()
@@ -256,6 +315,7 @@ const displayGachaStats = (array) => {
     );
     return displayStats;
 }
+
 
 // **** BURN FUNCTIONS ***** //
 
@@ -350,38 +410,48 @@ const burnCards = async(userID, arrayIndex) => {
         {$inc:{dailyRollCount: -3}}
         //decrement the player's roll count by 3
     )
+    await Player.findOneAndUpdate(
+        {playerId: userID},
+        {$inc:{points: 10}}
+        //increment the player's points by 10
+    )
 }
 
 
 // *** PLAYER CARD UPGRADE FUNCTIONS ***//
-//currently constructing
 
+//pre-condition: player exists and card wanting to be upgraded is provided
+//post-condition: returns true if the card is upgradable and returns false otehrwise
 const isUpgradable = async(userID, upgradedCard) => {
     const result = await Player.find({
         playerId: userID
-    })
-    if(result[0].characterDeck.length === 0)
-        return false;
+    });
     const toUpgrade = result[0].characterDeck[upgradedCard-1];
+    //obtain the card to be upgraded. note: since the user sees their deck starting at 1, we must subtract 1 to get to the correct index
     if(toUpgrade.upgradeDialogue)
+    //if the upgrade dialogue exists, the card is upgradable
         return true;
     else
         return false;
 }
 
+//pre-condition: upgradedCard and burnedCard are in existing player deck
+//post-condition: returns true if it's a valid upgrade; false otherwise
 const validUpgrade = async(userID, upgradedCard, burnedCard) =>{
     const result = await Player.find({
         playerId: userID
     })
     const toUpgrade = result[0].characterDeck[upgradedCard-1];
+    //obtain card to be upgraded
     const toBurn = result[0].characterDeck[burnedCard-1];
+    //obtain card to be burned
     if(toUpgrade.ranking === toBurn.ranking){
+        //if the rankings match up, it's alid
         return true;
     }
     return false;
 }
 
-//currently constructing
 const upgradeCard  = async(userID, upgradedCard) => {
     const result = await Player.find({
         playerId: userID
@@ -401,15 +471,15 @@ const upgradeCard  = async(userID, upgradedCard) => {
     }
     else if(minusValue === 9){
         toUpgrade.ranking = "✦ ✦ ✦ ✦";
-        gainedPoints = 10;
+        gainedPoints = 20;
     }
     else if(minusValue === 5){
         toUpgrade.ranking = "✦ ✦ ✦ ✦ ✦"
-        gainedPoints = 15;
+        gainedPoints = 30;
     }
     else if(minusValue === 0){
         toUpgrade.ranking = "✦ ✦ ✦ ✦ ✦ ✦";
-        gainedPoints = 20;
+        gainedPoints = 50;
     }
     await Player.findOneAndUpdate(
         {playerId: userID},
@@ -424,12 +494,12 @@ const upgradeCard  = async(userID, upgradedCard) => {
 }
 
 
+//pre-condition: player exists and
 const burnCardForUpgrade = async(userID, burnedCard) => {
     const result = await Player.find({
         playerId: userID
     })
     const toBurn = result[0].characterDeck[burnedCard-1];
-    console.log(toBurn);
     const toUnset = `characterDeck.${burnedCard-1}`;
     await Player.findOneAndUpdate(
         {playerId: userID},
@@ -473,6 +543,8 @@ const upgradeDialogue = async(userID, upgradedCard) =>{
     return dialogueEmbed;
 }
 
+
+///** GIFT FUNCTIONS */
 const isGiftReady =  async(userID, upgradedCard) => {
     const result = await Player.find({
         playerId: userID
@@ -575,6 +647,15 @@ const checkGoldenRollCount =  async (userID) => {
     return true;
 }
 
+const checkRankRollCount =  async (userID) => {
+    const result = await Player.find({
+        playerId: userID
+    })
+    if(result[0].rankRollCount  >=1)
+        return false;
+    return true;
+}
+
 
 
 
@@ -606,5 +687,9 @@ module.exports = {
     displayGachaStats,
     checkGoldenRollCount, 
     incrementGoldenCount, 
-    burnCardForUpgrade
+    burnCardForUpgrade,
+    resetGoldenRollCount,
+    incrementRankCount,
+    checkRankRollCount,
+    changeOrder
 }
