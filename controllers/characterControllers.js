@@ -1,5 +1,6 @@
 const path = require('path');
-const {EmbedBuilder} = require('discord.js')
+const {EmbedBuilder} = require('discord.js');
+const { all } = require('axios');
 const characterData = {
     characters: require('../models/characterData.json'),
     setCharacters: function (characterData){
@@ -71,6 +72,15 @@ const goldenRoll = () => {
 }
 
 
+const wishRoll = (requestName) => {
+    const allCharacters = characterData.characters;
+    for(let i = 0; i < allCharacters.length; i++)
+        for(let k = 0; k < allCharacters[i].length; k++)
+            if(allCharacters[i][k].name === requestName)
+                return allCharacters[i][k];
+    return allCharacters[0][0];
+}
+
 //pre-condition: character data is available from the getCharacter function
 //post-condition: returns an embedded with values for name, type, affiliation, etc
 const getEmbedded = (data) => {
@@ -98,5 +108,6 @@ module.exports = {
     getEmbedded,
     weekendPityRoll,
     goldenRoll,
-    rankRoll
+    rankRoll,
+    wishRoll
 }

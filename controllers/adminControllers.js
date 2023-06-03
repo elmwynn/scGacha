@@ -107,10 +107,9 @@ const syncDeck = async(userID) => {
                 //if the card id for player deck matches card id for main deck
                 const oldCard = result[0].characterDeck[i];
                 //set oldCard
-                //store old ranking
                 const updatedCard = allCharacters[k];
                 //set new card
-                if(oldCard.upgradeCount){
+                if(oldCard.upgradeDialogue){
                 //if upgrade count exists, store old upgrade count
                     keepUpgradeCount = oldCard.upgradeCount;
                     updatedCard.upgradeCount = keepUpgradeCount;
@@ -120,20 +119,26 @@ const syncDeck = async(userID) => {
                 //set new card
                 //update new card ranking
                 //update new card upgrade count
-                await Player.updateMany(
+                if(userID === 811660796873670668){
+                    console.log("old card")
+                    console.log(oldCard)
+                    console.log("updated card")
+                    console.log(updatedCard);
+                }
+                await Player.findOneAndUpdate(
                     //update player deck
-                    {characterDeck: oldCard},
-                    {"$set": {"characterDeck.$": updatedCard}}
-                );
-            }   
-    }
+                    {playerId: userID},
+                    {$set: {[`characterDeck.${i}`]: updatedCard}},
+                );  
+            }
+        }
 }
 
 //post-condition: adds new fields to player documents
 const addNewFieldsToPlayers = async() =>{
     await Player.updateMany(
         {},
-        {$set: {"rankRollCount": 0}}
+        {$set: {"wishRollCount": 0}}
     )
 }
 

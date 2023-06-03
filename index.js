@@ -74,7 +74,6 @@ client.on('messageCreate', async (message) => {
         else if(request === 'Golden'){
             const canRoll = await playerFunctions.checkGoldenRollCount(user);
             //check to see if player can roll
-            console.log(canRoll)
             if(canRoll){
                 const goldenCard = await characterFunctions.goldenRoll();
                 //obtain roll
@@ -114,6 +113,30 @@ client.on('messageCreate', async (message) => {
             }
             else{
                 message.channel.send("OWO...? What kinda request was that?")
+            }
+        }
+        else if(request.startsWith('Wish')){
+            const canRoll = await playerFunctions.checkWishRollCount(user);
+            //check to see if player can roll
+            const nameRequest = request.substring(5);
+            if(canRoll){
+                const wishCard = await characterFunctions.wishRoll(nameRequest);
+                //obtain roll
+                const displayCard = await characterFunctions.getEmbedded(wishCard);
+                //obtain embed of roll
+                message.channel.send({embeds: [displayCard]});
+                if(wishCard.name === 'Feliciano Donato'){
+                    message.channel.send('OWO... Did you wish properly?');
+                    message.channel.send('( ͡°Ɛ ͡°)');
+                }
+                //display roll
+                await playerFunctions.addToPlayerDeck(user, wishCard);
+                //add to player deck
+                await playerFunctions.incrementWishCount(user);
+                //increment wish roll count
+            }
+            else{
+                message.channel.send("No more wish rolls for you! OWO")
             }
         }
         const cardIDs = await achievementFunctions.getCharacterIDArray(user);
@@ -238,16 +261,17 @@ client.on('messageCreate', async (message) => {
             { name: 'Rolls', value: 'You can roll up to 3 times per day. Rolls are reset daily.' },
             { name: 'Character rarity', value: 'Characters are ranked from 1* to 6* with increasing rarity with increasing star ranking. Almost all major characters are obtainable. The database is updated frequently so you have the opportunity to obtain more characters. Repeat characters are possible.'},
             { name: 'Burning Cards', value: 'If you would like more daily rolls and are willing to sacrifice cards, you can burn your cards to get 3 additional rolls. Must have one of the following requirements: ten 1-star cards, eight 2-star cards, six 3-star cards, four 4-star cards, two 5-star cards, OR one 6-star card.'},
-            { name: 'Points', value: 'You can obtain points by rolling for characters, getting achievements, receiving gifts from characters, etc. If you obtain a certai number of points, you may receive a GOLDEN ROLL for a 5*-6* character.'},
+            { name: 'Points', value: 'You can obtain points by rolling for characters, getting achievements, receiving gifts from characters, etc. If you obtain a certain number of points, you may receive a GOLDEN ROLL for a 5*-6* character.'},
             { name: 'COMMANDS', value: ' '},
             { name: '/scGachaRules', value: 'Get info on how to use the bot.' },
-            { name: '/scRoll, /scRollPity, /scRollGolden, /scRollRank #', value: 'Roll for a character with varying rates. scRoll is a daily roll (3 rolls, 1-star to 6-star). scRollPity is a daily roll (1 roll, 3-star to -star). scRollGolden is a special roll (1 roll, 5-star to 6-star). scRollRank is a special roll (1 roll, specifying a rank between 1 and 5'},
+            { name: '/scRoll, /scRollPity, /scRollGolden, /scRollRank #, scRollWish NAME', value: 'Roll for a character with varying rates. scRoll is a daily roll (3 rolls, 1-star to 6-star). scRollPity is a daily roll (1 roll, 3-star to -star). scRollGolden is a special roll (1 roll, 5-star to 6-star). scRollRank is a special roll (1 roll, specifying a rank between 1 and 5. scRollWish Name gets you the character name of your choice. NOTE: if you do not put a valid name, you will get a 1-star character.'},
             { name: '/checkCard #', value: 'Check a specific card (detailed)'},
             { name: '/checkAllCards #', value: 'Look at multiple cards at once'},
             { name: '/checkGachaStats', value: 'Check your stats!'},
             { name: '/burn #,#,#', value: 'Burn cards for more rolls.'},
             { name: '/upgrade # #', value: 'Upgrade a character card.' },
-            { name: '/organize switch # #', value: 'Switch ordering of your cards.' }
+            { name: '/organize switch # #', value: 'Switch ordering of your cards.' },
+            { name: '/checkShop', value: 'View rolls/items purchasable via poitns.' }
         )
         message.channel.send({embeds: [rulesEmbed]})
     }

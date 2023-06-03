@@ -133,6 +133,13 @@ const incrementRankCount = async(userID) => {
    
 }
 
+const incrementWishCount = async(userID) => {
+    await Player.findOneAndUpdate(
+        {playerId: userID},
+        {$inc:{wishRollCount: 1}}
+    );
+}
+
 const resetGoldenRollCount = async(userID) => {
     await Player.findOneAndUpdate(
         {playerId: userID},
@@ -203,10 +210,17 @@ const validCardPage = async(userID, pageNumber) =>{
     const numberOfCards = result[0].characterDeck.length;
     //obtain length of deck
     let possibleCardPage = Math.floor(numberOfCards/10);
+    //obtain the potentially max possible card page
     const trailingCards = numberOfCards - possibleCardPage*10;
+    //obtain amount of trailing cards after you obtain the max possible
+    //ex: the person has 24 cards so the trailing # of cards is 4
     if(trailingCards > 0)
+    //if the trailing cards is greater than 0, there are possible additional cards
+    // to be displayed on the next page
         possibleCardPage += 1;
+        //if so, add one
     if(pageNumber > possibleCardPage)
+    //if the requested pageNumber is greater than the max card page
         return false;
     return true;
 }
@@ -220,13 +234,12 @@ const getAllCards = async(userID, pageNumber) => {
     });
     const length = result[0].characterDeck.length;
     //obtain length of their characterDeck
-    if(pageNumber === 1)
-    //if they chose page 1
-        beginIndex = 0
-    else{
-        beginIndex = pageNumber*10-10;
-    }
+
+    const beginIndex = pageNumber*10-10;
+    //obtain the starting index
     endIndex = beginIndex + 10;
+    //there are 10 cards per page so the end index would be 10 more than the beginning
+    //note: the 'true' ending index would be endIndex-1. 
     if(endIndex > length){
         //if the addition from the previous line of code is greater than the length
         //that would be invalid, so set the index to the length
@@ -429,10 +442,12 @@ const isUpgradable = async(userID, upgradedCard) => {
     const toUpgrade = result[0].characterDeck[upgradedCard-1];
     //obtain the card to be upgraded. note: since the user sees their deck starting at 1, we must subtract 1 to get to the correct index
     if(toUpgrade.upgradeDialogue)
+        if(toUpgrade.upgradeCount !== 0)
     //if the upgrade dialogue exists, the card is upgradable
-        return true;
-    else
-        return false;
+            return true;
+        else
+            return false;
+    return false;
 }
 
 //pre-condition: upgradedCard and burnedCard are in existing player deck
@@ -445,7 +460,7 @@ const validUpgrade = async(userID, upgradedCard, burnedCard) =>{
     //obtain card to be upgraded
     const toBurn = result[0].characterDeck[burnedCard-1];
     //obtain card to be burned
-    if(toUpgrade.ranking === toBurn.ranking){
+    if(toUpgrade.ranking === toBurn.ranking && toUpgrade.ranking !== '✦ ✦ ✦ ✦ ✦ ✦'){
         //if the rankings match up, it's alid
         return true;
     }
@@ -456,7 +471,7 @@ const upgradeCard  = async(userID, upgradedCard) => {
     const result = await Player.find({
         playerId: userID
     })
-    let gainedPoints = 0;
+    let gainedPoints = 5;
     const toUpgrade = result[0].characterDeck[upgradedCard-1];
     const toUpdate = `characterDeck.${upgradedCard-1}`
     if(toUpgrade.ranking ===  "✦ ✦ ✦ ✦ ✦ ✦")
@@ -467,7 +482,7 @@ const upgradeCard  = async(userID, upgradedCard) => {
     //store the new upgradeCount
     if(minusValue === 12){
         toUpgrade.ranking = "✦ ✦ ✦";
-        gainedPoints = 5;
+        gainedPoints = 10;
     }
     else if(minusValue === 9){
         toUpgrade.ranking = "✦ ✦ ✦ ✦";
@@ -518,7 +533,10 @@ const upgradeDialogue = async(userID, upgradedCard) =>{
     })
     const upgraded = result[0].characterDeck[upgradedCard-1];
     let levelUPDialogue = `${upgraded.name} has evolved to another star level!`;
-    if(upgraded.upgradeCount === 9){
+    if(upgraded.upgradeCount === 12){
+        dialogue = upgraded.upgradeDialogue[2];
+    }
+    else if(upgraded.upgradeCount === 9){
         dialogue = upgraded.upgradeDialogue[3];
     }
     else if(upgraded.upgradeCount === 5){
@@ -609,8 +627,8 @@ const addGift =  async(userID, data) => {
     await Player.findOneAndUpdate(
         {playerId: userID},
         //find player by id
-        {$inc: {points: 50}}
-        //push the gift data to their gift deck
+        {$inc: {points: 1000}}
+        //increment points
     )
 }
 
@@ -656,6 +674,15 @@ const checkRankRollCount =  async (userID) => {
     return true;
 }
 
+const checkWishRollCount =  async (userID) => {
+    const result = await Player.find({
+        playerId: userID
+    })
+    if(result[0].wishRollCount  >=1)
+        return false;
+    return true;
+}
+
 
 
 
@@ -691,5 +718,7 @@ module.exports = {
     resetGoldenRollCount,
     incrementRankCount,
     checkRankRollCount,
-    changeOrder
+    changeOrder,
+    incrementWishCount,
+    checkWishRollCount
 }

@@ -245,6 +245,25 @@ const innerCircle = (characterIDArray) => {
         return allAchievements[14];
 return -1;
 }
+
+const gentleNurturing = async(userID) => {
+    const result = await Player.find(
+        {playerId: userID}
+    )
+    for(let i = 0; i < result[0].characterDeck.length; i++){
+        if(result[0].characterDeck[i].ranking){
+            if(result[0].characterDeck[i].ranking === '✦ ✦ ✦ ✦ ✦ ✦' && result[0].characterDeck[i].upgradeCount === 0)
+                return allAchievements[16];
+        }
+    }
+    return -1;
+}
+
+const beClouds = (characterIDArray) => {
+    if(characterIDArray.includes(8) && characterIDArray.includes(37) && characterIDArray.includes(36) && characterIDArray.includes(53) && characterIDArray.includes(6) && characterIDArray.includes(17)  && characterIDArray.includes(14) && characterIDArray.includes(18) && characterIDArray.includes(124) && characterIDArray.includes(91))
+        return allAchievements[17];
+    return -1;
+}
 //** MAIN ACHIEVEMENT FUNCTIONS */
 
 const checkAchievement = async(array, userID) => {
@@ -279,6 +298,10 @@ const checkAchievement = async(array, userID) => {
         obtainedAchievements.push(starsAndSky(array));
     if(innerCircle(array) !== -1)
         obtainedAchievements.push(innerCircle(array));
+    if(await gentleNurturing(userID) !== -1)
+        obtainedAchievements.push(await gentleNurturing(userID));
+    if(beClouds(array) !== -1)
+        obtainedAchievements.push(beClouds(array));
     return obtainedAchievements;
 }
 
@@ -313,7 +336,7 @@ const filteredAchievements = async(userID, array) => {
     for(let i = 0; i < array.length; i++)
         for(let k = 0; k < alreadyAchieved.length; k++){
            if(array[i].id === alreadyAchieved[k].id)
-                obtainedAchieved.splice(i,1);
+                obtainedAchieved.splice(i);
             if(obtainedAchieved.length === 0)
                 break;
         }

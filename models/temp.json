@@ -116,7 +116,9 @@
         "affiliation": "Ariesian Royalty",
         "conductingType": "Elementalist: Fire",
         "ranking": "✦ ✦ ✦",
-        "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+        "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png",
+        "upgradeDialogue": ["I am grateful for you help, but I suggest you pass on any 'ranking up' to the prince.", " ", " ","... thank you. Again, I ask that you direct your donations to the prince.", "You are being overgenerous. Please, allow me to do something for you in turn.", "The world is injust, but people are not. People like yourself and the prince, at least. Thank you."],
+        "upgradeCount": 12
     },
     {
         "id": 12,
@@ -190,7 +192,9 @@
         "affiliation": "Twin Cities Underground",
         "conductingType": "Transmutationist",
         "ranking": "✦ ✦ ✦",
-        "image": "https://media.discordapp.net/attachments/970820451578298398/1108838982994907196/image.png?width=298&height=514"
+        "image": "https://media.discordapp.net/attachments/970820451578298398/1108838982994907196/image.png?width=298&height=514",
+        "upgradeDialogue": ["Oh! You didn't have to, but I appreciate it.", " ", " ","You know, professionally speakin', I'm the one who's supposed t'be lookin' after you... but... well...", "I'm ranked higher than Werner now, aren't I...? I wonder if I can tease him about it. Thanks! Let me know if you need anythin'.", "I'm not the most moral person nor am I the most reliable person, but medicine and people are what I know best, so if y'need anythin' about that, you can always ask me. I probably didn't start that off right, but... y'know what I mean."],
+        "upgradeCount": 12
     },
     {
         "id": 20,
@@ -217,7 +221,9 @@
         "affiliation": "Capricornian Army",
         "conductingType": "Projector",
         "ranking": "✦ ✦",
-        "image": "https://media.discordapp.net/attachments/970820451578298398/1108851817451888660/image.png?width=340&height=514"
+        "image": "https://media.discordapp.net/attachments/970820451578298398/1108851817451888660/image.png?width=340&height=514",
+        "upgradeDialogue": ["Oh...! Uhm, thank you, sir--I-I mean. Y-yes, thank you.", " ", "I-I promise I won't disappoint you, sir!","Thank you again, sir! Uhm... I'll continue to try my best!", "Thank you for the promotion--I-I mean the rank up, sir.", "I know I'm not the best at what I do... I know I'm average. But... thank you for giving me a chance like the hauptmann did. Sincerely, thank you."],
+        "upgradeCount": 14
     },
     {
         "id": 23,
@@ -226,7 +232,9 @@
         "affiliation": "Capricornian Army",
         "conductingType": "Projector",
         "ranking": "✦ ✦ ✦",
-        "image": "https://media.discordapp.net/attachments/970820451578298398/1108851990856999043/image.png?width=340&height=514"
+        "image": "https://media.discordapp.net/attachments/970820451578298398/1108851990856999043/image.png?width=340&height=514",
+        "upgradeDialogue": ["Nice. I deserve that sh*t.", " ", " ","Keep it f*cking coming.", "Yeah, that's what I'm f*cking talking about! Bet that brat'd be surprised that I'm ranked higher than him now.", "I'm not going to gush like Vogt if that's what you were expecting. I'm not going to dedicate myself to you either--I already have that. But. If you need some b*stard dead, just ask me."],
+        "upgradeCount": 12
     },
     {
         "id": 24,
@@ -712,7 +720,7 @@
         "affiliation": "ELPIS",
         "conductingType": "Conjuror",
         "ranking": "✦ ✦ ✦ ✦ ✦",
-        "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+        "image": "https://media.discordapp.net/attachments/970820451578298398/1112754570033123429/tykimikkitty-2.jpg?width=599&height=599"
     },
     {
         "id": 78,
@@ -861,7 +869,7 @@
     {
         "id": 94,
         "name": "William Saovàng",
-        "type": "Conductor",
+        "type": "Peacekeeper",
         "affiliation": "Ophiuchus",
         "conductingType": "????",
         "ranking": "✦ ✦ ✦ ✦",
@@ -1142,6 +1150,159 @@
         "name": "Gilbert (?)",
         "type": "???",
         "affiliation": "Ndoto",
+        "conductingType": "???",
+        "ranking": "✦ ✦ ✦ ✦ ✦",
+        "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+    },
+    {
+        "id": 126,
+        "name": "Maximallian",
+        "type": "Civillian",
+        "affiliation": "Twin Cities Underground",
+        "conductingType": "???",
+        "ranking": "✦ ✦",
+        "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+    },
+    {
+        "id": 127,
+        "name": "Dominic Gloria-Elegado",
+        "type": "Conductor",
+        "affiliation": "Monadism",
+        "conductingType": "???",
+        "ranking": "✦ ✦ ✦ ✦",
+        "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+    },
+    {
+        "id": 128,
+        "name": "Albertine Echécs",
+        "type": "Political Leader",
+        "affiliation": "Cancerian Dukedom",
+        "conductingType": "???",
+        "ranking": "✦ ✦ ✦",
+        "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+    },
+    {
+        "id": 129,
+        "name": "Alderic Echécs",
+        "type": "Political Leader",
+        "affiliation": "Cancerian Dukedom",
+        "conductingType": "???",
+        "ranking": "✦ ✦ ✦",
+        "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+    },
+    {
+        "id": 130,
+        "name": "Louoise Bonnefoy",
+        "type": "True Conductor",
+        "affiliation": "Cancerian Dukedom",
+        "conductingType": "???",
+        "ranking": "✦ ✦ ✦ ✦",
+        "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+    },
+    {
+        "id": 131,
+        "name": "Kurohoshi Hideyoshi",
+        "type": "True Conductor",
+        "affiliation": "Hoshi Clan",
+        "conductingType": "???",
+        "ranking": "✦ ✦ ✦ ✦",
+        "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+    },
+    {
+        "id": 132,
+        "name": "Ilunaria Solnaciente",
+        "type": "Political Leader",
+        "affiliation": "Leonian Royalty",
+        "conductingType": "Transmutationist",
+        "ranking": "✦ ✦ ✦ ✦",
+        "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+    },
+    {
+        "id": 133,
+        "name": "Libra (Pond)",
+        "type": "Saint Candidate",
+        "affiliation": "???",
+        "conductingType": "Diverger",
+        "ranking": "✦ ✦ ✦ ✦ ✦ ✦",
+        "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+    },
+    {
+        "id": 134,
+        "name": "Pothos",
+        "type": "Remnant",
+        "affiliation": "Pandora, Ophiuchus",
+        "conductingType": "???",
+        "ranking": "✦ ✦ ✦ ✦ ✦",
+        "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+    },
+    {
+        "id": 135,
+        "name": "Stelleona",
+        "type": "Political Leader",
+        "affiliation": "Leonian Royalty",
+        "conductingType": "???",
+        "ranking": "✦ ✦ ✦ ✦ ✦",
+        "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+    },
+    {
+        "id": 136,
+        "name": "Leonce",
+        "type": "Saint Candidate",
+        "affiliation": "Leonian Royalty",
+        "conductingType": "???",
+        "ranking": "✦ ✦ ✦ ✦ ✦ ✦",
+        "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+    },
+    {
+        "id": 137,
+        "name": "Tulio",
+        "type": "Civillian",
+        "affiliation": "Gloria's Grail",
+        "conductingType": "???",
+        "ranking": "✦",
+        "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+    },
+    {
+        "id": 138,
+        "name": "Hastya",
+        "type": "Remnant",
+        "affiliation": "Pandora, Ophiuchus",
+        "conductingType": "???",
+        "ranking": "✦ ✦ ✦ ✦ ✦",
+        "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+    },
+    {
+        "id": 139,
+        "name": "Bolina",
+        "type": "Remnant",
+        "affiliation": "Pandora, Ophiuchus",
+        "conductingType": "???",
+        "ranking": "✦ ✦ ✦ ✦ ✦",
+        "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+    },
+    {
+        "id": 140,
+        "name": "Soteria",
+        "type": "Remnant",
+        "affiliation": "Pandora, Ophiuchus",
+        "conductingType": "???",
+        "ranking": "✦ ✦ ✦ ✦ ✦",
+        "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+    },
+    {
+        "id": 141,
+        "name": "Eurydice",
+        "type": "Remnant",
+        "affiliation": "Pandora, Ophiuchus",
+        "conductingType": "???",
+        "ranking": "✦ ✦ ✦ ✦ ✦",
+        "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+    },
+    {
+        "id": 142,
+        "name": "Themis",
+        "type": "Remnant",
+        "affiliation": "Pandora, Ophiuchus",
         "conductingType": "???",
         "ranking": "✦ ✦ ✦ ✦ ✦",
         "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"

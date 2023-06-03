@@ -31,6 +31,10 @@ const playerSchema = new Schema({
         type: Number,
         default: 0
     },
+    wishRollCount: {
+        type: Number,
+        default: 0
+    },
     points: {
         type: Number,
         default: 0
