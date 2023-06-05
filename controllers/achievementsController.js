@@ -1,6 +1,6 @@
 const path = require('path');
 const Player = require('../models/Player');
-const {EmbedBuilder} = require('discord.js');
+const {EmbedBuilder, ApplicationRoleConnectionMetadataType} = require('discord.js');
 const { all } = require('axios');
 const achievementData = {
     achievements: require('../models/achievements.json'),
@@ -246,6 +246,28 @@ const innerCircle = (characterIDArray) => {
 return -1;
 }
 
+const remnants = async(userID) => {
+    const result = await Player.find(
+        {playerId: userID}
+    )
+    const allCharacters = characterData.characters;
+    let remnantCount = [];
+    let playerCount = [];
+    for(let i = 0; i < allCharacters.length; i++){
+        if(allCharacters[i].type === 'Remnant')
+            remantCount.push(allCharacters[i].id);
+    }
+    for(let i = 0; i < result[0].characterDeck.length; i++){
+        const id = result[0].characterDeck[i].id;
+        const type = result[0].characterDeck[i].type;
+        if(!playerCount.includes(id) && type ===  'Remnant')
+            playerCount.push(result[0].characterDeck[i].id);
+    }
+    if(remnantCount.length === playerCount.length)
+        return allAchievements[15];
+    return -1;
+}
+
 const gentleNurturing = async(userID) => {
     const result = await Player.find(
         {playerId: userID}
@@ -260,8 +282,9 @@ const gentleNurturing = async(userID) => {
 }
 
 const beClouds = (characterIDArray) => {
-    if(characterIDArray.includes(8) && characterIDArray.includes(37) && characterIDArray.includes(36) && characterIDArray.includes(53) && characterIDArray.includes(6) && characterIDArray.includes(17)  && characterIDArray.includes(14) && characterIDArray.includes(18) && characterIDArray.includes(124) && characterIDArray.includes(91))
-        return allAchievements[17];
+    if(characterIDArray.includes(8) && characterIDArray.includes(37) && characterIDArray.includes(36)){
+        return allAchievements[17]
+    };
     return -1;
 }
 //** MAIN ACHIEVEMENT FUNCTIONS */
@@ -269,9 +292,9 @@ const beClouds = (characterIDArray) => {
 const checkAchievement = async(array, userID) => {
     const obtainedAchievements = [];
     if(synchronizationAchievement(array) !== -1)
-        obtainedAchievements.push(await synchronizationAchievement(userID));
+        obtainedAchievements.push(synchronizationAchievement(array));
     if(lucky7Achievement(array) !== -1)
-        obtainedAchievements.push(await lucky7Achievement(array));
+        obtainedAchievements.push(lucky7Achievement(array));
     if(await twinCitiesAchiev(userID) !== -1)
         obtainedAchievements.push(await twinCitiesAchiev(userID));
     if(await endlessCyclesAchieve(userID) !== -1)
@@ -298,6 +321,8 @@ const checkAchievement = async(array, userID) => {
         obtainedAchievements.push(starsAndSky(array));
     if(innerCircle(array) !== -1)
         obtainedAchievements.push(innerCircle(array));
+    if(await remmants(userID)!== -1)
+        obtainedAchievements.push(await remnants(userID));
     if(await gentleNurturing(userID) !== -1)
         obtainedAchievements.push(await gentleNurturing(userID));
     if(beClouds(array) !== -1)
@@ -331,16 +356,9 @@ const filteredAchievements = async(userID, array) => {
         {playerId: userID}
     )
     const alreadyAchieved = result[0].achievements;
-    const obtainedAchieved = array;
-    if(alreadyAchieved.length !== 0){
-    for(let i = 0; i < array.length; i++)
-        for(let k = 0; k < alreadyAchieved.length; k++){
-           if(array[i].id === alreadyAchieved[k].id)
-                obtainedAchieved.splice(i);
-            if(obtainedAchieved.length === 0)
-                break;
-        }
-    }
+    const obtainedAchieved = array.filter(
+        achievement  => !alreadyAchieved.some(alreadyAchieved => alreadyAchieved.id === achievement.id)
+    )
     return obtainedAchieved;
 }
 

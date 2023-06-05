@@ -25,6 +25,8 @@ client.on('ready', () => {
 });
 
 client.on('messageCreate', async (message) => {
+    /*if(message.content.startsWith('/') && message.author.id !== '811660796873670668'){
+        message.channel.send('Under maintenance.');    }*/
     if(message.content.startsWith('/scRoll')){
         const user = message.author.id;
         const name = message.author.username;
@@ -146,16 +148,17 @@ client.on('messageCreate', async (message) => {
             if(uniqueAchievemnts.length !== 0){
                 const embeddedAchieve = achievementFunctions.achievementEmbedArray(uniqueAchievemnts)
                 for(let i = 0; i < embeddedAchieve.length; i++){
+                    await playerFunctions.resetGoldenRollCount(user);
                     message.channel.send({embeds: [embeddedAchieve[i]]});
+                    message.channel.send('You have obtained a Golden Roll!!!!');
                 }
                 for(let i = 0; i < embeddedAchieve.length; i++){
                     await playerFunctions.resetGoldenRollCount(user);
                 }
-
-                message.channel.send('You have obtained a Golden Roll!!!!');
-                await achievementFunctions.addAchievement(user, uniqueAchievemnts);
+            await achievementFunctions.addAchievement(user, uniqueAchievemnts);
             }
         }
+
     }
     else if(message.content.startsWith('/check')){
         const request = message.content.substring(6);
@@ -410,7 +413,7 @@ client.on('messageCreate', async (message) => {
             const cardChosen = Number(request.substring(9));
             await adminFunctions.randomAddToDeck(user, cardChosen);
             message.channel.send('Selected Card has been added.')
-           const cardIDs = await achievementFunctions.getCharacterIDArray(user);
+            const cardIDs = await achievementFunctions.getCharacterIDArray(user);
             const achievementArray = await achievementFunctions.checkAchievement(cardIDs, user);
             if(achievementArray.length !== 0){
                 const uniqueAchievemnts = await achievementFunctions.filteredAchievements(user, achievementArray);
@@ -446,9 +449,12 @@ client.on('messageCreate', async (message) => {
             message.channel.send('All Cards Removed');
         }
         else if(request.startsWith('addToPlayer')){
+            message.channel.send("Passes starts with test.");
             const newReq = request.substring(12);
+            console.log(newReq);
             const array = newReq.split(" ");
             const idAndCardNum = array.map(Number);
+            message.channel.send("Passes Array Split and Map")
             await adminFunctions.randomAddToDeck(idAndCardNum[0], idAndCardNum[1]);
             message.channel.send(`Card Number ${idAndCardNum[1]} added to ${idAndCardNum[0]} `)
         }
@@ -462,6 +468,11 @@ client.on('messageCreate', async (message) => {
         else if(request === 'getID'){
             adminFunctions.getID();
         }
+        else if(request === 'getAllCards'){
+            await adminFunctions.addAll(user);
+            message.channel.send('All Cards added.');
+        }
+        
     }
 });
 
