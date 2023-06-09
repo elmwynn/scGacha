@@ -94,9 +94,6 @@ const burnAll = async(userID) =>{
 
 const addAll = async(userID) => {
     const allCharacters = characterData.characters;
-    const result = await Player.find(
-        {playerId: userID}
-    )
     for(let i = 0; i < allCharacters.length; i++){
         await Player.findOneAndUpdate(
             {playerId: userID},

@@ -118,6 +118,38 @@
         "description": "A Capricornian-issue combat knife. Thankfully, it looks unused.",
         "image": "https://www.militarytrader.com/.image/t_share/MTkxMzMzMDQ3MDYzMjkxNDkw/1.jpg",
         "points": 1000
+    },
+    {
+        "id": 45,
+        "name": "Old tome",
+        "from": "Theta (Foxman)",
+        "description": "An extremely heavy-looking, old book. Apparently it was gifted to him before he gifted it to you. There appears to be a bird feather being used as a bookmark.",
+        "image": "https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/old-tome-still-life-iii-tom-mc-nemar.jpg",
+        "points": 1000
+    },
+    {
+        "id": 61,
+        "name": "Piano",
+        "from": "Alma Mirragio",
+        "description": "A large, expensive piano... with no player, no music sheet.",
+        "image": "https://bid.comasmontgomery.com/images/lot/1021/10210073_0.jpg?1553176722",
+        "points": 1000
+    },
+    {
+        "id": 77,
+        "name": "A pair of horn-rimmed glasses",
+        "from": "Gamma (Wtorek)",
+        "description": "A pair of glasses? Do you need them? He seems to need them more than you, but...",
+        "image": "https://m.media-amazon.com/images/I/61VehiCPl+L._AC_UY1100_.jpg",
+        "points": 1000
+    },
+    {
+        "id": 106,
+        "name": "Test",
+        "from": "Werner Waltz (?)",
+        "description": "Test",
+        "image": "https://media.discordapp.net/attachments/970820451578298398/1108864233720000522/image.png?width=443&height=514",
+        "points": 2000
     }
     
 ]

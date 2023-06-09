@@ -107,5 +107,11 @@
         "achievement": "Let's Be Clouds",
         "description": "Obtain all characters in Claire's circle",
         "points": 500
+    },
+    {
+        "id": 19,
+        "achievement": "Heads of Peace",
+        "description": "Obtain all First Chairmen of Ophiuchus",
+        "points": 600
     }
 ]

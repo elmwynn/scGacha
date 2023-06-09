@@ -432,7 +432,9 @@
         "affiliation": "ELPIS",
         "conductingType": "Diverger",
         "ranking": "✦ ✦ ✦ ✦ ✦",
-        "image": "https://sixchanceshome.files.wordpress.com/2021/03/comm2.2.png"
+        "image": "https://sixchanceshome.files.wordpress.com/2021/03/comm2.2.png",
+        "upgradeDialogue": ["Is it not the teacher that should be giving to the student? Ah, well, it's not unexpected--the changing tides of time, relationships, people... Ridiculous.", " ", " "," ", " ", "We have reached the point of no return. For me, there is nothing to return for. The person I was returning for is no longer here. However, that is just me. You... yes, you have potential and promise, child. I would like to see you flourish."],
+        "upgradeCount": 5
     },
     {
         "id": 46,
@@ -576,7 +578,9 @@
         "affiliation": "Twin Cities Underground",
         "conductingType": "????",
         "ranking": "✦",
-        "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+        "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png",
+        "upgradeDialogue": ["Oh... your kindness is... Thank you for taking me one step closer to my dream. I won't forget you.", "Oh, aren't you the sweetest thing?", "Hm... Perhaps I should play you something as a thank you? I'm very familiar with entertaining people...","This place is absolutely suffocating... Don't you feel it? I think it'd do you well. If you and me were free.", "Ah, that just gave me some inspiration!", "We stand in separate cages as in entertainment for people more powerful than us. But you know what, dear? You're a divine bird."],
+        "upgradeCount": 15
     },
     {
         "id": 62,
@@ -720,7 +724,9 @@
         "affiliation": "ELPIS",
         "conductingType": "Conjuror",
         "ranking": "✦ ✦ ✦ ✦ ✦",
-        "image": "https://media.discordapp.net/attachments/970820451578298398/1112754570033123429/tykimikkitty-2.jpg?width=599&height=599"
+        "image": "https://media.discordapp.net/attachments/970820451578298398/1112754570033123429/tykimikkitty-2.jpg?width=599&height=599",
+        "upgradeDialogue": ["We are closing the distance to disrupting the syzygy. For Ophiuchus...", " ", " "," ", " ", "Cast aside your doubt and hesitation. We are doing what is necessary. Your life is but a blip, but your actions are not. Slowly, but surely, we are making progress."],
+        "upgradeCount": 5
     },
     {
         "id": 78,
@@ -833,7 +839,7 @@
     {
         "id": 90,
         "name": "Nadinaline Delacroix",
-        "type": "Conductor",
+        "type": "Peacekeeper",
         "affiliation": "Ophiuchus",
         "conductingType": "Manipulator",
         "ranking": "✦ ✦ ✦ ✦",
@@ -842,7 +848,7 @@
     {
         "id": 91,
         "name": "Moerani Pō'ai",
-        "type": "Conductor",
+        "type": "Peacekeeper",
         "affiliation": "Ophiuchus",
         "conductingType": "Diverger",
         "ranking": "✦ ✦ ✦ ✦ ✦",
@@ -860,7 +866,7 @@
     {
         "id": 93,
         "name": "Katharina Groth",
-        "type": "Conductor",
+        "type": "Peacekeeper",
         "affiliation": "Ophiuchus",
         "conductingType": "????",
         "ranking": "✦ ✦ ✦ ✦",
@@ -878,7 +884,7 @@
     {
         "id": 95,
         "name": "Luca D'Angelo",
-        "type": "Conductor",
+        "type": "Peacekeeper",
         "affiliation": "Ophiuchus",
         "conductingType": "????",
         "ranking": "✦ ✦ ✦ ✦",
@@ -887,7 +893,7 @@
     {
         "id": 96,
         "name": "Saddine Agwuegbo",
-        "type": "Conductor",
+        "type": "Peacekeeper",
         "affiliation": "Ophiuchus",
         "conductingType": "????",
         "ranking": "✦ ✦ ✦ ✦",
@@ -895,8 +901,8 @@
     },
     {
         "id": 97,
-        "name": "Saddine Agwuegbo",
-        "type": "Conductor",
+        "name": "Sera Aliz",
+        "type": "Peacekeeper",
         "affiliation": "Ophiuchus",
         "conductingType": "????",
         "ranking": "✦ ✦ ✦ ✦",
@@ -905,7 +911,7 @@
     {
         "id": 98,
         "name": "Hårek Ohmdahl",
-        "type": "Conductor",
+        "type": "Peacekeeper",
         "affiliation": "Ophiuchus",
         "conductingType": "Transmutationist",
         "ranking": "✦ ✦ ✦ ✦",
@@ -981,7 +987,9 @@
         "affiliation": "Ndoto",
         "conductingType": "????",
         "ranking": "✦ ✦ ✦ ✦ ✦ ✦",
-        "image": "https://media.discordapp.net/attachments/970820451578298398/1108864233720000522/image.png?width=443&height=514"
+        "image": "https://media.discordapp.net/attachments/970820451578298398/1108864233720000522/image.png?width=443&height=514",
+        "upgradeDialogue": ["Woahhh! I can level up too? That's so cool, man! Thanks!", "I leveled up again! Can I level you up? Yeah, let me try! We can be like level-up buddies! ...Wait, how do I do that? '/upgrade....?' Technology is confusing... Where's Ollie? He can help!", "Woah. I don't think I've been this high-leveled in anything... like, ever. You know... I'm only able to level up because of you!","I wonder if Kaiser can level up...? He'd be so... cool... so powerful. Kaiser: Rank, 10; Type; Cat King; Affiliation: Something-Cool... Yeah! We should level up Kaiser together!", "Thanks again, man! You know... I feel kinda bad. I want to level you up too... Well, you know what? You're already Rank 10, so there's no rank higher than the cool that you are!", "You know... people say that I'm not real bright and I'm not a good judge of character. Only one of those things must be right, because I know you're a great person! I'm you're ride and die!"],
+        "upgradeCount": -6
     },
     {
         "id": 107,
@@ -1305,6 +1313,60 @@
         "affiliation": "Pandora, Ophiuchus",
         "conductingType": "???",
         "ranking": "✦ ✦ ✦ ✦ ✦",
+        "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+    },
+    {
+        "id": 143,
+        "name": "Head Chairman",
+        "type": "Peacekeeper",
+        "affiliation": "Ophiuchus",
+        "conductingType": "???",
+        "ranking": "✦ ✦ ✦ ✦ ✦ ✦",
+        "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+    },
+    {
+        "id": 144,
+        "name": "Usian",
+        "type": "Civillian",
+        "affiliation": "Imamu Tribe",
+        "conductingType": "???",
+        "ranking": "✦ ✦",
+        "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+    },
+    {
+        "id": 145,
+        "name": "Virgo (Imamu)",
+        "type": "Saint Candidate",
+        "affiliation": "Ndoto",
+        "conductingType": "Conjuror",
+        "ranking": "✦ ✦ ✦ ✦ ✦ ✦",
+        "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+    },
+    {
+        "id": 146,
+        "name": "Bení",
+        "type": "Civillian",
+        "affiliation": "???",
+        "conductingType": "???",
+        "ranking": "✦ ✦",
+        "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+    },
+    {
+        "id": 147,
+        "name": "Cancer ()",
+        "type": "Saint Candidate",
+        "affiliation": "Ndoto",
+        "conductingType": "Conjuror",
+        "ranking": "✦ ✦ ✦ ✦ ✦ ✦",
+        "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+    },
+    {
+        "id": 148,
+        "name": "Virgo (Imamu)",
+        "type": "Saint Candidate",
+        "affiliation": "Ndoto",
+        "conductingType": "Conjuror",
+        "ranking": "✦ ✦ ✦ ✦ ✦ ✦",
         "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
     }
 ]

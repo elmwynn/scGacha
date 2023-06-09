@@ -74,6 +74,7 @@ const addToPlayerDeck = async(userID, data) => {
 }
 
 
+//pre-condition
 const changeOrder = async(userID, card1, card2) => {
     const result = await Player.find({
         playerId: userID
@@ -90,8 +91,74 @@ const changeOrder = async(userID, card1, card2) => {
         {playerId: userID},
         {$set: {[secondCardPosition]: firstCardValue}}
     )
+}
+
+//pre-condition: player exists and has cards
+//post-condition: cards ordered by ascending ranking
+const orderByAscendingRank = async (userID) => {
+    const result = await Player.find({
+        playerId: userID
+    })
+    let minIndex = 0;
+    const array = result[0].characterDeck;
+    for(let i = 0; i < array.length-1; i++){
+        minIndex = i;
+        for(let j = i + 1; j < array.length; j++){
+            if(array[j].ranking.length < array[minIndex].ranking.length){
+                minIndex = j;
+            }
+            if(array[j].ranking.length === array[minIndex].ranking.length && array[j].name < array[minIndex].name){
+                minIndex = j;
+            }
+        }
+        if(minIndex != i){
+           temp = array[i];
+           array[i] = array[minIndex];
+           array[minIndex] = temp;
+        }
+    }
+    await Player.findOneAndUpdate(
+        {playerId: userID},
+        {$set: {characterDeck: array}}
+    )
 
 }
+
+//pre-condition: player exists and has cards
+//post-condition: cards ordered by descending ranking
+const orderByDescendingRank = async (userID) => {
+    const result = await Player.find({
+        playerId: userID
+    })
+    let maxIndex = 0;
+    const array = result[0].characterDeck;
+    for(let i = 0; i < array.length-1; i++){
+        maxIndex = i;
+        for(let j = i + 1; j < array.length; j++){
+            if(array[j].ranking.length > array[maxIndex].ranking.length){
+                maxIndex = j;
+            }
+            if(array[j].ranking.length === array[maxIndex].ranking.length && array[j].name < array[maxIndex].name){
+                maxIndex = j;
+            }
+        }
+        if(maxIndex != i){
+           temp = array[i];
+           array[i] = array[maxIndex];
+           array[maxIndex] = temp;
+        }
+    }
+    await Player.findOneAndUpdate(
+        {playerId: userID},
+        {$set: {characterDeck: array}}
+    )
+
+}
+
+
+
+
+
 
 //** PLAYER ROLL INCREMENTATION  FUNCTIONS */
 
@@ -114,6 +181,8 @@ const incrementPityCount = async(userID) => {
         {$inc:{pityRollCount: 1}}
     );
 }
+
+
 
 
 //pre-condition: player has performed a successful golden roll
@@ -443,7 +512,7 @@ const isUpgradable = async(userID, upgradedCard) => {
     //obtain the card to be upgraded. note: since the user sees their deck starting at 1, we must subtract 1 to get to the correct index
     if(toUpgrade.upgradeDialogue)
         if(toUpgrade.upgradeCount !== 0)
-    //if the upgrade dialogue exists, the card is upgradable
+        //if the upgrade dialogue exists, the card is upgradable
             return true;
         else
             return false;
@@ -460,7 +529,7 @@ const validUpgrade = async(userID, upgradedCard, burnedCard) =>{
     //obtain card to be upgraded
     const toBurn = result[0].characterDeck[burnedCard-1];
     //obtain card to be burned
-    if(toUpgrade.ranking === toBurn.ranking && toUpgrade.ranking !== '✦ ✦ ✦ ✦ ✦ ✦'){
+    if(toUpgrade.ranking === toBurn.ranking && (toUpgrade.ranking === '✦ ✦ ✦ ✦ ✦ ✦' && toUpgrade.upgradeCount < 0)){
         //if the rankings match up, it's alid
         return true;
     }
@@ -474,13 +543,21 @@ const upgradeCard  = async(userID, upgradedCard) => {
     let gainedPoints = 5;
     const toUpgrade = result[0].characterDeck[upgradedCard-1];
     const toUpdate = `characterDeck.${upgradedCard-1}`
-    if(toUpgrade.ranking ===  "✦ ✦ ✦ ✦ ✦ ✦")
-        return;
-    const minusValue = toUpgrade.upgradeCount-1;
+    let minusValue;
+    if(toUpgrade.ranking ===  "✦ ✦ ✦ ✦ ✦ ✦" && toUpgrade.upgradeCount < 0){
+        minusValue = toUpgrade.upgradeCount+1
+    }
+    else{
+    minusValue = toUpgrade.upgradeCount-1;
+    }
     //decrement the upgradecount
     toUpgrade.upgradeCount = minusValue;
     //store the new upgradeCount
-    if(minusValue === 12){
+    if(minusValue === 14){
+        toUpgrade.ranking = "✦ ✦";
+        gainedPoints = 5;
+    }
+    else if(minusValue === 12){
         toUpgrade.ranking = "✦ ✦ ✦";
         gainedPoints = 10;
     }
@@ -495,6 +572,21 @@ const upgradeCard  = async(userID, upgradedCard) => {
     else if(minusValue === 0){
         toUpgrade.ranking = "✦ ✦ ✦ ✦ ✦ ✦";
         gainedPoints = 50;
+    }
+    else if(minusValue == -1){
+        gainedPoints = 500;
+    }
+    else if(minusValue == -2){
+        gainedPoints = 400;
+    }
+    else if(minusValue == -3){
+        gainedPoints = 300;
+    }
+    else if(minusValue == -4){
+        gainedPoints = 200;
+    }
+    else if(minusValue == -5){
+        gainedPoints = 100;
     }
     await Player.findOneAndUpdate(
         {playerId: userID},
@@ -533,13 +625,19 @@ const upgradeDialogue = async(userID, upgradedCard) =>{
     })
     const upgraded = result[0].characterDeck[upgradedCard-1];
     let levelUPDialogue = `${upgraded.name} has evolved to another star level!`;
-    if(upgraded.upgradeCount === 12){
+    if(upgraded.ranking === '✦ ✦ ✦ ✦ ✦ ✦'){
+        levelUPDialogue=`${upgraded.name} has been boosted!`;
+    }
+    if(upgraded.upgradeCount === 14 || upgraded.upgradeCount === -4){
+        dialogue = upgraded.upgradeDialogue[1];
+    }
+    else if(upgraded.upgradeCount === 12 || upgraded.upgradeCount === -3){
         dialogue = upgraded.upgradeDialogue[2];
     }
-    else if(upgraded.upgradeCount === 9){
+    else if(upgraded.upgradeCount === 9 || upgraded.upgradeCount === -2){
         dialogue = upgraded.upgradeDialogue[3];
     }
-    else if(upgraded.upgradeCount === 5){
+    else if(upgraded.upgradeCount === 5 || upgraded.upgradeCount === -1){
         dialogue = upgraded.upgradeDialogue[4];
     }
     else if(upgraded.upgradeCount === 0){
@@ -547,6 +645,9 @@ const upgradeDialogue = async(userID, upgradedCard) =>{
     }
     else{
         levelUPDialogue=`${upgraded.name} has been leveled up!`;
+        if(upgraded.ranking === '✦ ✦ ✦ ✦ ✦ ✦'){
+            levelUPDialogue=`${upgraded.name} has been boosted!`;
+        }
         dialogue = upgraded.upgradeDialogue[0];
     }
     
@@ -720,5 +821,7 @@ module.exports = {
     checkRankRollCount,
     changeOrder,
     incrementWishCount,
-    checkWishRollCount
+    checkWishRollCount,
+    orderByAscendingRank,
+    orderByDescendingRank
 }

@@ -30,6 +30,8 @@ const getCharacterIDArray = async(userID)=>{
 
 
 //** HELPER FUNCTIONS */
+//these functions either require a UserID or an array of Charater Ids to be provided
+
 //pre-condition: receives an array of character IDs from player
 const synchronizationAchievement = (synchroArray) =>{
     if(synchroArray.includes(1) && synchroArray.includes(2) && synchroArray.includes(3) &&synchroArray.includes(4) && synchroArray.includes(5) && synchroArray.includes(6))
@@ -235,7 +237,7 @@ const gloriaGrail = async(userID) => {
 }
 
 const starsAndSky = (characterIDArray) => {
-    if(characterIDArray.includes(36) && characterIDArray.includes(4) && characterIDArray.includes(41) && characterIDArray.includes(12) && characterIDArray.includes(35) && characterIDArray.includes(58))
+    if(characterIDArray.includes(36) && characterIDArray.includes(4) && characterIDArray.includes(41) && characterIDArray.includes(12) && characterIDArray.includes(35) && characterIDArray.includes(58) && characterIDArray.includes(127))
         return allAchievements[13];
 return -1;
 }
@@ -255,7 +257,7 @@ const remnants = async(userID) => {
     let playerCount = [];
     for(let i = 0; i < allCharacters.length; i++){
         if(allCharacters[i].type === 'Remnant')
-            remantCount.push(allCharacters[i].id);
+            remnantCount.push(allCharacters[i].id);
     }
     for(let i = 0; i < result[0].characterDeck.length; i++){
         const id = result[0].characterDeck[i].id;
@@ -287,8 +289,19 @@ const beClouds = (characterIDArray) => {
     };
     return -1;
 }
+
+
+const headPeace = (characterIDArray) => {
+    if(characterIDArray.includes(96) && characterIDArray.includes(98) && characterIDArray.includes(94) && characterIDArray.includes(93) && characterIDArray.includes(92) && characterIDArray.includes(91) && characterIDArray.includes(90) && characterIDArray.includes(15) && characterIDArray.includes(52) && characterIDArray.includes(95) && characterIDArray.includes(97)&& characterIDArray.includes(35) && characterIDArray.includes(94) && characterIDArray.includes(143)){
+        return allAchievements[18]
+    };
+    return -1;
+}
+
 //** MAIN ACHIEVEMENT FUNCTIONS */
 
+//pre-condition: userID and an array of character IDs is provided
+//post-condition: returns an array of achievements based on whether or not the player has met each of the requirements
 const checkAchievement = async(array, userID) => {
     const obtainedAchievements = [];
     if(synchronizationAchievement(array) !== -1)
@@ -321,12 +334,14 @@ const checkAchievement = async(array, userID) => {
         obtainedAchievements.push(starsAndSky(array));
     if(innerCircle(array) !== -1)
         obtainedAchievements.push(innerCircle(array));
-    if(await remmants(userID)!== -1)
+    if(await remnants(userID)!== -1)
         obtainedAchievements.push(await remnants(userID));
     if(await gentleNurturing(userID) !== -1)
         obtainedAchievements.push(await gentleNurturing(userID));
     if(beClouds(array) !== -1)
         obtainedAchievements.push(beClouds(array));
+    if(headPeace(array) !== -1)
+        obtainedAchievements.push(headPeace(array));
     return obtainedAchievements;
 }
 
@@ -356,8 +371,11 @@ const filteredAchievements = async(userID, array) => {
         {playerId: userID}
     )
     const alreadyAchieved = result[0].achievements;
+    //obtain achievements player already has
     const obtainedAchieved = array.filter(
+        //filter through the array of achievements the user has gained with the roll
         achievement  => !alreadyAchieved.some(alreadyAchieved => alreadyAchieved.id === achievement.id)
+        //return an array with only achievements not matching those the player already has
     )
     return obtainedAchieved;
 }

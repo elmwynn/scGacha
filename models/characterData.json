@@ -25,7 +25,9 @@
             "affiliation": "Twin Cities Underground",
             "conductingType": "????",
             "ranking": "✦",
-            "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+            "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png",
+            "upgradeDialogue": ["Oh... your kindness is... Thank you for taking me one step closer to my dream. I won't forget you.", "Oh, aren't you the sweetest thing?", "Hm... Perhaps I should play you something as a thank you? I'm very familiar with entertaining people...","This place is absolutely suffocating... Don't you feel it? I think it'd do you well. If you and me were free.", "Ah, that just gave me some inspiration!", "We stand in separate cages as in entertainment for people more powerful than us. But you know what, dear? You're a divine bird."],
+            "upgradeCount": 15
         },
         {
             "id": 29,
@@ -131,7 +133,7 @@
             "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
         },
         {
-            "id": 125,
+            "id": 126,
             "name": "Maximallian",
             "type": "Civillian",
             "affiliation": "Twin Cities Underground",
@@ -323,7 +325,7 @@
             "name": "Lyrs Faitah",
             "type": "True Conductor",
             "affiliation": "Monadism",
-            "conductingType": "Projector",
+            "conductingType": "Diverger",
             "ranking": "✦ ✦ ✦",
             "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
         },
@@ -799,7 +801,7 @@
         },
         {
             "id": 97,
-            "name": "Saddine Agwuegbo",
+            "name": "Sera Aliz",
             "type": "Peacekeeper",
             "affiliation": "Ophiuchus",
             "conductingType": "????",
@@ -999,7 +1001,9 @@
             "affiliation": "ELPIS",
             "conductingType": "Conjuror",
             "ranking": "✦ ✦ ✦ ✦ ✦",
-            "image": "https://media.discordapp.net/attachments/970820451578298398/1112754570033123429/tykimikkitty-2.jpg?width=599&height=599"
+            "image": "https://media.discordapp.net/attachments/970820451578298398/1112754570033123429/tykimikkitty-2.jpg?width=599&height=599",
+            "upgradeDialogue": ["We are closing the distance to disrupting the syzygy. For Ophiuchus...", " ", " "," ", " ", "Cast aside your doubt and hesitation. We are doing what is necessary. Your life is but a blip, but your actions are not. Slowly, but surely, we are making progress."],
+            "upgradeCount": 5
         },
         {
             "id": 7,
@@ -1091,7 +1095,9 @@
             "affiliation": "ELPIS",
             "conductingType": "Diverger",
             "ranking": "✦ ✦ ✦ ✦ ✦",
-            "image": "https://sixchanceshome.files.wordpress.com/2021/03/comm2.2.png"
+            "image": "https://sixchanceshome.files.wordpress.com/2021/03/comm2.2.png",
+            "upgradeDialogue": ["Is it not the teacher that should be giving to the student? Ah, well, it's not unexpected--the changing tides of time, relationships, people... Ridiculous.", " ", " "," ", " ", "We have reached the point of no return. For me, there is nothing to return for. The person I was returning for is no longer here. However, that is just me. You... yes, you have potential and promise, child. I would like to see you flourish."],
+            "upgradeCount": 5
         },
         {
             "id": 81,

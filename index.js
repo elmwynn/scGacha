@@ -233,25 +233,40 @@ client.on('messageCreate', async (message) => {
             message.channel.send({embeds: [shopDisplay]});
         }
     }
-    else if(message.content.startsWith('/organize switch')){
-        const request = message.content.substring(17);
+    else if(message.content.startsWith('/organize')){
+        const request = message.content.substring(10);
         const user = message.author.id;
-        const cardArray = request.split(" ");
-        const numberCardArray = cardArray.map(Number);
-        const numberCard = numberCardArray.filter(
-            (number) => { 
-                return !isNaN(number)
-                //filter the array so only numbers retained
+        if(request.startsWith('switch')){
+            const secondRequest = request.substring(7);
+            const cardArray = secondRequest.split(" ");
+            const numberCardArray = cardArray.map(Number);
+            const numberCard = numberCardArray.filter(
+                (number) => { 
+                    return !isNaN(number)
+                    //filter the array so only numbers retained
+                }
+            );
+            if(numberCard.length === 2 && await playerFunctions.validIndex(user, numberCard[0]) && await playerFunctions.validIndex(user, numberCard[1]) && numberCard[0] !== numberCard[1]){
+                await playerFunctions.changeOrder(user, numberCard[0], numberCard[1]);
+                message.channel.send('Order changed!');
             }
-        );
-        if(numberCard.length === 2 && await playerFunctions.validIndex(user, numberCard[0]) && await playerFunctions.validIndex(user, numberCard[1]) && numberCard[0] !== numberCard[1]){
-            await playerFunctions.changeOrder(user, numberCard[0], numberCard[1]);
-            message.channel.send('Order changed!');
+            else{
+                message.channel.send('... Are you testing me OWO?');
+                message.channel.send('Do you want to lose your cards OWO?');
+                message.channel.send('Please list only two cards and only cards in your deck... uwu!');
+            }
         }
-        else{
-            message.channel.send('... Are you testing me OWO?');
-            message.channel.send('Do you want to lose your cards OWO?');
-            message.channel.send('Please list only two cards and only cards in your deck... uwu!');
+        else if(request.startsWith('orderBy')){
+            const secondRequest =  request.substring(7);
+            if(secondRequest == 'Ascending'){
+                console.log(user);
+                await playerFunctions.orderByAscendingRank(user);
+                message.channel.send('Cards ordered by ascending rank');
+            }
+            else if(secondRequest == 'Descending'){
+                await playerFunctions.orderByDescendingRank(user);
+                message.channel.send('Cards ordered by descending rank');
+            }
         }
     }
     else if(message.content === '/scGachaRules'){
@@ -273,7 +288,7 @@ client.on('messageCreate', async (message) => {
             { name: '/checkGachaStats', value: 'Check your stats!'},
             { name: '/burn #,#,#', value: 'Burn cards for more rolls.'},
             { name: '/upgrade # #', value: 'Upgrade a character card.' },
-            { name: '/organize switch # #', value: 'Switch ordering of your cards.' },
+            { name: '/organize switch # #, /organize orderByAscending, /organize orderByDescending', value: 'Switch ordering of your cards.' },
             { name: '/checkShop', value: 'View rolls/items purchasable via poitns.' }
         )
         message.channel.send({embeds: [rulesEmbed]})
@@ -447,6 +462,14 @@ client.on('messageCreate', async (message) => {
         else if(request === 'burnAll'){
             await adminFunctions.burnAll(user);
             message.channel.send('All Cards Removed');
+        }
+        else if(request === 'orderByAscendingRank'){
+            await playerFunctions.orderByAscendingRank(user);
+            message.channel.send('All Cards Reordered By Ascending Rank');
+        }
+        else if(request === 'orderByDescendingRank'){
+            await playerFunctions.orderByDescendingRank(user);
+            message.channel.send('All Cards Reordered By Descending Rank');
         }
         else if(request.startsWith('addToPlayer')){
             message.channel.send("Passes starts with test.");
