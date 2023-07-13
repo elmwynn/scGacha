@@ -298,6 +298,76 @@ const headPeace = (characterIDArray) => {
     return -1;
 }
 
+const converge = async(userID) => {
+    const result = await Player.find(
+        {playerId: userID}
+    )
+    const arrayOfIds = [];
+    for(let i = 0; i < result[0].characterDeck.length; i++){
+        if(result[0].characterDeck[i].id === 1 && result[0].characterDeck[i].upgradeCount === 0){
+            arrayOfIds.push(result[0].characterDeck[i].id);
+        }
+        else if(result[0].characterDeck[i].id === 2 && result[0].characterDeck[i].upgradeCount === 0){
+            arrayOfIds.push(result[0].characterDeck[i].id);
+        }
+        else if(result[0].characterDeck[i].id === 3 && result[0].characterDeck[i].upgradeCount === 0){
+            arrayOfIds.push(result[0].characterDeck[i].id);
+        }
+        else if(result[0].characterDeck[i].id === 4 && result[0].characterDeck[i].upgradeCount === 0){
+            arrayOfIds.push(result[0].characterDeck[i].id);
+        }
+        else if(result[0].characterDeck[i].id === 5 && result[0].characterDeck[i].ranking === "✦ ✦ ✦ ✦ ✦ ✦"){
+            arrayOfIds.push(result[0].characterDeck[i].id);
+        }
+        else if(result[0].characterDeck[i].id == 6 && result[0].characterDeck[i].upgradeCount === 0){
+            arrayOfIds.push(result[0].characterDeck[i].id);
+        }
+    }
+    if(arrayOfIds.includes(1) && arrayOfIds.includes(2) && arrayOfIds.includes(3) && arrayOfIds.includes(4) && arrayOfIds.includes(5) && arrayOfIds.includes(6))
+        return allAchievements[19];
+    return -1;
+}
+
+const politicalBond = (characterIDArray) => {
+    if(characterIDArray.includes(104) && characterIDArray.includes(105) && characterIDArray.includes(38) && characterIDArray.includes(41) && characterIDArray.includes(92)){
+        return allAchievements[20]
+    };
+    return -1;
+}
+
+const fromAshes = async (userID) => {
+    const result = await Player.find(
+        {playerId: userID}
+    )
+    const allCharacters = characterData.characters;
+    let royalCount = [];
+    let playerCount = [];
+    for(let i = 0; i < allCharacters.length; i++){
+        if(allCharacters[i].affiliation === 'Ariesian Royalty')
+            royalCount.push(allCharacters[i].id);
+    }
+    for(let i = 0; i < result[0].characterDeck.length; i++){
+        const id = result[0].characterDeck[i].id;
+        const affiliation = result[0].characterDeck[i].affiliation;
+        if(!playerCount.includes(id) && affiliation ===  'Ariesian Royalty')
+            playerCount.push(result[0].characterDeck[i].id);
+        if(!playerCount.includes(id) && id === 81 )
+            playerCount.push(result[0].characterDeck[i].id);
+            if(!playerCount.includes(id) && id === 149)
+            playerCount.push(result[0].characterDeck[i].id);
+    }
+    if(royalCount.length + 2 === playerCount.length)
+        return allAchievements[21];
+    return -1;
+}
+
+const animals = (characterIDArray) => {
+    if(characterIDArray.includes(169) && characterIDArray.includes(171) && characterIDArray.includes(172) && characterIDArray.includes(173)){
+        return allAchievements[23]
+    };
+    return -1;
+}
+
 //** MAIN ACHIEVEMENT FUNCTIONS */
 
 //pre-condition: userID and an array of character IDs is provided
@@ -342,6 +412,14 @@ const checkAchievement = async(array, userID) => {
         obtainedAchievements.push(beClouds(array));
     if(headPeace(array) !== -1)
         obtainedAchievements.push(headPeace(array));
+    if(await converge(userID) !== -1)
+        obtainedAchievements.push(await converge(userID));
+    if(politicalBond(array) !== -1)
+        obtainedAchievements.push(politicalBond(array));
+    if(await fromAshes(userID) !== -1)
+        obtainedAchievements.push(await fromAshes(userID));
+    if(animals(array) !== -1)
+        obtainedAchievements.push(animals(array));
     return obtainedAchievements;
 }
 

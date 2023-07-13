@@ -101,6 +101,21 @@ const addAll = async(userID) => {
         )
     }
 }
+const sameCard = (dataCard, playerCard) => {
+    if(dataCard.name !== playerCard.name)
+        return false;
+    if(dataCard.upgradeCount !== playerCard.upgradeCount)
+        return false;
+    if(dataCard.ranking !== playerCard.ranking)
+        return false;
+    if(dataCard.upgradeDialogue)
+        if(!playerCard.upgradeDialogue)
+            return false;
+    if(JSON.stringify(dataCard.upgradeDialogue) !== JSON.stringify(playerCard.upgradeDialogue))
+        return false;
+    return true;   
+}
+
 
 //post-condition:syncs the cards from character database to selected players
 const syncDeck = async(userID) => {
@@ -119,21 +134,16 @@ const syncDeck = async(userID) => {
                 //set oldCard
                 const updatedCard = allCharacters[k];
                 //set new card
+                if(sameCard(updatedCard, oldCard))
+                    //if the cards are the same, no need to update
+                    //continue
+                    continue;
                 if(oldCard.upgradeDialogue){
                 //if upgrade count exists, store old upgrade count
                     keepUpgradeCount = oldCard.upgradeCount;
                     updatedCard.upgradeCount = keepUpgradeCount;
                     const keepRanking = oldCard.ranking;
                     updatedCard.ranking = keepRanking;
-                }
-                //set new card
-                //update new card ranking
-                //update new card upgrade count
-                if(userID === 811660796873670668){
-                    console.log("old card")
-                    console.log(oldCard)
-                    console.log("updated card")
-                    console.log(updatedCard);
                 }
                 await Player.findOneAndUpdate(
                     //update player deck

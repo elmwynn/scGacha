@@ -27,6 +27,11 @@ client.on('ready', () => {
 client.on('messageCreate', async (message) => {
     /*if(message.content.startsWith('/') && message.author.id !== '811660796873670668'){
         message.channel.send('Under maintenance.');    }*/
+    if(message.content.startsWith('/getUser')){
+        message.channel.send('User name is...');
+        message.channel.send(message.author.username);
+    }
+
     if(message.content.startsWith('/scRoll')){
         const user = message.author.id;
         const name = message.author.username;
@@ -148,7 +153,6 @@ client.on('messageCreate', async (message) => {
             if(uniqueAchievemnts.length !== 0){
                 const embeddedAchieve = achievementFunctions.achievementEmbedArray(uniqueAchievemnts)
                 for(let i = 0; i < embeddedAchieve.length; i++){
-                    await playerFunctions.resetGoldenRollCount(user);
                     message.channel.send({embeds: [embeddedAchieve[i]]});
                     message.channel.send('You have obtained a Golden Roll!!!!');
                 }
@@ -234,8 +238,13 @@ client.on('messageCreate', async (message) => {
         }
     }
     else if(message.content.startsWith('/organize')){
-        const request = message.content.substring(10);
         const user = message.author.id;
+        const name = message.author.username;
+        const doesExist = await playerFunctions.playerExists(user);
+            //determine if user/player already exists in game
+        if(!doesExist)
+            playerFunctions.createPlayer(user, name);
+        const request = message.content.substring(10);
         if(request.startsWith('switch')){
             const secondRequest = request.substring(7);
             const cardArray = secondRequest.split(" ");
@@ -301,7 +310,6 @@ client.on('messageCreate', async (message) => {
         //check if player exists
         if(!doesExist){
             playerFunctions.createPlayer(user, name);
-            console.log('Player Created');
         }
         if(message.author.bot)
         //ensure that bot does not respond to itself 
@@ -340,7 +348,7 @@ client.on('messageCreate', async (message) => {
             if(validBurn){
                 playerFunctions.burnCards(user, numberCard);
                 //burn cards and increment daily count
-                message.channel.send("You have burned cards and obtained 3 more rolls.")
+                message.channel.send("You have burned cards <:olivedoom:911331762964160582> and obtained 3 more rolls.")
             }
             else{
                 message.channel.send('That was not a valid burn.')
@@ -351,9 +359,14 @@ client.on('messageCreate', async (message) => {
         }
     }
     else if(message.content.startsWith('/upgrade')){
-        //currently constructing:
-        
         const user = message.author.id;
+        const name = message.author.username;
+        //get userID and username for future functions
+        const doesExist = await playerFunctions.playerExists(user);
+        if(!doesExist){
+            playerFunctions.createPlayer(user, name);
+        }
+        //check if player exists
         const chosenCards = message.content.substring(9);
         const cardArray = chosenCards.split(" ");
         const numberCardArray = cardArray.map(Number);
@@ -395,6 +408,11 @@ client.on('messageCreate', async (message) => {
         if(message.author.bot)
             return;
         const user = message.author.id;
+        const name = message.author.name;
+        const doesExist = await playerFunctions.playerExists(user);
+        if(!doesExist){
+            playerFunctions.createPlayer(user, name);
+        }
         const itemRequest = Number(message.content.substring(10));
         if(shopFunctions.validShopRequest(itemRequest)){
             const item = shopFunctions.getShopItem(itemRequest);
@@ -418,10 +436,12 @@ client.on('messageCreate', async (message) => {
         const request = message.content.substring(7);
         //obtain the request substring
         if(request === "syncUpdate"){
-            const allPlayers = await adminFunctions.getAllPlayerIDs();
+            message.channel.send("Beginning sync...")
+            /*const allPlayers = await adminFunctions.getAllPlayerIDs();
             for(let i = 0; i < allPlayers.length; i++){
                 await adminFunctions.syncDeck(allPlayers[i]);
-            }
+            }*/
+            await adminFunctions.syncDeck(user);
             message.channel.send("Character decks have been synced!")
         }
         else if(request.search("pulltest \d*") !== -1){
@@ -435,7 +455,6 @@ client.on('messageCreate', async (message) => {
                 if(uniqueAchievemnts.length !== 0){
                     const embeddedAchieve = achievementFunctions.achievementEmbedArray(uniqueAchievemnts)
                     for(let i = 0; i < embeddedAchieve.length; i++){
-                        await playerFunctions.resetGoldenRollCount(user);
                         message.channel.send({embeds: [embeddedAchieve[i]]});
                         message.channel.send('You have obtained a Golden Roll!!!!');
                     }

@@ -120,11 +120,35 @@
         "points": 1000
     },
     {
+        "id": 35,
+        "name": "Golden brooch",
+        "from": "Leona Gloria-Angelo",
+        "description": "A gem-encrutsed brooch in the shape of a sun.",
+        "image": "https://denniswisser.com/wp-content/uploads/2019/12/rhinestone-flower-brooch.jpg",
+        "points": 1000
+    },
+    {
         "id": 45,
         "name": "Old tome",
         "from": "Theta (Foxman)",
         "description": "An extremely heavy-looking, old book. Apparently it was gifted to him before he gifted it to you. There appears to be a bird feather being used as a bookmark.",
         "image": "https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/old-tome-still-life-iii-tom-mc-nemar.jpg",
+        "points": 1000
+    },
+    {
+        "id": 46,
+        "name": "Bird feather bookmark",
+        "from": "Omicron (Charite)",
+        "description": "A rather beautiful, feather-shaped bookmark. It looks as if it's been used.",
+        "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSZcMdwm43l6SKtkRYdinpxiyjRsZUZXMAXLOQzgETMasU87bTCIRe3QU7dUg&usqp=CAc",
+        "points": 1000
+    },
+    {
+        "id": 48,
+        "name": "Book on law",
+        "from": "Tau",
+        "description": "A really thick book on the laws of Signum...",
+        "image": "https://www.lawbookexchange.com/images/upload/home_boxes_1_1.jpg?v=1428694924",
         "points": 1000
     },
     {
@@ -145,11 +169,19 @@
     },
     {
         "id": 106,
-        "name": "Test",
+        "name": "Hand-made pastries",
         "from": "Werner Waltz (?)",
-        "description": "Test",
-        "image": "https://media.discordapp.net/attachments/970820451578298398/1108864233720000522/image.png?width=443&height=514",
+        "description": "An assortment of cat-themed, hand-made pastries. There's a little note on the side that reads 'You are meowsome!' The gift-giver is staring at you rather expectantly and hopefully, so maybe you should try a piece now...?",
+        "image": "https://static.boredpanda.com/blog/wp-content/uploads/2015/03/adorable-cat-sweets-laura-caroline-ingalls-fb.jpg",
         "points": 2000
+    },
+    {
+        "id": 122,
+        "name": "A bird feather",
+        "from": "Scorpio (Nareen)",
+        "description": "A single blackbird feather. She seems to know that you know the meaning behind it.",
+        "image": "https://www.color-meanings.com/wp-content/uploads/2022/12/black-feather-1-1024x683.png",
+        "points": 1000
     }
     
 ]

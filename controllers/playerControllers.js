@@ -529,7 +529,7 @@ const validUpgrade = async(userID, upgradedCard, burnedCard) =>{
     //obtain card to be upgraded
     const toBurn = result[0].characterDeck[burnedCard-1];
     //obtain card to be burned
-    if(toUpgrade.ranking === toBurn.ranking && (toUpgrade.ranking === '✦ ✦ ✦ ✦ ✦ ✦' && toUpgrade.upgradeCount < 0)){
+    if(toUpgrade.ranking === toBurn.ranking /*|| (toUpgrade.ranking === '✦ ✦ ✦ ✦ ✦ ✦' && toUpgrade.upgradeCount < 0)*/){
         //if the rankings match up, it's alid
         return true;
     }
@@ -601,7 +601,7 @@ const upgradeCard  = async(userID, upgradedCard) => {
 }
 
 
-//pre-condition: player exists and
+//pre-condition: player exists and burned card is valid
 const burnCardForUpgrade = async(userID, burnedCard) => {
     const result = await Player.find({
         playerId: userID

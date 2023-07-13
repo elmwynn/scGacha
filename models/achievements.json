@@ -7,7 +7,7 @@
 
     },
     {
-        "id":2,
+        "id": 2,
         "achievement": "Lucky 7",
         "description": "Obtain all six main characters and Shion",
         "points": 700
@@ -113,5 +113,42 @@
         "achievement": "Heads of Peace",
         "description": "Obtain all First Chairmen of Ophiuchus",
         "points": 600
+    }, 
+    {
+        "id": 20,
+        "achievement": "Convergence",
+        "description": "Fully max star all main six characters",
+        "points": 1000
+    },
+    {
+        "id": 21,
+        "achievement": "A Political Bond",
+        "description": "Obtain the True Conductor Group surrounding Seamus Dolby",
+        "points": 500
+    },
+    {
+        "id": 22,
+        "achievement": "From the Ashes",
+        "description": "Obtain the characters associated with Ariesian Royalty",
+        "points": 500
+    },
+    {
+        "id": 23,
+        "achievement": "Utopian Paradise",
+        "description": "Obtain the characters associated with Ndoto",
+        "points": 1000
+    },
+    {
+        "id": 24,
+        "achievement": "Pets!",
+        "description": "Obtain all animal type characters",
+        "points": 500
+    },
+    {
+        "id": 25,
+        "achievement": "The full collection!",
+        "description": "Obtain all SC characters.",
+        "points": 700
     }
+    
 ]

@@ -1,6 +1,24 @@
 [
     [
         {
+            "id": 164,
+            "name": "Kent",
+            "type": "Civillian",
+            "affiliation": "Twin Cities Underground",
+            "conductingType": "???",
+            "ranking": "✦",
+            "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+        },
+        {
+            "id": 168,
+            "name": "Omar",
+            "type": "Civillian",
+            "affiliation": "???",
+            "conductingType": "???",
+            "ranking": "✦",
+            "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+        },
+        {
             "id": 70,
             "name": "Feliciano Donato",
             "type": "Civillian",
@@ -96,6 +114,15 @@
             "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
         },
         {
+            "id": 167,
+            "name": "Professor Morgan",
+            "type": "Civillian",
+            "affiliation": "New Ram City",
+            "conductingType": "???",
+            "ranking": "✦ ✦",
+            "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+        },
+        {
             
             "id": 12,
             "name": "Simon",
@@ -142,8 +169,26 @@
             "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
         },
         {
+            "id": 167,
+            "name": "Professor Morgan",
+            "type": "Civillian",
+            "affiliation": "New Ram City",
+            "conductingType": "???",
+            "ranking": "✦ ✦",
+            "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+        },
+        {
             "id": 76,
             "name": "Bendetto",
+            "type": "Civillian",
+            "affiliation": "Twin Cities Underground",
+            "conductingType": "???",
+            "ranking": "✦ ✦",
+            "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+        },
+        {
+            "id": 165,
+            "name": "Mateo",
             "type": "Civillian",
             "affiliation": "Twin Cities Underground",
             "conductingType": "???",
@@ -202,6 +247,24 @@
             "name": "Kichea Imamu",
             "type": "Civillian",
             "affiliation": "Imamu Tribe",
+            "conductingType": "???",
+            "ranking": "✦ ✦",
+            "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+        },
+        {
+            "id": 144,
+            "name": "Usian",
+            "type": "Civillian",
+            "affiliation": "Imamu Tribe",
+            "conductingType": "???",
+            "ranking": "✦ ✦",
+            "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+        },
+        {
+            "id": 146,
+            "name": "Béni",
+            "type": "Civillian",
+            "affiliation": "???",
             "conductingType": "???",
             "ranking": "✦ ✦",
             "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
@@ -361,6 +424,24 @@
             "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
         },
         {
+            "id": 180,
+            "name": "Vincente Giustiza",
+            "type": "Civillian",
+            "affiliation": "Twin Cities Underground",
+            "conductingType": "???",
+            "ranking": "✦ ✦ ✦",
+            "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+        },
+        {
+            "id": 166,
+            "name": "Signore Campana",
+            "type": "Civillian",
+            "affiliation": "Twin Cities Underground",
+            "conductingType": "???",
+            "ranking": "✦ ✦ ✦",
+            "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+        },
+        {
             "id": 14,
             "name": "Talib Al-Jarrah",
             "type": "Peacekeeper",
@@ -424,6 +505,15 @@
             "conductingType": "Manipulator",
             "ranking": "✦ ✦ ✦",
             "image": "https://media.discordapp.net/attachments/970820451578298398/1108843976372518982/image.png?width=364&height=514"
+        },
+        {
+            "id": 148,
+            "name": "Nia",
+            "type": "Conductor",
+            "affiliation": "Imamu Tribe",
+            "conductingType": "Projector",
+            "ranking": "✦ ✦ ✦",
+            "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
         },
         {
             "id": 19,
@@ -824,7 +914,27 @@
             "affiliation": "ELPIS",
             "conductingType": "Manipulator",
             "ranking": "✦ ✦ ✦ ✦",
-            "image": "https://sixchanceshome.files.wordpress.com/2021/01/ilustracion25.jpg"
+            "image": "https://sixchanceshome.files.wordpress.com/2021/01/ilustracion25.jpg",
+            "upgradeDialogue": ["Oh? That's rather forward of you.", " ", " "," ", "You've done that several times now... It wouldn't be just of me not to return the favor, would it? Don't get any ideas now. My right hand is already holding another's.", "Since you've helped me, allow me to give you a word of advice. To some, the state of the world is an unsalvagable disappointment. You might think it's better to conceal it instead of facing it. However, it's working through the imperfections and the disappointment that you realize even dust has use. Hiding it away only leads to deprecation. If only I realized that sooner... If only I had more time... Well. That's just me. As my darling always says, I'm a ridiculous person. You on the other hand..."],
+            "upgradeCount": 9
+        },
+        {
+            "id": 171,
+            "name": "Fenrir (Dog)",
+            "type": "Animal",
+            "affiliation": "Werner Waltz",
+            "conductingType": "???",
+            "ranking": "✦ ✦ ✦ ✦",
+            "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+        },
+        {
+            "id": 172,
+            "name": "Blackbird (Bird)",
+            "type": "Animal",
+            "affiliation": "Olive Chance",
+            "conductingType": "???",
+            "ranking": "✦ ✦ ✦ ✦",
+            "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
         },
         {
             "id": 50,
@@ -842,7 +952,9 @@
             "affiliation": "ELPIS",
             "conductingType": "Conjuror",
             "ranking": "✦ ✦ ✦ ✦",
-            "image": "https://media.discordapp.net/attachments/970820451578298398/1108844085902585896/image.png?width=307&height=514"
+            "image": "https://media.discordapp.net/attachments/970820451578298398/1108844085902585896/image.png?width=307&height=514",
+            "upgradeDialogue": ["What?! What is this?! What do you think you're doing?! Is this bribery?! You think you're above the law? Bribing me like this?! How dare you!", " ", " "," ", "I will not be moved by suck trickery!", "You are a relentless criminal, aren't you? ... No one is above the law. I hope you realize that. The law of men, time, justice, life, the cycle. If you go agains it, you'll undoubtedly be punished. I'm not above punishment either. Yes, yes, I'm damned self-aware! Anyways. Whether that punishment is worth the sacrifice you think that you're making... "],
+            "upgradeCount": 9
         },
         {
             "id": 33,
@@ -981,7 +1093,9 @@
             "affiliation": "Ophiuchus",
             "conductingType": "Manipulator",
             "ranking": "✦ ✦ ✦ ✦ ✦",
-            "image": "https://media.discordapp.net/attachments/970820451578298398/1110930653496758373/image.png"
+            "image": "https://media.discordapp.net/attachments/970820451578298398/1110930653496758373/image.png",
+            "upgradeDialogue": ["Oh...? You're leveling me up? Why? Oh, I know. You have nothing else to do. You poor, precious, pitiable thing. Doing this for me won't do anything for you. You'll just see me repeat myself over and over again. Oh? Does that entertain you? Perhaps... I can help you find something more exciting that you can be passionate about. Regardless, I won't stop you, dear.", " ", " "," ", " ", "And what has bringing me to this point done for you? It certainly hasn't done anything for me. From your perspective, I'm not even real, so it hasn't done anything for you either. From my perspective, you aren't real either. It's quite sad, isn't it? All your work for something that isn't physical. Absolutely adorable. I can't get enough of you."],
+            "upgradeCount": 5
         },
         {
             "id": 6,
@@ -1015,6 +1129,51 @@
             "image": "https://cdn.discordapp.com/attachments/970820451578298398/1108845444953559142/image.png",
             "upgradeDialogue": ["Oh... thank you! Please don't focus too much on me though. Have you leveled up Olive, Cadence, Werner, Maria, Atienna, or Jericho yet?", " ", " "," ", " ", "... Thank you for helping me even though I'm no longer..."],
             "upgradeCount": 5
+        },
+        {
+            "id": 156,
+            "name": "Otto Vogt (???)",
+            "type": "????",
+            "affiliation": "Ndoto",
+            "conductingType": "???",
+            "ranking": "✦ ✦ ✦ ✦ ✦",
+            "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+        },
+        {
+            "id": 157,
+            "name": "Nil Abero (???)",
+            "type": "????",
+            "affiliation": "Ndoto",
+            "conductingType": "???",
+            "ranking": "✦ ✦ ✦ ✦ ✦",
+            "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+        },
+        {
+            "id": 158,
+            "name": "Marionette Engel (???)",
+            "type": "????",
+            "affiliation": "Ndoto",
+            "conductingType": "???",
+            "ranking": "✦ ✦ ✦ ✦ ✦",
+            "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+        },
+        {
+            "id": 169,
+            "name": "Kaiser (Cat)",
+            "type": "Animal",
+            "affiliation": "Werner Waltz",
+            "conductingType": "???",
+            "ranking": "✦ ✦ ✦ ✦ ✦",
+            "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+        },
+        {
+            "id": 159,
+            "name": "Iris McKillop (???)",
+            "type": "????",
+            "affiliation": "Ndoto",
+            "conductingType": "???",
+            "ranking": "✦ ✦ ✦ ✦ ✦",
+            "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
         },
         {
             "id": 125,
@@ -1068,7 +1227,9 @@
             "affiliation": "Ophiuchus",
             "conductingType": "Projector",
             "ranking": "✦ ✦ ✦ ✦ ✦",
-            "image": "https://sixchanceshome.files.wordpress.com/2021/02/414141.png"
+            "image": "https://sixchanceshome.files.wordpress.com/2021/02/414141.png",
+            "upgradeDialogue": ["What is it? Did I ask for your help? Certainly not. IT's unwise to help another when you're incapable of helping yourself.", " ", " "," ", " ", "Hm... Your devotion and dedication... since you have given this much to me, allow me to leave you with a word of advice. Wherever you go, whatever you do, whatever you accomplish, never look back. That is true victory. Otherwise, it is simply regret."],
+            "upgradeCount": 5
         },
         {
             "id": 36,
@@ -1078,6 +1239,33 @@
             "conductingType": "Conjuror",
             "ranking": "✦ ✦ ✦ ✦ ✦",
             "image": "https://media.discordapp.net/attachments/970820451578298398/1108846396720812082/image.png?width=262&height=514"
+        },
+        {
+            "id": 177,
+            "name": "Morandi (?)",
+            "type": "???",
+            "affiliation": "Ndoto",
+            "conductingType": "???",
+            "ranking": "✦ ✦ ✦ ✦ ✦",
+            "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+        },
+        {
+            "id": 178,
+            "name": "Izsak (?)",
+            "type": "???",
+            "affiliation": "Ndoto",
+            "conductingType": "???",
+            "ranking": "✦ ✦ ✦ ✦ ✦",
+            "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+        },
+        {
+            "id": 179,
+            "name": "Vincente Giustiza(?)",
+            "type": "???",
+            "affiliation": "Ndoto",
+            "conductingType": "???",
+            "ranking": "✦ ✦ ✦ ✦ ✦",
+            "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
         },
         {
             "id": 38,
@@ -1234,7 +1422,27 @@
             "affiliation": "Ndoto",
             "conductingType": "????",
             "ranking": "✦ ✦ ✦ ✦ ✦ ✦",
-            "image": "https://media.discordapp.net/attachments/970820451578298398/1108864233720000522/image.png?width=443&height=514"
+            "image": "https://media.discordapp.net/attachments/970820451578298398/1108864233720000522/image.png?width=443&height=514",
+            "upgradeDialogue": ["Woahhh! I can level up too? That's so cool, man! Thanks!", "I leveled up again! Can I level you up? Yeah, let me try! We can be like level-up buddies! ...Wait, how do I do that? '/upgrade....?' Technology is confusing... Where's Ollie? He can help!", "Woah. I don't think I've been this high-leveled in anything... like, ever. You know... I'm only able to level up because of you!","I wonder if Kaiser can level up...? He'd be so... cool... so powerful. Kaiser: Rank, 10; Type; Cat King; Affiliation: Something-Cool... Yeah! We should level up Kaiser together!", "Thanks again, man! You know... I feel kinda bad. I want to level you up too... Well, you know what? You're already Rank 10, so there's no rank higher than the cool that you are!", "You know... people say that I'm not real bright and I'm not a good judge of character. Only one of those things must be right, because I know you're a great person! I'm you're ride and die!"],
+            "upgradeCount": -6
+        },
+        {
+            "id": 160,
+            "name": "Talib Al-Jarrah (???)",
+            "type": "????",
+            "affiliation": "Ndoto",
+            "conductingType": "???",
+            "ranking": "✦ ✦ ✦ ✦ ✦ ✦",
+            "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+        },
+        {
+            "id": 155,
+            "name": "P.D. Oran",
+            "type": "Conductor",
+            "affiliation": "???",
+            "conductingType": "Diverger",
+            "ranking": "✦ ✦ ✦ ✦ ✦ ✦",
+            "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
         },
         {
             "id": 56,
@@ -1273,6 +1481,96 @@
             "image": "https://media.discordapp.net/attachments/970820451578298398/1109203496328233061/image.png?width=396&height=599"
         },
         {
+            "id": 149,
+            "name": "Olivier Chance (True)",
+            "type": "True Conductor",
+            "affiliation": "Ariesian Crown",
+            "conductingType": "Elementalist: Fire",
+            "ranking": "✦ ✦ ✦ ✦ ✦ ✦",
+            "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+        },
+        {
+            "id": 150,
+            "name": "Cadence Morello (True)",
+            "type": "True Conductor",
+            "affiliation": "Twin Cities",
+            "conductingType": "Transmutationist",
+            "ranking": "✦ ✦ ✦ ✦ ✦ ✦",
+            "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+        },
+        {
+            "id": 151,
+            "name": "Werner Waltz (True)",
+            "type": "True Conductor",
+            "affiliation": "Capricornian Military Academy",
+            "conductingType": "Projector",
+            "ranking": "✦ ✦ ✦ ✦ ✦ ✦",
+            "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+        },
+        {
+            "id": 152,
+            "name": "Maria Gloria-Fernandez (True)",
+            "type": "True Conductor / Potential Saint Candidate",
+            "affiliation": "Monadism / Alpha",
+            "conductingType": "???",
+            "ranking": "✦ ✦ ✦ ✦ ✦ ✦",
+            "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+        },
+        {
+            "id": 160,
+            "name": "Talib Al-Jarrah (???)",
+            "type": "????",
+            "affiliation": "Ndoto",
+            "conductingType": "???",
+            "ranking": "✦ ✦ ✦ ✦ ✦ ✦",
+            "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+        },
+        {
+            "id": 161,
+            "name": "Aquarius (War)",
+            "type": "Saint Candidate",
+            "affiliation": "Aquarian Army",
+            "conductingType": "Elementalist: Water",
+            "ranking": "✦ ✦ ✦ ✦ ✦ ✦",
+            "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+        },
+        {
+            "id": 162,
+            "name": "Gemini (War)",
+            "type": "Saint Candidate",
+            "affiliation": "Twin Cities",
+            "conductingType": "Transmutationist",
+            "ranking": "✦ ✦ ✦ ✦ ✦ ✦",
+            "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+        },
+        {
+            "id": 163,
+            "name": "Virgo (War)",
+            "type": "Saint Candidate",
+            "affiliation": "???",
+            "conductingType": "Conjuror",
+            "ranking": "✦ ✦ ✦ ✦ ✦ ✦",
+            "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+        },
+        {
+            "id": 153,
+            "name": "Atienna Imamu (True)",
+            "type": "True Conductor",
+            "affiliation": "Anti-Isolation Movement",
+            "conductingType": "???",
+            "ranking": "✦ ✦ ✦ ✦ ✦ ✦",
+            "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+        },
+        {
+            "id": 154,
+            "name": "Jericho (True)",
+            "type": "True Conductor",
+            "affiliation": "ELPIS",
+            "conductingType": "Diverger",
+            "ranking": "✦ ✦ ✦ ✦ ✦ ✦",
+            "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+        },
+        {
             "id": 107,
             "name": "Atienna Imamu (?)",
             "type": "???",
@@ -1300,6 +1598,15 @@
             "image": "https://media.discordapp.net/attachments/970820451578298398/1108864407758450688/image.png?width=494&height=514"
         },
         {
+            "id": 170,
+            "name": "Cancer (War)",
+            "type": "Saint Candidate",
+            "affiliation": "Chevaliers",
+            "conductingType": "Transmutationist",
+            "ranking": "✦ ✦ ✦ ✦ ✦ ✦",
+            "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+        },
+        {
             "id": 82,
             "name": "Ophiuchus",
             "type": "Remnant",
@@ -1307,6 +1614,15 @@
             "conductingType": "????",
             "ranking": "✦ ✦ ✦ ✦ ✦ ✦",
             "image": "https://media.discordapp.net/attachments/970820451578298398/1111014080610836643/image.png"
+        },
+        {
+            "id": 173,
+            "name": "Oros (Bird)",
+            "type": "Animal",
+            "affiliation": "Leo (Ariete)",
+            "conductingType": "???",
+            "ranking": "✦ ✦ ✦ ✦ ✦ ✦",
+            "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
         },
         {
             "id": 117,
@@ -1325,6 +1641,51 @@
             "conductingType": "???",
             "ranking": "✦ ✦ ✦ ✦ ✦ ✦",
             "image": "https://media.discordapp.net/attachments/970820451578298398/1110573857443676230/image.png?width=394&height=599"
+        },
+        {
+            "id": 143,
+            "name": "Head Chairman",
+            "type": "Peacekeeper",
+            "affiliation": "Ophiuchus",
+            "conductingType": "???",
+            "ranking": "✦ ✦ ✦ ✦ ✦ ✦",
+            "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+        },
+        {
+            "id": 147,
+            "name": "Cancer (Béni)",
+            "type": "Saint Candidate",
+            "affiliation": "???",
+            "conductingType": "Transmutationist",
+            "ranking": "✦ ✦ ✦ ✦ ✦ ✦",
+            "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+        },
+        {
+            "id": 174,
+            "name": "Isabel",
+            "type": "Saint Candidate",
+            "affiliation": "Leo",
+            "conductingType": "???",
+            "ranking": "✦ ✦ ✦ ✦ ✦ ✦",
+            "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+        },
+        {
+            "id": 175,
+            "name": "Araceli",
+            "type": "???",
+            "affiliation": "Ndoto",
+            "conductingType": "???",
+            "ranking": "✦ ✦ ✦ ✦ ✦ ✦",
+            "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+        },
+        {
+            "id": 176,
+            "name": "Ariete",
+            "type": "???",
+            "affiliation": "Ndoto",
+            "conductingType": "???",
+            "ranking": "✦ ✦ ✦ ✦ ✦ ✦",
+            "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
         }
 
     ]
