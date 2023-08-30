@@ -437,11 +437,10 @@ client.on('messageCreate', async (message) => {
         //obtain the request substring
         if(request === "syncUpdate"){
             message.channel.send("Beginning sync...")
-            /*const allPlayers = await adminFunctions.getAllPlayerIDs();
+            const allPlayers = await adminFunctions.getAllPlayerIDs();
             for(let i = 0; i < allPlayers.length; i++){
                 await adminFunctions.syncDeck(allPlayers[i]);
-            }*/
-            await adminFunctions.syncDeck(user);
+            }
             message.channel.send("Character decks have been synced!")
         }
         else if(request.search("pulltest \d*") !== -1){

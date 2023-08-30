@@ -270,7 +270,9 @@
         "affiliation": "Capricornian Army",
         "conductingType": "Transmutationist",
         "ranking": "✦ ✦ ✦",
-        "image": "https://media.discordapp.net/attachments/970820451578298398/1108851930412879972/image.png?width=340&height=514"
+        "image": "https://media.discordapp.net/attachments/970820451578298398/1108851930412879972/image.png?width=340&height=514",
+        "upgradeDialogue": ["Oh! Showering me in gifts now, are you? How did you know that I'm easily bribed?", " ", " ","You're still at it? I admire that. Obviously, I can't give you my heart since I have a fiancee, but I could give you a story or two. Or maybe a lolipop? I *was* a nurse before this. What? No bite?", "Why do you think people enjoy stories so much? Escapism if its fictional? Gossip if its real? Say, you read a book and you get attached to a character. Would you still be attacehd to that character if he was replaced by someone with the same name, the same face, almost the same history, but a different head on his shoulders? ...What? I'm only asking because I'm about to tell you something I heard the other day.", "Does all of this count as a promotion? I could use some extra funds. My fiancee's been wanting to buy this one luxury purse for ages, and I haven't been able to get it to her with my current stipend. No, no, I'm not making a sob story out of it. *My* fiancee, *my* stipend, *my* country... Have you ever thought of how possessive the word 'my' is? How can you call it 'my' when it was technically never yours to begin with. Well, that's a story for another day. Thanks, *my* friend."],
+        "upgradeCount": 12
     },
     {
         "id": 28,
@@ -353,7 +355,9 @@
         "affiliation": "Monadism",
         "conductingType": "Conjuror",
         "ranking": "✦ ✦ ✦ ✦ ✦",
-        "image": "https://media.discordapp.net/attachments/970820451578298398/1108846396720812082/image.png?width=262&height=514"
+        "image": "https://media.discordapp.net/attachments/970820451578298398/1108846396720812082/image.png?width=262&height=514",
+        "upgradeDialogue": ["...😶", " ", " "," ", " ", "...🫵....🫶...🙇‍♂️"],
+        "upgradeCount": 5
     },
     {
         "id": 37,
@@ -371,7 +375,9 @@
         "affiliation": "Unknown",
         "conductingType": "Elementalist: Water",
         "ranking": "✦ ✦ ✦ ✦ ✦",
-        "image": "https://media.discordapp.net/attachments/970820451578298398/1108857030959181884/image.png?width=215&height=514"
+        "image": "https://media.discordapp.net/attachments/970820451578298398/1108857030959181884/image.png?width=215&height=514",
+        "upgradeDialogue": ["HAHAHAHAHA. Of course you would choose to support me. Of course you would. But, it is not you who is supporting me, but I-VELES-WHO IS SUPPORTING YOU!", " ", " "," ", " ", "I see, I see! So you have offered to me the fruits of your labor. Your efforts shall not go unrewarded. No efforts are. Your disposition reminds me of an adventurer that I once knew-no, perhaps no. Come closer. Let me see your face."],
+        "upgradeCount": 5
     },
     {
         "id": 39,
@@ -456,7 +462,9 @@
         "affiliation": "ELPIS",
         "conductingType": "Manipulator",
         "ranking": "✦ ✦ ✦",
-        "image": "https://cdn.discordapp.com/attachments/970820451578298398/1108840185808027698/image.png"
+        "image": "https://cdn.discordapp.com/attachments/970820451578298398/1108840185808027698/image.png",
+        "upgradeDialogue": ["Oh...? Oh...? Why make such a sacrifice when we're at the beginning of the end?", " ", " ","What do you call the vanity of a transient creature? Haha. I don't know either. I'm not one for self-awareness.", "All of this life you're breathing into me. Should I thank you? Or should you thank me? You're such a cute fool--but not as cute a fool as me, of course.", "We're here one moment and gone the next. Forgotten. Our existence insignificant in the turn of tge cycle. It'd be foolish for us to hold onto anything, and yet... here we are. You and me. Silly little things."],
+        "upgradeCount": 12
     },
     {
         "id": 48,
@@ -476,7 +484,9 @@
         "affiliation": "ELPIS",
         "conductingType": "Manipulator",
         "ranking": "✦ ✦ ✦",
-        "image": "https://media.discordapp.net/attachments/970820451578298398/1108843976372518982/image.png?width=364&height=514"
+        "image": "https://media.discordapp.net/attachments/970820451578298398/1108843976372518982/image.png?width=364&height=514",
+        "upgradeDialogue": ["Are you a Conductor? If you are, I'd rather take your head than a gift like this.", " ", " ", "Damnit. It's just not fast enough. Nothing is. How long do you think you'll be here? How do you think I'll be here? Not long, so why the hell are we sitting around? Your gift is not enough. I don't even need it, if you use a conductor.", "I'm... sorry for being a bit harsh. Call it impatience, a poor initiation, a poor personality--I can't control myself sometimes. Hm. Let met get a good look at you. Hm... you have a good sense of style.", "I feel like ever second that passes by I'm slipping from one color to the next. Red, blue, red again, blue, white. Madness from a host that consumed the blood of children. Putrid. This is what conductors do. It's not good, don't you know? Not choosing a style stick to for awhile? Your style says everything about you. Well... at least your style is fashionable."],
+        "upgradeCount": 12
     },
     {
         "id": 50,
@@ -548,7 +558,9 @@
         "affiliation": "Ndoto",
         "conductingType": "????",
         "ranking": "✦ ✦ ✦ ✦ ✦ ✦",
-        "image": "https://media.discordapp.net/attachments/970820451578298398/1108864591246663714/image.png?width=356&height=513"
+        "image": "https://media.discordapp.net/attachments/970820451578298398/1108864591246663714/image.png?width=356&height=513",
+        "upgradeDialogue": ["You should invest in your own growth as well.", "Thank you. I appreciate your support. I have to say though that you should research all you can about a person or idea before you start investing in and supporting them.", "I have many qualms about the way Ndoto is run. They say all are equal here but what about there? You can't make equal people who've come from different backgrounds by providing them with the same exact resources. If we try equity, I'm sure some would complain about some receiving more than others. Justice... removing all barriers and gates from the very beginning. Now... that truly is something. Even so, at least Ndoto gives justice in the way everyone returns to the tree. It's something I'm proud to take part in.", "Hm... You've spent all this time listening to me and yet I haven't listened to you. What are you thoughts and opinions? On anything, on anyone, on anyplace. I'd love to hear them.", "Let's take a picture together. If you're comfortable, of course."],
+        "upgradeCount": -6
     },
     {
         "id": 58,
@@ -736,7 +748,7 @@
     },
     {
         "id": 78,
-        "name": "Lambda",
+        "name": "Kappa",
         "type": "ELPIS Leader",
         "affiliation": "ELPIS",
         "conductingType": "Diverger",
@@ -994,7 +1006,7 @@
         "conductingType": "????",
         "ranking": "✦ ✦ ✦ ✦ ✦ ✦",
         "image": "https://media.discordapp.net/attachments/970820451578298398/1108864233720000522/image.png?width=443&height=514",
-        "upgradeDialogue": ["Woahhh! I can level up too? That's so cool, man! Thanks!", "I leveled up again! Can I level you up? Yeah, let me try! We can be like level-up buddies! ...Wait, how do I do that? '/upgrade....?' Technology is confusing... Where's Ollie? He can help!", "Woah. I don't think I've been this high-leveled in anything... like, ever. You know... I'm only able to level up because of you!","I wonder if Kaiser can level up...? He'd be so... cool... so powerful. Kaiser: Rank, 10; Type; Cat King; Affiliation: Something-Cool... Yeah! We should level up Kaiser together!", "Thanks again, man! You know... I feel kinda bad. I want to level you up too... Well, you know what? You're already Rank 10, so there's no rank higher than the cool that you are!", "You know... people say that I'm not real bright and I'm not a good judge of character. Only one of those things must be right, because I know you're a great person! I'm you're ride and die!"],
+        "upgradeDialogue": ["Woahhh! I can level up too? That's so cool, man! Thanks!", "I leveled up again! Can I level you up? Yeah, let me try! We can be like level-up buddies! ...Wait, how do I do that? '/upgrade....?' Technology is confusing... Where's Ollie? He can help!", "Woah. I don't think I've been this high-leveled in anything... like, ever. You know... I'm only able to level up because of you!","I wonder if Kaiser can level up...? He'd be so... cool... so powerful. Kaiser: Rank, 10; Type: Cat King; Affiliation: Something-Cool... Yeah! We should level up Kaiser together!", "Thanks again, man! You know... I feel kinda bad. I want to level you up too... Well, you know what? You're already Rank 10, so there's no rank higher than the cool that you are!", "You know... people say that I'm not real bright and I'm not a good judge of character. Only one of those things must be right, because I know you're a great person! I'm your ride and die!"],
         "upgradeCount": -6
     },
     {
@@ -1564,7 +1576,9 @@
         "affiliation": "Werner Waltz",
         "conductingType": "???",
         "ranking": "✦ ✦ ✦ ✦ ✦",
-        "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+        "image": "https://cdn.discordapp.com/attachments/970820451578298398/1132354129281425468/image.png",
+        "upgradeDialogue": ["Mrep?", " ", " "," ", " ", "Purr.... purr...."],
+        "upgradeCount": 5
     },
     {
         "id": 170,
@@ -1644,7 +1658,7 @@
         "type": "???",
         "affiliation": "Ndoto",
         "conductingType": "???",
-        "ranking": "✦ ✦ ✦ ✦ ✦",
+        "ranking": "✦ ✦ ✦ ✦",
         "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
     },
     {
@@ -1663,6 +1677,63 @@
         "affiliation": "Twin Cities Underground",
         "conductingType": "???",
         "ranking": "✦ ✦ ✦",
+        "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+    },
+    {
+        "id": 181,
+        "name": "(???) Yuseong",
+        "type": "???",
+        "affiliation": "???",
+        "conductingType": "Elementalist: Air",
+        "ranking": "✦ ✦ ✦ ✦ ✦ ✦",
+        "image": "https://cdn.picrew.me/shareImg/org/202307/34800_k7oqSw7n.png",
+        "upgradeDialogue": ["Haven't we done this already? ..what's with that face? It looks like you've seen a ghost.", "Yes, yes, kiddo, sacrifice all your other high-ranked cards to me. It makes me feel popular.", "And there falls another one. Pun non-intended.", "Ndoto is made up of a bunch of people wandering around and not looking for anything in particular. Dare I say it... It's filled with boring people. My homeroom teacher says that I'm a natural-born leader, so I *could* lead them all in the right direction, couldn't I? Become a policy maker and all that? But maybe I'm just getting carried away with my ego.", "Mirrors are for self-discovery and self-awareness not whittling away your self-esteem. I should write that down. That's a good line.", "Hm. Look at that. A cloud."],
+        "upgradeCount": -6
+    },
+    {
+        "id": 182,
+        "name": "Mnemnos",
+        "type": "Remnant",
+        "affiliation": "Leo",
+        "conductingType": "???",
+        "ranking": "✦ ✦ ✦ ✦ ✦",
+        "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+    },
+    {
+        "id": 183,
+        "name": "The One In The Raincoat",
+        "type": "???",
+        "affiliation": "???",
+        "conductingType": "???",
+        "ranking": "✦ ✦ ✦ ✦ ✦",
+        "image": "https://media.discordapp.net/attachments/1017965989691936790/1133831086519107694/image.png"
+    }
+    ,
+    {
+        "id": 184,
+        "name": "Charite (?)",
+        "type": "???",
+        "affiliation": "Ndoto",
+        "conductingType": "???",
+        "ranking": "✦ ✦ ✦ ✦ ✦",
+        "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+    },
+    {
+        "id": 185,
+        "name": "Francis Foxman (?)",
+        "type": "???",
+        "affiliation": "Ndoto",
+        "conductingType": "???",
+        "ranking": "✦ ✦ ✦ ✦ ✦ ✦",
+        "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
+    },
+    {
+        "id": 186,
+        "name": "Kafke (?)",
+        "type": "???",
+        "affiliation": "Ndoto",
+        "conductingType": "???",
+        "ranking": "✦ ✦ ✦ ✦ ✦",
         "image": "https://sixchanceshome.files.wordpress.com/2021/02/cropped-screen-shot-2021-02-20-at-9.55.43-am.png"
     }
     

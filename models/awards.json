@@ -120,11 +120,35 @@
         "points": 1000
     },
     {
+        "id": 27,
+        "name": "Lolipop",
+        "from": "Alwin Brandt",
+        "description": "A lolipop, the kind you get at a doctor's office.",
+        "image": "https://media.istockphoto.com/id/147256550/photo/two-lollipops.jpg?s=170667a&w=0&k=20&c=2EGtgPEw6rnxmmKb_wF7t2MrquXV51eJwus3p9AgvJw=",
+        "points": 1000
+    },
+    {
         "id": 35,
         "name": "Golden brooch",
         "from": "Leona Gloria-Angelo",
         "description": "A gem-encrutsed brooch in the shape of a sun.",
         "image": "https://denniswisser.com/wp-content/uploads/2019/12/rhinestone-flower-brooch.jpg",
+        "points": 1000
+    },
+    {
+        "id": 36,
+        "name": "Golden brooch",
+        "from": "Andres",
+        "description": "A golden Sagittarian pin forged with stone from the Aquarian mountain ranges. It seems precious.",
+        "image": "https://www.leehwawedding.com/cdn/shop/products/1_eb707059-905e-4e89-8195-112fb09a2cf7_1024x1024@2x.png?v=1658347223",
+        "points": 1000
+    },
+    {
+        "id": 38,
+        "name": "Treasure chest",
+        "from": "Veles",
+        "description": "A large chest full of everything you could imagine. You probably shouldn't brag about it. Some of the items look stolen.",
+        "image": "https://img1.cgtrader.com/items/146809/5f348335b5/large/treasure-chest-with-gold-3d-model-obj-3ds-fbx-c4d.jpg",
         "points": 1000
     },
     {
@@ -144,11 +168,35 @@
         "points": 1000
     },
     {
+        "id": 47,
+        "name": "A brush",
+        "from": "Omega",
+        "description": "An orante hairbrush. Why was this a gift?",
+        "image": "https://static.wikia.nocookie.net/warehouse-13-artifact-database/images/8/8d/AphroditeComb.jpg/revision/latest?cb=20170327181728",
+        "points": 1000
+    },
+    {
         "id": 48,
         "name": "Book on law",
         "from": "Tau",
         "description": "A really thick book on the laws of Signum...",
         "image": "https://www.lawbookexchange.com/images/upload/home_boxes_1_1.jpg?v=1428694924",
+        "points": 1000
+    },
+    {
+        "id": 49,
+        "name": "An ornate hairbow",
+        "from": "Iota (McKillop)",
+        "description": "A vintage-looking hairbow. Very fashionable.",
+        "image": "https://www.hairbowcenter.com/media/catalog/product/cache/b372a124dce8536b465a24085d23a931/h/a/hair-bow-satin-lace-tails-down-vintage-blue_2.jpg",
+        "points": 1000
+    },
+    {
+        "id": 57,
+        "name": "A photo",
+        "from": "Jericho El-Mahdy (?)",
+        "description": "A photo of you and Jericho in perfect lighting",
+        "image": "https://www.creativefabrica.com/wp-content/uploads/2021/08/23/Blank-polaroid-frame-photo-design-Graphics-16251130-1-580x386.png",
         "points": 1000
     },
     {
@@ -182,6 +230,23 @@
         "description": "A single blackbird feather. She seems to know that you know the meaning behind it.",
         "image": "https://www.color-meanings.com/wp-content/uploads/2022/12/black-feather-1-1024x683.png",
         "points": 1000
+    },
+    {
+        "id": 169,
+        "name": "A mouse",
+        "from": "Kaiser (Cat)",
+        "description": "A mouse. This cat brought you a mouse. His owner is trying to tell you that this means the cat likes you, but you're not too sure.",
+        "image": "https://www.havahart.com/media/wysiwyg/hh/cms/lc/mice/hh-animals-mouse-1.png",
+        "points": 1000
+    },
+    {
+        "id": 181,
+        "name": "A sign with an arrow",
+        "from": "(???) Yuseong",
+        "description": "A literal street sign of an arrow. The person who gifted you this is laughing up a storm.",
+        "image": "https://cdn11.bigcommerce.com/s-4nops3qe/images/stencil/1280x1280/products/14775/20515/m-m61__87791.1516503244.png?c=2",
+        "points": 1000
     }
+    
     
 ]
